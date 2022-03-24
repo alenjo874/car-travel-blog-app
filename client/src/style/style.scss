@@ -11,6 +11,10 @@ body {
   font-family: "Playfair Display";
 }
 
+img {
+  width: 100%;
+}
+
 .home-page-container {
   min-height: 100vh;
   border: 2px solid yellow;
@@ -49,6 +53,14 @@ body {
 .blog-card-container {
   border: 2px solid purple;
 
-  .blog-card-body {
+  .blog-card-teaser {
+    display: flex;
+  }
+
+  .blog-thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100px;
   }
 }
