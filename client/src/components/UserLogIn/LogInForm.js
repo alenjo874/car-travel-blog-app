@@ -22,6 +22,24 @@ function LogInForm() {
     setPassword("");
   }
 
+  function handleSignIn(e) {
+    e.preventDefault();
+    const user = {
+      name: username,
+      password: password,
+    };
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+
+    setUsername("");
+    setPassword("");
+  }
+
   return (
     <div>
       <form className="sign-up-form">
@@ -36,7 +54,7 @@ function LogInForm() {
           onChange={(e) => setPassword(e.target.value)}
         ></input>
         <button onClick={handleSignUp}>SIGN UP</button>
-        <button>LOGIN</button>
+        <button onClick={handleSignIn}>LOGIN</button>
       </form>
     </div>
   );

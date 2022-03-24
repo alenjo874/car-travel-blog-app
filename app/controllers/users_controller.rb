@@ -3,6 +3,11 @@ class UsersController < ApplicationController
        create_user = User.create!(user_params)
     end
 
+    def show 
+        show_user = User.find(session[:user_id])
+        render json: show_user
+    end
+
     def index
         render json: {hello: "heello"}
     end
