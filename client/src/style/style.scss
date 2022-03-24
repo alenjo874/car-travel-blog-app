@@ -1,0 +1,47 @@
+$nav-fontsize: 1.2rem;
+$nav-margin: 1.5em;
+$home-background-img: url("./images/Mountains.jpg");
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+}
+
+body {
+  font-family: "Playfair Display";
+}
+
+.home-page-container {
+  min-height: 100vh;
+  border: 2px solid yellow;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h4 {
+    margin-left: $nav-margin;
+  }
+
+  ul {
+    display: flex;
+    margin-right: $nav-margin;
+    list-style: none;
+    li {
+      margin-left: $nav-margin;
+    }
+  }
+  .nav-elements {
+    display: flex;
+
+    p {
+      margin-right: $nav-margin;
+    }
+  }
+
+  font-size: $nav-fontsize;
+
+  border: 2px solid red;
+}

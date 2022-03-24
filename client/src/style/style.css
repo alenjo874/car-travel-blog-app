@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Playfair Display";
+  src: url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+}
+
+body {
+  font-family: "Playfair Display";
+}
+
+.home-page-container {
+  min-height: 100vh;
+  border: 2px solid yellow;
+}
+
+.navbar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+  border: 2px solid red;
+}
+
+.navbar-container h4 {
+  margin-left: 1.5em;
+}
+
+.navbar-container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 1.5em;
+  list-style: none;
+}
+
+.navbar-container ul li {
+  margin-left: 1.5em;
+}
+
+.navbar-container .nav-elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar-container .nav-elements p {
+  margin-right: 1.5em;
+}
+/*# sourceMappingURL=style.css.map */
