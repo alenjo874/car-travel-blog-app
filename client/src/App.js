@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./style/style.css";
 import LogInForm from "./components/UserLogIn/LogInForm";
 import HomePage from "./components/HomePage/HomePage";
+import BlogsPage from "./components/Blogs/BlogsPage";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <HomePage />
+      <BlogsPage />
     </div>
   );
 }

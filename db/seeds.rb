@@ -1,7 +1,7 @@
 require 'faker'
 
-Attraction.destroy_all
+Blog.destroy_all
 
 20.times do 
-    Attraction.create(name:Faker::Name.name ,image: Faker::LoremFlickr.image)
+    Blog.create(title:Faker::Name.name , blog_entry:Faker::Lorem.sentence(word_count: 50) ,thumbnail: Faker::LoremFlickr.image, like: 0)
 end
