@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -8,11 +9,15 @@ function NavBar() {
       </div>
       <div className="nav-elements">
         <ul>
-          <li>Home</li>
-          <li>Blogs</li>
+          <NavLink to="/" style={{ textDecoration: "none" }}>
+            <li>Home</li>
+          </NavLink>
+          <NavLink to="/blogs" style={{ textDecoration: "none" }}>
+            <li>Blogs</li>
+          </NavLink>
         </ul>
         <div>
-            <p>signin</p>
+          <p>signin</p>
           {/* <img > */}
         </div>
       </div>

@@ -4,6 +4,8 @@ import "./style/style.css";
 import LogInForm from "./components/UserLogIn/LogInForm";
 import HomePage from "./components/HomePage/HomePage";
 import BlogsPage from "./components/Blogs/BlogsPage";
+import { Route, Switch } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -19,8 +21,15 @@ function App() {
   // if (!currentUser) return <LogInForm />;
   return (
     <div className="App">
-      <HomePage />
-      <BlogsPage />
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route exact path="/blogs">
+          <BlogsPage />
+        </Route>
+      </Switch>
     </div>
   );
 }
