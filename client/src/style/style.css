@@ -51,4 +51,8 @@ body {
 .navbar-container .nav-elements p {
   margin-right: 1.5em;
 }
+
+.blog-card-container {
+  border: 2px solid purple;
+}
 /*# sourceMappingURL=style.css.map */

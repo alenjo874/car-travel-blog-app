@@ -12,7 +12,7 @@ function BlogsPage() {
   }, []);
 
   const displayBlogCard = blogsArray.map((blog) => {
-    return <BlogCard {...blog} />;
+    return <BlogCard key={uuidv4()} {...blog} />;
   });
 
   return <div>{displayBlogCard}</div>;
