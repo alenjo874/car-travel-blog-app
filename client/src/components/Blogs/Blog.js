@@ -13,13 +13,22 @@ function Blog({
   const [editBlog, setEditBlog] = useState(false);
 
   function handleEditBlog() {
-    setEditBlog(true);
+    setEditBlog((prev) => !prev);
   }
 
- function handleNewTitle(e) {
+  function handleNewTitle(e) {}
 
- }
+  const editBlogForm = (
+    <form>
+      <label>Title</label>
+      <input value={title}></input>
+      <label>Entry</label>
+      <textarea value={blog_entry}></textarea>
+    </form>
+  );
 
+  const editBtn = <button onClick={handleEditBlog}>Edit</button>;
+  const cancelEditBtn = <button onClick={handleEditBlog}>Cancel</button>;
   return (
     <div className="user-blog-container">
       <div className="user-blog-thumbnail">
@@ -29,21 +38,19 @@ function Blog({
         <div>
           <p>{user.name}</p>
           <p>{create_date}</p>
-          {editBlog ? (
-            <input placeholder="title" value={title} onChange={handleNewTitle}></input>
-          ) : (
-            <h3>{title}</h3>
-          )}
+          <h3>{title}</h3>
         </div>
         <div>{blog_entry}</div>
       </div>
       <div>
         <p>{like}</p>
         <button>+</button>
-        <button onClick={handleEditBlog}>Edit</button>
+        {editBlog ? cancelEditBtn : editBtn}
       </div>
-
       <button onClick={changeBackToBlogDispaly}>Back</button>
+      <div className="blog-edit-form-container">
+        {editBlog ? editBlogForm : null}
+      </div>
     </div>
   );
 }

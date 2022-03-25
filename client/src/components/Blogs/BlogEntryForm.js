@@ -3,7 +3,7 @@ import React from "react";
 function BlogEntryForm() {
   return (
     <div>
-      <form>
+      <form className="new-blog-form">
         <label>Blog Title</label>
         <input></input>
         <label>Thumbnail</label>

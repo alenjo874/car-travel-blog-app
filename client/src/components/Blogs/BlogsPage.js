@@ -70,12 +70,8 @@ function BlogsPage() {
     <div className="blogs-page-container">
       <div className="blog-banner"></div>
       <div className="blog-list">
-        <div className="blogs-page-forms">
-          {searchBlogForm}
-          <BlogEntryForm />
-        </div>
-
         <div className="blog-display">
+          <div className="blogs-page-forms">{searchBlogForm}</div>
           {showBlog ? (
             <Blog
               {...clickedBlogObj}
