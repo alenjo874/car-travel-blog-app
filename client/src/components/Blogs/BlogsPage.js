@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import BlogCard from "./BlogCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import Blog from "./Blog";
 // import Mustang from "../../style/images/Mustang.jpg";
@@ -55,13 +57,16 @@ function BlogsPage() {
 
   const searchBlogForm = (
     <div>
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} className="search">
         <input
           placeholder="search"
           value={searchBlog}
+          className="search-term"
           onChange={(e) => setSearchBlog(e.target.value)}
         ></input>
-        <button>Search</button>
+        <button type="submit" className="search-button">
+          <FontAwesomeIcon icon={faSearch} />
+        </button>
       </form>
     </div>
   );
@@ -78,6 +83,7 @@ function BlogsPage() {
           {searchBlogForm}
           {newBlogForm}
         </div>
+
         <div className="blog-display">
           {showBlog ? (
             <Blog

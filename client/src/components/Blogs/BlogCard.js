@@ -13,15 +13,15 @@ function BlogCard({
   }
 
   return (
-    <div className="blog-card-container" onClick={handleShowBlog}>
+    <div className="blog-card-container">
       <div className="blog-card-teaser">
         <span>
-          <h5>{title}</h5>
-          <p>{blog_entry}</p>
+          <h5 onClick={handleShowBlog}>{title}</h5>
+          <p onClick={handleShowBlog}>{blog_entry}</p>
         </span>
       </div>
       <div className="blog-thumbnail">
-        <img src={thumbnail} alt="blog thumbnail" />
+        <img src={thumbnail} alt="blog thumbnail" onClick={handleShowBlog} />
       </div>
     </div>
   );
