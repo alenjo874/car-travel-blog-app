@@ -1,6 +1,5 @@
 $nav-fontsize: 1.2rem;
 $nav-margin: 1.5em;
-$home-background-img: url("./images/Mountains.jpg");
 $blog-card-padding: 10px;
 $primary-color: #fff;
 $user-blog-fontsize: 1.5rem;
@@ -26,12 +25,29 @@ button:hover {
 }
 
 .home-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   border: 2px solid yellow;
 
+  .home-background {
+    position: absolute;
+    min-height: 100vh;
+    border: 2px solid purple;
+    img {
+      border: 2px solid red;
+    }
+  }
+
   .home-blurb {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: 100;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     justify-content: flex-start;
     p {
       font-size: 5rem;

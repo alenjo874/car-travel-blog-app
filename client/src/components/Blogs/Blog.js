@@ -7,6 +7,8 @@ function Blog({
   thumbnail,
   like,
   changeBackToBlogDispaly,
+  user,
+  create_date,
 }) {
   return (
     <div className="user-blog-container">
@@ -15,6 +17,8 @@ function Blog({
       </div>
       <div>
         <div>
+          <p>{user.name}</p>
+          <p>{create_date}</p>
           <h3>{title}</h3>
         </div>
         <div>{blog_entry}</div>
@@ -24,7 +28,7 @@ function Blog({
         <p>{like}</p>
         <button>+</button>
       </div>
-    
+
       <button onClick={changeBackToBlogDispaly}>Back</button>
     </div>
   );
