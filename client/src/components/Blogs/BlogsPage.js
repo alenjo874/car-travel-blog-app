@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import BlogCard from "./BlogCard";
 import BlogSearch from "./BlogSearch";
 import Blog from "./Blog";
+import Mustang from "../../style/images/Mustang.jpg";
 
 function BlogsPage() {
   const [blogsArray, setBlogsArray] = useState([]);
@@ -36,7 +37,7 @@ function BlogsPage() {
 
   const newBlogForm = (
     <form>
-    <label>New Blog</label>
+      <label>New Blog</label>
       <input></input>
     </form>
   );
@@ -45,19 +46,28 @@ function BlogsPage() {
 
   return (
     <div className="blogs-page-container">
-      <div className="blogs-page-forms">
-        <BlogSearch />
-        {newBlogForm}
+      <div className="blog-banner">
+        <img src={Mustang} alt="porsche" />
       </div>
-      <div>
-        {showBlog ? (
-          <Blog
-            {...clickedBlogObj}
-            changeBackToBlogDispaly={changeBackToBlogDispaly}
-          />
-        ) : (
-          displayBlogCard
-        )}
+      <div className="blog-intro">
+
+        <p>Blogs</p>
+      </div>
+      <div className="blog-list">
+        <div className="blogs-page-forms">
+          <BlogSearch />
+          {newBlogForm}
+        </div>
+        <div>
+          {showBlog ? (
+            <Blog
+              {...clickedBlogObj}
+              changeBackToBlogDispaly={changeBackToBlogDispaly}
+            />
+          ) : (
+            displayBlogCard
+          )}
+        </div>
       </div>
     </div>
   );

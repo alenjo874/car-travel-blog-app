@@ -5,6 +5,7 @@ $primary-color: #1c1c1c;
 $secondary-color: #bb000e;
 $accent-color: #fff;
 $user-blog-fontsize: 1.5rem;
+$nav-bar-height: 80px;
 @font-face {
   font-family: "Playfair Display";
   src: url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
@@ -12,11 +13,6 @@ $user-blog-fontsize: 1.5rem;
 
 body {
   font-family: "Playfair Display";
-}
-
-a {
-  text-decoration: none;
-  color: $secondary-color;
 }
 
 img {
@@ -38,7 +34,6 @@ button:hover {
     align-items: flex-start;
     justify-content: flex-start;
     min-height: 100vh;
-    object-fit: cover;
 
     img {
       object-fit: cover;
@@ -73,12 +68,15 @@ button:hover {
   align-items: center;
   position: absolute;
   z-index: 200;
-  height: 80px;
+  height: $nav-bar-height;
   width: 100%;
-  color: $secondary-color;
-  background-color: $primary-color;
-
+  color: $primary-color;
   background-color: transparent;
+  a {
+    text-decoration: none;
+    color: $primary-color;
+  }
+
   h4 {
     margin-left: $nav-margin;
   }
@@ -110,45 +108,79 @@ button:hover {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-}
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  z-index: -200;
+  top: $nav-bar-height;
+  color: $accent-color;
+  background-color: $primary-color;
 
-.blog-card-container {
-  margin: 15px;
-  padding: $blog-card-padding;
-  border: 2px solid purple;
-  width: 80%;
-  max-width: 650px;
+  .blog-banner {
+    position: absolute;
+    top: -$nav-bar-height;
+    z-index: -1;
+    max-height: 30%;
+    width: 100%;
 
-  .blog-card-teaser {
-    display: flex;
-    border: 2px solid green;
-
-    span {
-      padding: $blog-card-padding;
+    img {
+      object-fit: cover;
+      height: $nav-bar-height;
+      min-height: 30vh;
+      width: 100%;
     }
   }
 
-  .blog-thumbnail {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100px;
+  .blog-intro {
+    position: absolute;
+    top: 180px;
+    height: 60px;
+    width: 80%;
+    background-color: #fff;
+  }
+
+  .blog-list {
+    margin-top: 250px;
+  }
+
+  .blog-card-container {
+    margin: 15px;
+    padding: $blog-card-padding;
     border: 2px solid purple;
-  }
-  :hover {
-    cursor: pointer;
-  }
-}
+    width: 80%;
+    max-width: 650px;
 
-.user-blog-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: $user-blog-fontsize;
-  width: 80%;
-  border: 2px solid red;
+    .blog-card-teaser {
+      display: flex;
+      border: 2px solid green;
 
-  .user-blog-thumbnail {
-    max-width: 400px;
+      span {
+        padding: $blog-card-padding;
+      }
+    }
+
+    .blog-thumbnail {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100px;
+      border: 2px solid purple;
+    }
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  .user-blog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: $user-blog-fontsize;
+    width: 80%;
+    border: 2px solid red;
+
+    .user-blog-thumbnail {
+      max-width: 400px;
+    }
   }
 }
