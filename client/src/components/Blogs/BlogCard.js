@@ -21,7 +21,12 @@ function BlogCard({
         </span>
       </div>
       <div className="blog-thumbnail">
-        <img src={thumbnail} alt="blog thumbnail" onClick={handleShowBlog} />
+        <img
+          src={thumbnail}
+          alt="blog thumbnail"
+          onClick={handleShowBlog}
+          loading="lazy"
+        />
       </div>
     </div>
   );

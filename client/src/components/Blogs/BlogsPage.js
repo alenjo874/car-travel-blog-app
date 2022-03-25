@@ -6,7 +6,6 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import Blog from "./Blog";
 import BlogEntryForm from "./BlogEntryForm";
-// import Mustang from "../../style/images/Mustang.jpg";
 
 function BlogsPage() {
   const [blogsArray, setBlogsArray] = useState([]);
@@ -69,9 +68,7 @@ function BlogsPage() {
 
   return (
     <div className="blogs-page-container">
-      <div className="blog-banner">
-        {/* <img src={Mustang} alt="porsche" /> */}
-      </div>
+      <div className="blog-banner"></div>
       <div className="blog-list">
         <div className="blogs-page-forms">
           {searchBlogForm}

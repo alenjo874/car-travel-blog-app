@@ -1,10 +1,6 @@
-import React, { useState } from "react";
-import { Editor, EditorState } from "draft-js";
+import React from "react";
 
 function BlogEntryForm() {
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
   return (
     <div>
       <form>

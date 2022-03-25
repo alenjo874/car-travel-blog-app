@@ -1,18 +1,23 @@
 import React from "react";
-// import GTR from "../../style/images/GTR.jpg";
 import Porsche from "../../style/images/Porsche.jpg";
+import { motion } from "framer-motion/dist/framer-motion";
 
 function HomePage() {
   return (
     <div className="home-page-container">
       <div className="home-background">
-        <div className="home-blurb">
+        <motion.div
+          initial={{ y: -5, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeIn" }}
+          className="home-blurb"
+        >
           <p>Tell Us Your Story</p>
           <em>Connect and Share stories with car enthusiasts</em>
           <button>Get Started</button>
-        </div>
+        </motion.div>
         <div>
-          <img src={Porsche} alt="gtr background" />
+          <img src={Porsche} alt="gtr background" loading="lazy" />
         </div>
       </div>
     </div>
