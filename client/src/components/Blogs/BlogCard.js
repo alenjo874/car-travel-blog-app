@@ -8,12 +8,13 @@ function BlogCard({
   like,
   changeShowBlogState,
 }) {
-    function handleShowBlog() {
-      changeShowBlogState(id)
-    }
+  function handleShowBlog() {
+    changeShowBlogState(id);
+  }
 
   return (
     <div className="blog-card-container" onClick={handleShowBlog}>
+
       <div className="blog-card-teaser">
         <span>
           <h5>{title}</h5>

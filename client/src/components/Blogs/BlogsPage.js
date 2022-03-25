@@ -34,19 +34,31 @@ function BlogsPage() {
     );
   });
 
+  const newBlogForm = (
+    <form>
+    <label>New Blog</label>
+      <input></input>
+    </form>
+  );
+
   const clickedBlogObj = blogsArray.find((blog) => blog.id === clickedBlog);
 
   return (
     <div className="blogs-page-container">
-      <BlogSearch />
-      {showBlog ? (
-        <Blog
-          {...clickedBlogObj}
-          changeBackToBlogDispaly={changeBackToBlogDispaly}
-        />
-      ) : (
-        displayBlogCard
-      )}
+      <div className="blogs-page-forms">
+        <BlogSearch />
+        {newBlogForm}
+      </div>
+      <div>
+        {showBlog ? (
+          <Blog
+            {...clickedBlogObj}
+            changeBackToBlogDispaly={changeBackToBlogDispaly}
+          />
+        ) : (
+          displayBlogCard
+        )}
+      </div>
     </div>
   );
 }
