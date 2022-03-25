@@ -233,10 +233,17 @@ button:hover {
     align-items: center;
     font-size: $user-blog-fontsize;
     width: 80%;
-    border: 2px solid red;
+
+    min-height: 100vh;
 
     .user-blog-thumbnail {
-      max-width: 400px;
+      width: 100%;
+
+      img {
+        object-fit: cover;
+        height: 250px;
+        border-radius: $img-border-radius;
+      }
     }
   }
 }

@@ -29,7 +29,13 @@ function BlogsPage() {
     setShowBlog(false);
   }
 
-  const displayBlogCard = blogsArray.map((blog) => {
+  const searchBlogArray = blogsArray.filter(
+    (blog) =>
+      blog.title.toLowerCase().includes(searchBlog.toLowerCase()) ||
+      blog.blog_entry.toLowerCase().includes(searchBlog.toLowerCase())
+  );
+
+  const displayBlogCard = searchBlogArray.map((blog) => {
     return (
       <BlogCard
         key={uuidv4()}
@@ -41,12 +47,6 @@ function BlogsPage() {
 
   function handleSearch(e) {
     e.preventDefault();
-    const searchBlogArray = blogsArray.filter(
-      (blog) =>
-        blog.title.toLowerCase().includes(searchBlog.toLowerCase()) ||
-        blog.blog_entry.toLowerCase().includes(searchBlog.toLowerCase())
-    );
-    setBlogsArray(searchBlogArray);
   }
 
   const searchBlogForm = (
