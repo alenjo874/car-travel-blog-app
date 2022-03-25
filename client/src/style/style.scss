@@ -1,7 +1,8 @@
 $nav-fontsize: 1.2rem;
 $nav-margin: 1.5em;
 $home-background-img: url("./images/Mountains.jpg");
-
+$blog-card-padding: 10px;
+$primary-color: #fff;
 @font-face {
   font-family: "Playfair Display";
   src: url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
@@ -15,15 +16,35 @@ img {
   width: 100%;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .home-page-container {
   min-height: 100vh;
   border: 2px solid yellow;
+
+  .home-blurb {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    p {
+      font-size: 5rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    em {
+      font-size: 2rem;
+    }
+  }
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: $primary-color;
 
   h4 {
     margin-left: $nav-margin;
@@ -43,6 +64,9 @@ img {
     p {
       margin-right: $nav-margin;
     }
+    :hover {
+      cursor: pointer;
+    }
   }
 
   font-size: $nav-fontsize;
@@ -50,11 +74,26 @@ img {
   border: 2px solid red;
 }
 
+.blogs-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .blog-card-container {
+  margin: 15px;
+  padding: $blog-card-padding;
   border: 2px solid purple;
+  width: 80%;
+  max-width: 650px;
 
   .blog-card-teaser {
     display: flex;
+    border: 2px solid green;
+
+    span {
+      padding: $blog-card-padding;
+    }
   }
 
   .blog-thumbnail {
@@ -62,5 +101,9 @@ img {
     justify-content: center;
     align-items: center;
     max-width: 100px;
+    border: 2px solid purple;
+  }
+  :hover {
+    cursor: pointer;
   }
 }
