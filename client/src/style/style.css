@@ -9,6 +9,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #bb000e;
 }
 
 img {
@@ -27,7 +28,6 @@ button:hover {
       -ms-flex-pack: start;
           justify-content: flex-start;
   min-height: 100vh;
-  border: 2px solid yellow;
   position: absolute;
 }
 
@@ -42,13 +42,11 @@ button:hover {
       -ms-flex-pack: start;
           justify-content: flex-start;
   min-height: 100vh;
-  border: 2px solid green;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 .home-page-container .home-background img {
-  border: 2px solid red;
   -o-object-fit: cover;
      object-fit: cover;
   min-height: 100vh;
@@ -94,8 +92,13 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #fff;
+  position: absolute;
+  z-index: 200;
+  height: 80px;
+  width: 100%;
+  color: #bb000e;
   background-color: #1c1c1c;
+  background-color: transparent;
   font-size: 1.2rem;
 }
 
@@ -108,6 +111,8 @@ button:hover {
   display: -ms-flexbox;
   display: flex;
   margin-right: 1.5em;
+  list-style: none;
+  text-decoration: none;
 }
 
 .navbar-container ul li {
