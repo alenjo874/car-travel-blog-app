@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import Blog from "./Blog";
+import BlogEntryForm from "./BlogEntryForm";
 // import Mustang from "../../style/images/Mustang.jpg";
 
 function BlogsPage() {
@@ -37,13 +38,6 @@ function BlogsPage() {
       />
     );
   });
-
-  const newBlogForm = (
-    <form>
-      <label>New Blog</label>
-      <input></input>
-    </form>
-  );
 
   function handleSearch(e) {
     e.preventDefault();
@@ -81,7 +75,7 @@ function BlogsPage() {
       <div className="blog-list">
         <div className="blogs-page-forms">
           {searchBlogForm}
-          {newBlogForm}
+          <BlogEntryForm />
         </div>
 
         <div className="blog-display">
