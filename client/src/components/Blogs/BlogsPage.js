@@ -49,16 +49,12 @@ function BlogsPage() {
       <div className="blog-banner">
         <img src={Mustang} alt="porsche" />
       </div>
-      <div className="blog-intro">
-
-        <p>Blogs</p>
-      </div>
       <div className="blog-list">
         <div className="blogs-page-forms">
           <BlogSearch />
           {newBlogForm}
         </div>
-        <div>
+        <div className="blog-display">
           {showBlog ? (
             <Blog
               {...clickedBlogObj}

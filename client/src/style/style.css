@@ -168,35 +168,53 @@ button:hover {
   width: 100%;
 }
 
-.blogs-page-container .blog-intro {
-  position: absolute;
-  top: 180px;
-  height: 60px;
-  width: 80%;
-  background-color: #fff;
+.blogs-page-container .blog-display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .blogs-page-container .blog-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 250px;
 }
 
 .blogs-page-container .blog-card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 15px;
   padding: 10px;
   border: 2px solid purple;
   width: 80%;
-  max-width: 650px;
 }
 
 .blogs-page-container .blog-card-container .blog-card-teaser {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 2px solid green;
+  width: 50%;
 }
 
 .blogs-page-container .blog-card-container .blog-card-teaser span {
   padding: 10px;
+}
+
+.blogs-page-container .blog-card-container .blog-card-teaser span h5 {
+  font-size: 1.5rem;
 }
 
 .blogs-page-container .blog-card-container .blog-thumbnail {
@@ -209,8 +227,12 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 100px;
-  border: 2px solid purple;
+  width: 100%;
+  max-width: 250px;
+}
+
+.blogs-page-container .blog-card-container .blog-thumbnail img {
+  border-radius: 15px;
 }
 
 .blogs-page-container .blog-card-container :hover {

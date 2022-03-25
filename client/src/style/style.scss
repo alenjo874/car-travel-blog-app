@@ -2,10 +2,11 @@ $nav-fontsize: 1.2rem;
 $nav-margin: 1.5em;
 $blog-card-padding: 10px;
 $primary-color: #1c1c1c;
-$secondary-color: #bb000e;
+$secondary-color: #656565;
 $accent-color: #fff;
 $user-blog-fontsize: 1.5rem;
 $nav-bar-height: 80px;
+$img-border-radius: 15px;
 @font-face {
   font-family: "Playfair Display";
   src: url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
@@ -131,31 +132,38 @@ button:hover {
     }
   }
 
-  .blog-intro {
-    position: absolute;
-    top: 180px;
-    height: 60px;
-    width: 80%;
-    background-color: #fff;
+  .blog-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .blog-list {
+    display: flex;
+    justify-content: center;
+
     margin-top: 250px;
   }
 
   .blog-card-container {
+    display: flex;
+    justify-content: space-evenly;
     margin: 15px;
     padding: $blog-card-padding;
     border: 2px solid purple;
     width: 80%;
-    max-width: 650px;
 
     .blog-card-teaser {
       display: flex;
-      border: 2px solid green;
+
+      width: 50%;
 
       span {
         padding: $blog-card-padding;
+
+        h5 {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -163,8 +171,12 @@ button:hover {
       display: flex;
       justify-content: center;
       align-items: center;
-      max-width: 100px;
-      border: 2px solid purple;
+      width: 100%;
+      max-width: 250px;
+
+      img {
+        border-radius: $img-border-radius;
+      }
     }
     :hover {
       cursor: pointer;
