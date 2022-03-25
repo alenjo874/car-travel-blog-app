@@ -1,8 +1,8 @@
 $nav-fontsize: 1.2rem;
 $nav-margin: 1.5em;
 $blog-card-padding: 10px;
-$primary-color: #1c1c1c;
-$secondary-color: #656565;
+$primary-color: #141414;
+$secondary-color: #121212;
 $accent-color: #fff;
 $user-blog-fontsize: 1.5rem;
 $nav-bar-height: 80px;
@@ -14,6 +14,9 @@ $img-border-radius: 15px;
 
 body {
   font-family: "Playfair Display";
+  background-color: $secondary-color;
+  letter-spacing: 1.4px;
+  line-height: 1.2;
 }
 
 img {
@@ -71,11 +74,11 @@ button:hover {
   z-index: 200;
   height: $nav-bar-height;
   width: 100%;
-  color: $primary-color;
+  color: $accent-color;
   background-color: transparent;
   a {
     text-decoration: none;
-    color: $primary-color;
+    color: $accent-color;
   }
 
   h4 {
@@ -94,6 +97,7 @@ button:hover {
   }
   .nav-elements {
     display: flex;
+    font-weight: 600;
 
     p {
       margin-right: $nav-margin;
@@ -113,16 +117,17 @@ button:hover {
   width: 100%;
   position: absolute;
   z-index: -200;
-  top: $nav-bar-height;
   color: $accent-color;
-  background-color: $primary-color;
+  background-color: $secondary-color;
 
   .blog-banner {
     position: absolute;
-    top: -$nav-bar-height;
-    z-index: -1;
-    max-height: 30%;
+    z-index: -10;
+    height: 80px;
+    color: blueviolet;
     width: 100%;
+    background-color: $primary-color;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
 
     img {
       object-fit: cover;
@@ -142,7 +147,7 @@ button:hover {
     display: flex;
     justify-content: center;
 
-    margin-top: 250px;
+    margin-top: 200px;
   }
 
   .blog-card-container {
@@ -150,12 +155,11 @@ button:hover {
     justify-content: space-evenly;
     margin: 15px;
     padding: $blog-card-padding;
-    border: 2px solid purple;
+    border-bottom: 1px solid #fff;
     width: 80%;
 
     .blog-card-teaser {
       display: flex;
-
       width: 50%;
 
       span {
@@ -163,6 +167,11 @@ button:hover {
 
         h5 {
           font-size: 1.5rem;
+          transition: 0.2s;
+          &:hover {
+            transition: 0.2s;
+            transform: scale(1.05);
+          }
         }
       }
     }
@@ -176,6 +185,11 @@ button:hover {
 
       img {
         border-radius: $img-border-radius;
+        transition: 0.2s;
+        &:hover {
+          transition: 0.2s;
+          transform: scale(1.05);
+        }
       }
     }
     :hover {

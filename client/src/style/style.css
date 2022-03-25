@@ -5,6 +5,9 @@
 
 body {
   font-family: "Playfair Display";
+  background-color: #121212;
+  letter-spacing: 1.4px;
+  line-height: 1.2;
 }
 
 img {
@@ -89,14 +92,14 @@ button:hover {
   z-index: 200;
   height: 80px;
   width: 100%;
-  color: #1c1c1c;
+  color: #fff;
   background-color: transparent;
   font-size: 1.2rem;
 }
 
 .navbar-container a {
   text-decoration: none;
-  color: #1c1c1c;
+  color: #fff;
 }
 
 .navbar-container h4 {
@@ -120,6 +123,7 @@ button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-weight: 600;
 }
 
 .navbar-container .nav-elements p {
@@ -147,17 +151,19 @@ button:hover {
   width: 100%;
   position: absolute;
   z-index: -200;
-  top: 80px;
   color: #fff;
-  background-color: #1c1c1c;
+  background-color: #121212;
 }
 
 .blogs-page-container .blog-banner {
   position: absolute;
-  top: -80px;
-  z-index: -1;
-  max-height: 30%;
+  z-index: -10;
+  height: 80px;
+  color: blueviolet;
   width: 100%;
+  background-color: #141414;
+  -webkit-box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
 }
 
 .blogs-page-container .blog-banner img {
@@ -186,7 +192,7 @@ button:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 250px;
+  margin-top: 200px;
 }
 
 .blogs-page-container .blog-card-container {
@@ -198,7 +204,7 @@ button:hover {
           justify-content: space-evenly;
   margin: 15px;
   padding: 10px;
-  border: 2px solid purple;
+  border-bottom: 1px solid #fff;
   width: 80%;
 }
 
@@ -215,6 +221,15 @@ button:hover {
 
 .blogs-page-container .blog-card-container .blog-card-teaser span h5 {
   font-size: 1.5rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.blogs-page-container .blog-card-container .blog-card-teaser span h5:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .blogs-page-container .blog-card-container .blog-thumbnail {
@@ -233,6 +248,15 @@ button:hover {
 
 .blogs-page-container .blog-card-container .blog-thumbnail img {
   border-radius: 15px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.blogs-page-container .blog-card-container .blog-thumbnail img:hover {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .blogs-page-container .blog-card-container :hover {

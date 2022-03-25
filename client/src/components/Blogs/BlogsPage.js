@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import BlogCard from "./BlogCard";
-import BlogSearch from "./BlogSearch";
+
 import Blog from "./Blog";
-import Mustang from "../../style/images/Mustang.jpg";
+// import Mustang from "../../style/images/Mustang.jpg";
 
 function BlogsPage() {
   const [blogsArray, setBlogsArray] = useState([]);
   const [showBlog, setShowBlog] = useState(false);
   const [clickedBlog, setClickedBlog] = useState("");
+  const [searchBlog, setSearchBlog] = useState("");
 
   useEffect(() => {
     fetch("/blogs")
@@ -42,16 +43,39 @@ function BlogsPage() {
     </form>
   );
 
+  function handleSearch(e) {
+    e.preventDefault();
+    const searchBlogArray = blogsArray.filter(
+      (blog) =>
+        blog.title.toLowerCase().includes(searchBlog.toLowerCase()) ||
+        blog.blog_entry.toLowerCase().includes(searchBlog.toLowerCase())
+    );
+    setBlogsArray(searchBlogArray);
+  }
+
+  const searchBlogForm = (
+    <div>
+      <form onSubmit={handleSearch}>
+        <input
+          placeholder="search"
+          value={searchBlog}
+          onChange={(e) => setSearchBlog(e.target.value)}
+        ></input>
+        <button>Search</button>
+      </form>
+    </div>
+  );
+
   const clickedBlogObj = blogsArray.find((blog) => blog.id === clickedBlog);
 
   return (
     <div className="blogs-page-container">
       <div className="blog-banner">
-        <img src={Mustang} alt="porsche" />
+        {/* <img src={Mustang} alt="porsche" /> */}
       </div>
       <div className="blog-list">
         <div className="blogs-page-forms">
-          <BlogSearch />
+          {searchBlogForm}
           {newBlogForm}
         </div>
         <div className="blog-display">

@@ -1,5 +1,6 @@
 import React from "react";
-import background from "../../style/images/GTR.jpg";
+// import GTR from "../../style/images/GTR.jpg";
+import Porsche from "../../style/images/Porsche.jpg";
 
 function HomePage() {
   return (
@@ -11,7 +12,7 @@ function HomePage() {
           <button>Get Started</button>
         </div>
         <div>
-          <img src={background} alt="gtr background" />
+          <img src={Porsche} alt="gtr background" />
         </div>
       </div>
     </div>
