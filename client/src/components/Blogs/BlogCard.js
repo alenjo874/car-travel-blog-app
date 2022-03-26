@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion/dist/framer-motion";
 
 function BlogCard({
   id,
@@ -20,14 +21,19 @@ function BlogCard({
           <p onClick={handleShowBlog}>{blog_entry}</p>
         </span>
       </div>
-      <div className="blog-thumbnail">
+      <motion.div
+        className="blog-thumbnail"
+        initial={{ y: -5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeIn" }}
+      >
         <img
           src={thumbnail}
           alt="blog thumbnail"
           onClick={handleShowBlog}
           loading="lazy"
         />
-      </div>
+      </motion.div>
     </div>
   );
 }

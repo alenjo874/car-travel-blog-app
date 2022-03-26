@@ -234,6 +234,12 @@ button:hover {
   width: 100%;
 }
 
+.blogs-page-container .blog-page-intro {
+  background-color: #fff;
+  min-height: 100vh;
+  color: #141414;
+}
+
 .blogs-page-container .blogs-page-forms {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -310,10 +316,14 @@ button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 200px;
+  margin-top: 80px;
 }
 
 .blogs-page-container .blog-card-container {

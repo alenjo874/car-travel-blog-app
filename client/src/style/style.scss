@@ -184,6 +184,12 @@ button:hover {
     }
   }
 
+  .blog-page-intro {
+    background-color: #fff;
+    min-height: 100vh;
+    color: $primary-color;
+  }
+
   .blogs-page-forms {
     display: flex;
     justify-content: flex-start;
@@ -236,9 +242,9 @@ button:hover {
 
   .blog-list {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-
-    margin-top: 200px;
+    margin-top: 80px;
   }
 
   .blog-card-container {
@@ -344,8 +350,7 @@ button:hover {
   }
 }
 
-
 .logout {
-    border: 2px solid red;
-    color: white;
+  border: 2px solid red;
+  color: white;
 }

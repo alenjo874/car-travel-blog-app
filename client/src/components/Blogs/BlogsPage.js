@@ -95,22 +95,32 @@ function BlogsPage() {
       });
   }
 
+  const blogIntroPage = (
+    <div className="blog-page-intro">
+      <div>
+        <p>Share Stories with people</p>
+      </div>
+    </div>
+  );
+
   return (
     <div className="blogs-page-container">
       <div className="blog-banner"></div>
       <div className="blog-list">
-        <div className="blogs-page-forms">{searchBlogForm}</div>
-
-        <div className="blog-display">
-          {showBlog ? (
-            <Blog
-              {...clickedBlogObj}
-              handleBlogUpdate={handleBlogUpdate}
-              changeBackToBlogDispaly={changeBackToBlogDispaly}
-            />
-          ) : (
-            displayBlogCard
-          )}
+        <div>
+          {showBlog ? null : blogIntroPage}
+          <div className="blogs-page-forms">{searchBlogForm}</div>
+          <div className="blog-display">
+            {showBlog ? (
+              <Blog
+                {...clickedBlogObj}
+                handleBlogUpdate={handleBlogUpdate}
+                changeBackToBlogDispaly={changeBackToBlogDispaly}
+              />
+            ) : (
+              displayBlogCard
+            )}
+          </div>{" "}
         </div>
       </div>
     </div>
