@@ -1,14 +1,14 @@
 import React from "react";
-import GTR from "../../style/images/GTR.jpg";
+import BMW from "../../style/images/BMW.jpg";
 import LogInForm from "./LogInForm";
 
-function LogInPage() {
+function LogInPage({ handleLogIn }) {
   return (
     <div className="login-page-container">
       <div>
-        <img src={GTR} alt="GTR" />
+        <img src={BMW} alt="BMW" />
       </div>
-      <LogInForm />
+      <LogInForm handleLogIn={handleLogIn} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function LogInForm() {
+function LogInForm({ handleLogIn }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -35,23 +35,25 @@ function LogInForm() {
       },
       body: JSON.stringify(user),
     });
-
+    handleLogIn(username);
     setUsername("");
     setPassword("");
   }
 
   return (
     <div className="login-form-container">
-      <form >
-        <label>Sign Up</label>
+      <form>
+        <label>Sign In</label>
         <input
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          placeholder="Email"
         ></input>
         <label>Password</label>
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
         ></input>
         <button onClick={handleSignUp}>SIGN UP</button>
         <button onClick={handleSignIn}>LOGIN</button>

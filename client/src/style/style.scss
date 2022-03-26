@@ -8,6 +8,7 @@ $highlight-color: #ac0b0a;
 $user-blog-fontsize: 1.5rem;
 $nav-bar-height: 80px;
 $img-border-radius: 15px;
+$login-elem-padding: 0.6rem 1.25rem;
 @font-face {
   font-family: "Playfair Display";
   src: url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
@@ -127,19 +128,28 @@ button:hover {
     margin-left: auto;
     margin-right: auto;
     width: 35%;
-    height: 60%;
+    // height: 60%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     background-color: rgba(0, 0, 0, 0.75);
     color: $accent-color;
     form {
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding: 60px 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
 
       input {
         margin: 10px 0;
+        padding: $login-elem-padding;
+      }
+
+      button {
+        margin: 5px 0;
+        padding: $login-elem-padding;
       }
     }
   }
@@ -332,4 +342,10 @@ button:hover {
       order: 1;
     }
   }
+}
+
+
+.logout {
+    border: 2px solid red;
+    color: white;
 }

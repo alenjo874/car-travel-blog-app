@@ -1,6 +1,5 @@
-// import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style/style.css";
-// import LogInForm from "./components/UserLogIn/LogInForm";
 import HomePage from "./components/HomePage/HomePage";
 import BlogsPage from "./components/Blogs/BlogsPage";
 import { Route, Switch } from "react-router-dom";
@@ -8,7 +7,7 @@ import NavBar from "./components/NavBar/NavBar";
 import LogInPage from "./components/UserLogIn/LogInPage";
 
 function App() {
-  // const [currentUser, setCurrentUser] = useState("");
+  const [currentUser, setCurrentUser] = useState("");
 
   // useEffect(() => {
   //   fetch("/auth").then((res) => {
@@ -18,10 +17,25 @@ function App() {
   //   });
   // }, []);
 
-  // if (!currentUser) return <LogInForm />;
+  function handleLogout() {
+    fetch("/logout", {
+      method: "DELETE",
+    }).then(setCurrentUser(""));
+  }
+
+  function handleLogIn(username) {
+    setCurrentUser(username);
+  }
+
+  // if (!currentUser) return <LogInPage handleLogIn={handleLogIn} />;
+
   return (
     <div className="App">
+      {/* <p className="logout" onClick={handleLogout}>
+        Log Out
+      </p> */}
       <NavBar />
+
       <Switch>
         <Route exact path="/">
           <HomePage />

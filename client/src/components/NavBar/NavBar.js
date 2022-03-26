@@ -9,16 +9,18 @@ function NavBar() {
       </div>
       <div className="nav-elements">
         <ul>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/">
             <li>Home</li>
           </Link>
-          <Link to="/blogs" style={{ textDecoration: "none" }}>
+          <Link to="/blogs">
             <li>Blogs</li>
           </Link>
         </ul>
         <div>
-          <p>signin</p>
-          {/* <img > */}
+          <Link to="/login">
+            <p>signin</p>
+            {/* <img > */}
+          </Link>
         </div>
       </div>
     </div>
