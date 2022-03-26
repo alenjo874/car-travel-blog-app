@@ -9,21 +9,34 @@ function Blog({
   changeBackToBlogDispaly,
   user,
   create_date,
+  handleBlogUpdate,
 }) {
   const [editBlog, setEditBlog] = useState(false);
+  const [newTitle, setNewTitle] = useState(title);
+  const [newBlogEntry, setNewBlogEntry] = useState(blog_entry);
 
   function handleEditBlog() {
     setEditBlog((prev) => !prev);
   }
 
-  function handleNewTitle(e) {}
+  function submitEditBlog(e) {
+    e.preventDefault();
+    handleBlogUpdate(id, newTitle, newBlogEntry);
+  }
 
   const editBlogForm = (
-    <form>
+    <form onSubmit={submitEditBlog}>
       <label>Title</label>
-      <input value={title}></input>
+      <input
+        value={newTitle}
+        onChange={(e) => setNewTitle(e.target.value)}
+      ></input>
       <label>Entry</label>
-      <textarea value={blog_entry}></textarea>
+      <textarea
+        value={newBlogEntry}
+        onChange={(e) => setNewBlogEntry(e.target.value)}
+      ></textarea>
+      <button>Submit</button>
     </form>
   );
 

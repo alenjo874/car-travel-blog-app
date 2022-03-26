@@ -71,6 +71,30 @@ function BlogsPage() {
 
   const clickedBlogObj = blogsArray.find((blog) => blog.id === clickedBlog);
 
+  function handleBlogUpdate(id, newTitle, newEntry) {
+    const editBlogObj = { title: newTitle, blog_entry: newEntry };
+
+    fetch(`blogs/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify({ ...editBlogObj }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((newEditBlogObj) => {
+        const newEditBlogArray = blogsArray.map((blog) => {
+          if (blog.id === newEditBlogObj.id) {
+            return { ...blog, ...newEditBlogObj };
+          } else {
+            return blog;
+          }
+        });
+
+        setBlogsArray(newEditBlogArray);
+      });
+  }
+
   return (
     <div className="blogs-page-container">
       <div className="blog-banner"></div>
@@ -81,6 +105,7 @@ function BlogsPage() {
           {showBlog ? (
             <Blog
               {...clickedBlogObj}
+              handleBlogUpdate={handleBlogUpdate}
               changeBackToBlogDispaly={changeBackToBlogDispaly}
             />
           ) : (
