@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
 function Blog({
   id,
@@ -26,7 +27,13 @@ function Blog({
   }
 
   const editBlogForm = (
-    <form onSubmit={submitEditBlog}>
+    <motion.form
+      onSubmit={submitEditBlog}
+      initial={{ y: -5, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.2, ease: "easeIn" }}
+      exit={{ y: -5, opacity: 0 }}
+    >
       <label>Title</label>
       <input
         value={newTitle}
@@ -38,7 +45,7 @@ function Blog({
         onChange={(e) => setNewBlogEntry(e.target.value)}
       ></textarea>
       <button>Submit</button>
-    </form>
+    </motion.form>
   );
 
   const editBtn = <button onClick={handleEditBlog}>Edit</button>;
@@ -63,7 +70,7 @@ function Blog({
       </div>
       <button onClick={changeBackToBlogDispaly}>Back</button>
       <div className="blog-edit-form-container">
-        {editBlog ? editBlogForm : null}
+        <AnimatePresence>{editBlog ? editBlogForm : null}</AnimatePresence>
       </div>
     </div>
   );
