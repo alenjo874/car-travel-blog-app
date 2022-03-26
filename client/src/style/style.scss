@@ -123,11 +123,25 @@ button:hover {
     position: absolute;
     left: 0;
     right: 0;
-    top: 50%;
+    top: 20%;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
-    border: 2px solid red;
+    width: 35%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: $accent-color;
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      input {
+        margin: 10px 0;
+      }
+    }
   }
 }
 

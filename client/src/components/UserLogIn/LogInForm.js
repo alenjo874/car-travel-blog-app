@@ -42,7 +42,7 @@ function LogInForm() {
 
   return (
     <div className="login-form-container">
-      <form className="sign-up-form">
+      <form >
         <label>Sign Up</label>
         <input
           value={username}
