@@ -22,6 +22,7 @@ function Blog({
   function submitEditBlog(e) {
     e.preventDefault();
     handleBlogUpdate(id, newTitle, newBlogEntry);
+    setEditBlog(false);
   }
 
   const editBlogForm = (
