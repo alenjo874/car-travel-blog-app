@@ -108,7 +108,6 @@ function BlogsPage() {
       <div className="blog-banner"></div>
       <div className="blog-list">
         <div>
-          {showBlog ? null : blogIntroPage}
           <div className="blogs-page-forms">{searchBlogForm}</div>
           <div className="blog-display">
             {showBlog ? (

@@ -17,6 +17,7 @@ $login-elem-padding: 0.6rem 1.25rem;
 body {
   font-family: "Playfair Display";
   background-color: $secondary-color;
+
   letter-spacing: 1.5px;
   line-height: 1.2;
 }
@@ -174,6 +175,7 @@ button:hover {
     color: blueviolet;
     width: 100%;
     background-color: $primary-color;
+
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4);
 
     img {
@@ -184,11 +186,7 @@ button:hover {
     }
   }
 
-  .blog-page-intro {
-    background-color: #fff;
-    min-height: 100vh;
-    color: $primary-color;
-  }
+ 
 
   .blogs-page-forms {
     display: flex;

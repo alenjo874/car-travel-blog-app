@@ -235,9 +235,10 @@ button:hover {
 }
 
 .blogs-page-container .blog-page-intro {
-  background-color: #fff;
   min-height: 100vh;
-  color: #141414;
+  color: #fff;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#09203f), to(#537895));
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
 }
 
 .blogs-page-container .blogs-page-forms {
