@@ -41,7 +41,7 @@ function LogInForm() {
   }
 
   return (
-    <div>
+    <div className="login-form-container">
       <form className="sign-up-form">
         <label>Sign Up</label>
         <input

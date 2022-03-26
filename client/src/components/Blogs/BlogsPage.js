@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import BlogCard from "./BlogCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
+import { motion } from "framer-motion/dist/framer-motion";
 import Blog from "./Blog";
 import BlogEntryForm from "./BlogEntryForm";
 
@@ -49,7 +49,12 @@ function BlogsPage() {
   }
 
   const searchBlogForm = (
-    <div>
+    <motion.div
+      initial={{ y: -5, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.2, duration: 0.6, ease: "easeIn" }}
+      className="search-form-container"
+    >
       <form onSubmit={handleSearch} className="search">
         <input
           placeholder="search"
@@ -61,7 +66,7 @@ function BlogsPage() {
           <FontAwesomeIcon icon={faSearch} />
         </button>
       </form>
-    </div>
+    </motion.div>
   );
 
   const clickedBlogObj = blogsArray.find((blog) => blog.id === clickedBlog);
@@ -70,8 +75,9 @@ function BlogsPage() {
     <div className="blogs-page-container">
       <div className="blog-banner"></div>
       <div className="blog-list">
+        <div className="blogs-page-forms">{searchBlogForm}</div>
+
         <div className="blog-display">
-          <div className="blogs-page-forms">{searchBlogForm}</div>
           {showBlog ? (
             <Blog
               {...clickedBlogObj}

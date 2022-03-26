@@ -135,6 +135,28 @@ button:hover {
   cursor: pointer;
 }
 
+.login-page-container {
+  min-height: 100vh;
+}
+
+.login-page-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.login-page-container .login-form-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  border: 2px solid red;
+}
+
 .blogs-page-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -192,9 +214,15 @@ button:hover {
           flex-direction: column;
 }
 
+.blogs-page-container .blogs-page-forms .search-form-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
 .blogs-page-container .blogs-page-forms .search {
   width: 100%;
-  position: relative;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,6 +267,7 @@ button:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
 }
 
 .blogs-page-container .blog-list {
