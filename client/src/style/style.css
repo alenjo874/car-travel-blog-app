@@ -213,6 +213,8 @@ button:hover {
   min-height: 150vh;
   color: #fff;
   background-color: #121212;
+  background-color: #fff;
+  color: #121212;
 }
 
 .blogs-page-container .blog-banner {
@@ -232,13 +234,6 @@ button:hover {
   height: 80px;
   min-height: 30vh;
   width: 100%;
-}
-
-.blogs-page-container .blog-page-intro {
-  min-height: 100vh;
-  color: #fff;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#09203f), to(#537895));
-  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
 }
 
 .blogs-page-container .blogs-page-forms {
@@ -336,7 +331,7 @@ button:hover {
           justify-content: space-evenly;
   margin: 15px;
   padding: 10px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #121212;
   width: 80%;
   padding: 50px;
 }
@@ -345,6 +340,10 @@ button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 80%;
 }
 
@@ -356,13 +355,6 @@ button:hover {
   font-size: 1.5rem;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-}
-
-.blogs-page-container .blog-card-container .blog-card-teaser span h5:hover {
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
 }
 
 .blogs-page-container .blog-card-container .blog-thumbnail {
@@ -380,7 +372,7 @@ button:hover {
 }
 
 .blogs-page-container .blog-card-container .blog-thumbnail img {
-  border-radius: 15px;
+  border-radius: 4px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -407,9 +399,15 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   width: 80%;
   min-height: 100vh;
+}
+
+.blogs-page-container .user-blog-container .user-blog-columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .blogs-page-container .user-blog-container .user-blog-thumbnail {
@@ -420,7 +418,12 @@ button:hover {
   -o-object-fit: cover;
      object-fit: cover;
   height: 250px;
-  border-radius: 15px;
+  border-radius: 4px;
+}
+
+.blogs-page-container .user-blog-container .user-blog-info p {
+  border-top: 1px solid #121212;
+  border-bottom: 1px solid #121212;
 }
 
 .blogs-page-container .user-blog-container .blog-edit-form-container {

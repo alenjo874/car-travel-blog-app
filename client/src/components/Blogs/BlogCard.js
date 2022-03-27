@@ -7,6 +7,7 @@ function BlogCard({
   blog_entry,
   thumbnail,
   like,
+  user,
   changeShowBlogState,
 }) {
   function handleShowBlog() {
@@ -19,7 +20,13 @@ function BlogCard({
         <span>
           <h5 onClick={handleShowBlog}>{title}</h5>
           <p onClick={handleShowBlog}>{blog_entry}</p>
+          <p>
+            Author: <b>{user.name}</b>
+          </p>
         </span>
+        <div>
+          <button>Read More</button>
+        </div>
       </div>
       <motion.div
         className="blog-thumbnail"

@@ -5,9 +5,9 @@ $primary-color: #141414;
 $secondary-color: #121212;
 $accent-color: #fff;
 $highlight-color: #ac0b0a;
-$user-blog-fontsize: 1.5rem;
+$user-blog-fontsize: 1.25rem;
 $nav-bar-height: 80px;
-$img-border-radius: 15px;
+$img-border-radius: 4px;
 $login-elem-padding: 0.6rem 1.25rem;
 @font-face {
   font-family: "Playfair Display";
@@ -17,7 +17,6 @@ $login-elem-padding: 0.6rem 1.25rem;
 body {
   font-family: "Playfair Display";
   background-color: $secondary-color;
-
   letter-spacing: 1.5px;
   line-height: 1.2;
 }
@@ -167,6 +166,8 @@ button:hover {
   min-height: 150vh;
   color: $accent-color;
   background-color: $secondary-color;
+  background-color: #fff;
+  color: #121212;
 
   .blog-banner {
     position: absolute;
@@ -185,8 +186,6 @@ button:hover {
       width: 100%;
     }
   }
-
- 
 
   .blogs-page-forms {
     display: flex;
@@ -250,12 +249,13 @@ button:hover {
     justify-content: space-evenly;
     margin: 15px;
     padding: $blog-card-padding;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $secondary-color;
     width: 80%;
     padding: 50px;
 
     .blog-card-teaser {
       display: flex;
+      flex-direction: column;
       width: 80%;
 
       span {
@@ -264,10 +264,6 @@ button:hover {
         h5 {
           font-size: 1.5rem;
           transition: 0.2s;
-          &:hover {
-            transition: 0.2s;
-            transform: scale(1.05);
-          }
         }
       }
     }
@@ -299,8 +295,11 @@ button:hover {
     align-items: center;
     font-size: $user-blog-fontsize;
     width: 80%;
-
     min-height: 100vh;
+
+    .user-blog-columns {
+      display: flex;
+    }
 
     .user-blog-thumbnail {
       width: 100%;
@@ -309,6 +308,12 @@ button:hover {
         object-fit: cover;
         height: 250px;
         border-radius: $img-border-radius;
+      }
+    }
+    .user-blog-info {
+      p {
+        border-top: 1px solid $secondary-color;
+        border-bottom: 1px solid $secondary-color;
       }
     }
 

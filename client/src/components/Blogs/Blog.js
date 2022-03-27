@@ -52,25 +52,36 @@ function Blog({
   const cancelEditBtn = <button onClick={handleEditBlog}>Cancel</button>;
   return (
     <div className="user-blog-container">
-      <div className="user-blog-thumbnail">
-        <img src={thumbnail} alt="thumbnail for blog" />
-      </div>
-      <div>
-        <div>
-          <p>{user.name}</p>
-          <p>{create_date}</p>
-          <h3>{title}</h3>
+      <div className="user-blog-columns">
+        <div className="blog-col left">
+          <div className="user-blog-thumbnail">
+            <img src={thumbnail} alt="thumbnail for blog" />
+          </div>
+          <div>
+            <div>
+              <p>
+                Author: <b>{user.name}</b>
+              </p>
+              <p>Posted: {create_date}</p>
+              <h3>{title}</h3>
+            </div>
+            <div>{blog_entry}</div>
+          </div>
+          <div>
+            <p>{like}</p>
+            <button>+</button>
+            {editBlog ? cancelEditBtn : editBtn}
+          </div>
+          <button onClick={changeBackToBlogDispaly}>Back</button>
+          <div className="blog-edit-form-container">
+            <AnimatePresence>{editBlog ? editBlogForm : null}</AnimatePresence>
+          </div>
         </div>
-        <div>{blog_entry}</div>
-      </div>
-      <div>
-        <p>{like}</p>
-        <button>+</button>
-        {editBlog ? cancelEditBtn : editBtn}
-      </div>
-      <button onClick={changeBackToBlogDispaly}>Back</button>
-      <div className="blog-edit-form-container">
-        <AnimatePresence>{editBlog ? editBlogForm : null}</AnimatePresence>
+        <div className="blog-col right">
+          <div className="user-blog-info">
+            <p>About the Author</p>
+          </div>
+        </div>
       </div>
     </div>
   );
