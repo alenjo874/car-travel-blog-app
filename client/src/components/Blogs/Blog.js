@@ -11,7 +11,7 @@ function Blog({
   user,
   create_date,
   handleBlogUpdate,
-  handleDeleteBlog
+  handleDeleteBlog,
 }) {
   const [editBlog, setEditBlog] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
@@ -32,7 +32,7 @@ function Blog({
     fetch(`/blogs/${id}`, {
       method: "DELETE",
     });
-    handleDeleteBlog(id)
+    handleDeleteBlog(id);
   }
 
   const editBlogForm = (
@@ -67,6 +67,10 @@ function Blog({
     <div className="user-blog-container">
       <div className="user-blog-columns">
         <div className="blog-col left">
+          <div className="user-blog-head-btn">
+            <button onClick={changeBackToBlogDispaly}>Back</button>
+            <button onClick={changeBackToBlogDispaly}>Next</button>
+          </div>
           <div className="user-blog-thumbnail">
             <h3>{title}</h3>
             <img src={thumbnail} alt="thumbnail for blog" />
@@ -75,11 +79,12 @@ function Blog({
             <div>
               <p className="created-date">Created At: {create_date}</p>
             </div>
-            <div>{blog_entry}</div>
+            <div>
+              <p> {blog_entry}</p>
+            </div>
           </div>
 
           <div>{editBlog ? cancelEditBtn : editBtn}</div>
-          <button onClick={changeBackToBlogDispaly}>Back</button>
           <div className="blog-edit-form-container">
             <AnimatePresence>{editBlog ? editBlogForm : null}</AnimatePresence>
           </div>

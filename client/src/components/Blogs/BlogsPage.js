@@ -8,13 +8,10 @@ import Blog from "./Blog";
 import BlogEntryForm from "./BlogEntryForm";
 import Road from "../../style/images/Road.jpg";
 
-function BlogsPage({blogsArray, setBlogsArray}) {
-
+function BlogsPage({ blogsArray, setBlogsArray }) {
   const [showBlog, setShowBlog] = useState(false);
   const [clickedBlog, setClickedBlog] = useState("");
   const [searchBlog, setSearchBlog] = useState("");
-
-
 
   function changeShowBlogState(id) {
     setShowBlog(true);
@@ -96,7 +93,7 @@ function BlogsPage({blogsArray, setBlogsArray}) {
     <div className="blog-page-intro">
       <span className="intro-overlay">
         <p>Cars & Travel</p>
-        <h2>Tell you Story Today</h2>
+        <h2>Tell your Story Today</h2>
         <button>Explore</button>
       </span>
       <div className="blog-intro-banner">
@@ -118,7 +115,12 @@ function BlogsPage({blogsArray, setBlogsArray}) {
         {showBlog ? null : blogIntroPage}
         <div>
           {/* <div className="blogs-page-forms">{searchBlogForm}</div> */}
-          <div className="blog-display">
+          <motion.div
+            className="blog-display"
+            initial={{ y: -5, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6, ease: "easeIn" }}
+          >
             {showBlog ? (
               <Blog
                 {...clickedBlogObj}
@@ -129,7 +131,7 @@ function BlogsPage({blogsArray, setBlogsArray}) {
             ) : (
               displayBlogCard
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

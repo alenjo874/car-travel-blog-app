@@ -23,24 +23,19 @@ function BlogCard({
           <p>
             Author: <b>{user.name}</b>
           </p>
+          <div>
+            <button onClick={handleShowBlog}>Read More</button>
+          </div>
         </span>
-        <div>
-          <button onClick={handleShowBlog}>Read More</button>
-        </div>
       </div>
-      <motion.div
-        className="blog-thumbnail"
-        initial={{ y: -5, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4, ease: "easeIn" }}
-      >
+      <div className="blog-thumbnail">
         <img
           src={thumbnail}
           alt="blog thumbnail"
           onClick={handleShowBlog}
           loading="lazy"
         />
-      </motion.div>
+      </div>
     </div>
   );
 }
