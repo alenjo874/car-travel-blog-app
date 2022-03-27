@@ -1,16 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion/dist/framer-motion";
 
 function BlogEntryForm() {
+  const [title, setTitle] = useState("");
+  const [thumbnail, setThumbnail] = useState("");
+  const [blogEntry, setBlogEntry] = useState("");
+
+  function submitNewBlog(e) {
+    e.preventDefault();
+    const newBlogObj = {
+      title: title,
+      blog_entry: blogEntry,
+      thumbnail: thumbnail,
+      user_id: 19,
+    };
+
+      fetch("/blogs", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newBlogObj),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+        });
+  }
+
   return (
-    <div>
-      <form className="new-blog-form">
+    <div className="new-blog-container">
+      <motion.form
+        initial={{ y: -5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4, ease: "easeIn" }}
+        onSubmit={submitNewBlog}
+      >
         <label>Blog Title</label>
-        <input></input>
+        <input value={title} onChange={(e) => setTitle(e.target.value)}></input>
         <label>Thumbnail</label>
-        <input></input>
-        <label>Thumbnail</label>
-        <input></input>
-      </form>
+        <input
+          value={thumbnail}
+          onChange={(e) => setThumbnail(e.target.value)}
+        ></input>
+        <label>Blog Entry</label>
+        <textarea
+          value={blogEntry}
+          onChange={(e) => setBlogEntry(e.target.value)}
+        ></textarea>
+        <button>Submit</button>
+      </motion.form>
     </div>
   );
 }

@@ -70,8 +70,6 @@ function Blog({
           </div>
 
           <div>
-            <p>{like}</p>
-            <button>+</button>
             {editBlog ? cancelEditBtn : editBtn}
           </div>
           <button onClick={changeBackToBlogDispaly}>Back</button>

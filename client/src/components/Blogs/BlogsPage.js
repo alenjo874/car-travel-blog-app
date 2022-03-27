@@ -103,8 +103,8 @@ function BlogsPage() {
         <h2>Tell you Story Today</h2>
         <button>Explore</button>
       </span>
-      <div>
-        <img src={Road} />
+      <div className="blog-intro-banner">
+        <img src={Road} loading="lazy" alt="open road" />
       </div>
     </div>
   );
@@ -113,8 +113,7 @@ function BlogsPage() {
     <div className="blogs-page-container">
       <div className="blog-banner"></div>
       <div className="blog-list">
-        {showBlog ? null :  blogIntroPage }
-
+        {showBlog ? null : blogIntroPage}
         <div>
           {/* <div className="blogs-page-forms">{searchBlogForm}</div> */}
           <div className="blog-display">

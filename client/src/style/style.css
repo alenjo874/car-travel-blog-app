@@ -19,6 +19,11 @@ img {
   width: 100%;
 }
 
+textarea {
+  min-height: 200px;
+  font-family: "Playfair Display";
+}
+
 button {
   border: 2px solid #121212;
   padding: 0.5rem 1.2rem;
@@ -88,6 +93,17 @@ button:hover {
 
 .home-page-container .home-blurb em {
   font-size: 2rem;
+}
+
+.home-page-container button {
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.home-page-container p,
+.home-page-container em,
+.home-page-container button {
+  margin: 15px 0;
 }
 
 .navbar-container {
@@ -295,16 +311,6 @@ button:hover {
   font-size: 1rem;
 }
 
-.blogs-page-container .blogs-page-forms .new-blog-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 .blogs-page-container .blog-display {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -334,6 +340,7 @@ button:hover {
 .blogs-page-container .blog-list .blog-page-intro {
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 .blogs-page-container .blog-list .blog-page-intro .intro-overlay {
@@ -342,7 +349,12 @@ button:hover {
   color: #fff;
 }
 
-.blogs-page-container .blog-list .blog-page-intro img {
+.blogs-page-container .blog-list .blog-page-intro .blog-intro-banner {
+  height: 50vh;
+}
+
+.blogs-page-container .blog-list .blog-page-intro .blog-intro-banner img {
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -571,9 +583,40 @@ button:hover {
   width: 100%;
 }
 
-.blogs-page-container .user-blog-container .blog-edit-form-container textarea {
-  min-height: 200px;
-  font-family: "Playfair Display";
+.new-blog-container {
+  border: 2px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  position: absolute;
+  z-index: -200;
+  min-height: 150vh;
+  top: 80px;
+  color: #fff;
+  background-color: #121212;
+  background-color: #fff;
+  color: #141414;
+}
+
+.new-blog-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media only screen and (max-width: 800px) {
