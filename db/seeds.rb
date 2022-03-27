@@ -3,7 +3,7 @@ require 'faker'
 Blog.destroy_all
 User.destroy_all
 
-User.create(name: "Alen", password: "123", about: Faker::Hipster.sentence(word_count: 12), category:["Travel", "Car", "Life", "Music"])
+User.create(name: "Alen", profile_picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Tobey_Maguire_2014.jpg/220px-Tobey_Maguire_2014.jpg" , password: "123", about: Faker::Hipster.sentence(word_count: 12), category:"Travel Car Life Music")
 
 images = [ "https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80", "https://images.unsplash.com/photo-1552519507-88aa2dfa9fdb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80", "https://images.unsplash.com/photo-1611298280249-ea1e9c1e28f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80", "https://images.unsplash.com/photo-1604705528621-81b2755a320b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80","https://images.unsplash.com/photo-1591920689160-ee83654e464a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" ]
 

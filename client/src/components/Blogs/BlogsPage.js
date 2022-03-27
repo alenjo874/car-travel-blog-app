@@ -6,6 +6,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion/dist/framer-motion";
 import Blog from "./Blog";
 import BlogEntryForm from "./BlogEntryForm";
+import Road from "../../style/images/Road.jpg"
 
 function BlogsPage() {
   const [blogsArray, setBlogsArray] = useState([]);
@@ -108,7 +109,10 @@ function BlogsPage() {
       <div className="blog-banner"></div>
       <div className="blog-list">
         <div>
-          <div className="blogs-page-forms">{searchBlogForm}</div>
+          <img src={Road} />
+        </div>
+        <div>
+          {/* <div className="blogs-page-forms">{searchBlogForm}</div> */}
           <div className="blog-display">
             {showBlog ? (
               <Blog
@@ -119,7 +123,7 @@ function BlogsPage() {
             ) : (
               displayBlogCard
             )}
-          </div>{" "}
+          </div>
         </div>
       </div>
     </div>

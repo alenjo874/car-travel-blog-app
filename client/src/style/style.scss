@@ -21,8 +21,19 @@ body {
   line-height: 1.2;
 }
 
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+
 img {
   width: 100%;
+}
+
+button {
+  border: 2px solid $secondary-color;
+  padding: 0.5rem 1.2rem;
+  background-color: transparent;
 }
 
 button:hover {
@@ -91,8 +102,6 @@ button:hover {
   ul {
     display: flex;
     margin-right: $nav-margin;
-    list-style: none;
-    text-decoration: none;
 
     li {
       margin-left: $nav-margin;
@@ -297,8 +306,25 @@ button:hover {
     width: 80%;
     min-height: 100vh;
 
+    img {
+      border-radius: $img-border-radius;
+    }
+
     .user-blog-columns {
       display: flex;
+      width: 100%;
+
+      .left {
+        border: 2px solid red;
+        width: 80%;
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid green;
+        width: 20%;
+      }
     }
 
     .user-blog-thumbnail {
@@ -306,12 +332,60 @@ button:hover {
 
       img {
         object-fit: cover;
-        height: 250px;
-        border-radius: $img-border-radius;
+        height: 450px;
+      }
+
+      h3 {
+        font-size: 3.8rem;
+      }
+    }
+
+    .user-blog-entry {
+      .created-date {
+        font-size: 0.8rem;
       }
     }
     .user-blog-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      width: 80%;
+      border: 2px solid red;
+
+      .user-profile-picture {
+        width: 60%;
+      }
+
+      .user-category {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid purple;
+
+        span {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid red;
+        }
+
+        p {
+          margin: 0 5px;
+        }
+      }
+
       p {
+        text-align: center;
+        padding: 0.5rem;
+      }
+    }
+    .user-blog-info {
+      .about-head {
         border-top: 1px solid $secondary-color;
         border-bottom: 1px solid $secondary-color;
       }
@@ -332,6 +406,7 @@ button:hover {
 
       textarea {
         min-height: 200px;
+        font-family: "Playfair Display";
       }
     }
   }

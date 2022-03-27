@@ -25,7 +25,7 @@ function BlogCard({
           </p>
         </span>
         <div>
-          <button>Read More</button>
+          <button onClick={handleShowBlog}>Read More</button>
         </div>
       </div>
       <motion.div

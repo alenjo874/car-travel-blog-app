@@ -50,23 +50,25 @@ function Blog({
 
   const editBtn = <button onClick={handleEditBlog}>Edit</button>;
   const cancelEditBtn = <button onClick={handleEditBlog}>Cancel</button>;
+  const displayUserCategories = user.category.split(" ").map((category) => {
+    return <p>{category}</p>;
+  });
+
   return (
     <div className="user-blog-container">
       <div className="user-blog-columns">
         <div className="blog-col left">
           <div className="user-blog-thumbnail">
+            <h3>{title}</h3>
             <img src={thumbnail} alt="thumbnail for blog" />
           </div>
-          <div>
+          <div className="user-blog-entry">
             <div>
-              <p>
-                Author: <b>{user.name}</b>
-              </p>
-              <p>Posted: {create_date}</p>
-              <h3>{title}</h3>
+              <p className="created-date">Created At: {create_date}</p>
             </div>
             <div>{blog_entry}</div>
           </div>
+
           <div>
             <p>{like}</p>
             <button>+</button>
@@ -79,7 +81,14 @@ function Blog({
         </div>
         <div className="blog-col right">
           <div className="user-blog-info">
-            <p>About the Author</p>
+            <p className="about-head">About the Author</p>
+            <div className="user-profile-picture">
+              <img src={user.profile_picture} />
+            </div>
+            <div className="user-category">
+            <p className="about-head">Interests</p>
+              <span>{displayUserCategories}</span>
+            </div>
           </div>
         </div>
       </div>
