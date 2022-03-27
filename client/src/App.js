@@ -5,6 +5,7 @@ import BlogsPage from "./components/Blogs/BlogsPage";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import LogInPage from "./components/UserLogIn/LogInPage";
+import BlogEntryForm from "./components/Blogs/BlogEntryForm";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -45,6 +46,9 @@ function App() {
         </Route>
         <Route exact path="/blogs">
           <BlogsPage />
+        </Route>
+        <Route exact path="/new_blog">
+          <BlogEntryForm />
         </Route>
       </Switch>
     </div>

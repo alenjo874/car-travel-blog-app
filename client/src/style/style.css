@@ -331,6 +331,22 @@ button:hover {
   margin-top: 80px;
 }
 
+.blogs-page-container .blog-list .blog-page-intro {
+  position: relative;
+  display: inline-block;
+}
+
+.blogs-page-container .blog-list .blog-page-intro .intro-overlay {
+  top: 150px;
+  position: absolute;
+  color: #fff;
+}
+
+.blogs-page-container .blog-list .blog-page-intro img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .blogs-page-container .blog-card-container {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -251,6 +251,21 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     margin-top: 80px;
+
+    .blog-page-intro {
+      position: relative;
+      display: inline-block;
+
+      .intro-overlay {
+        top: 150px;
+        position: absolute;
+        color: $accent-color;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
   }
 
   .blog-card-container {

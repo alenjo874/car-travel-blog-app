@@ -1,6 +1,7 @@
 import React from "react";
 import Porsche from "../../style/images/Porsche.jpg";
 import { motion } from "framer-motion/dist/framer-motion";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -14,7 +15,9 @@ function HomePage() {
         >
           <p>Tell Us Your Story</p>
           <em>Connect and Share stories with car enthusiasts</em>
-          <button>Get Started</button>
+          <Link to="/new_blog">
+            <button>Get Started</button>
+          </Link>
         </motion.div>
         <div>
           <img src={Porsche} alt="gtr background" loading="lazy" />
