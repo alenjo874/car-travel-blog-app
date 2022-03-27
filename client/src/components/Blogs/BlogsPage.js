@@ -8,17 +8,13 @@ import Blog from "./Blog";
 import BlogEntryForm from "./BlogEntryForm";
 import Road from "../../style/images/Road.jpg";
 
-function BlogsPage() {
-  const [blogsArray, setBlogsArray] = useState([]);
+function BlogsPage({blogsArray, setBlogsArray}) {
+
   const [showBlog, setShowBlog] = useState(false);
   const [clickedBlog, setClickedBlog] = useState("");
   const [searchBlog, setSearchBlog] = useState("");
 
-  useEffect(() => {
-    fetch("/blogs")
-      .then((res) => res.json())
-      .then(setBlogsArray);
-  }, []);
+
 
   function changeShowBlogState(id) {
     setShowBlog(true);
@@ -109,6 +105,12 @@ function BlogsPage() {
     </div>
   );
 
+  function handleDeleteBlog(id) {
+    setShowBlog(false);
+    const deleteBlogsArray = blogsArray.filter((blog) => blog.id !== id);
+    setBlogsArray(deleteBlogsArray);
+  }
+
   return (
     <div className="blogs-page-container">
       <div className="blog-banner"></div>
@@ -121,6 +123,7 @@ function BlogsPage() {
               <Blog
                 {...clickedBlogObj}
                 handleBlogUpdate={handleBlogUpdate}
+                handleDeleteBlog={handleDeleteBlog}
                 changeBackToBlogDispaly={changeBackToBlogDispaly}
               />
             ) : (

@@ -11,6 +11,7 @@ function Blog({
   user,
   create_date,
   handleBlogUpdate,
+  handleDeleteBlog
 }) {
   const [editBlog, setEditBlog] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
@@ -26,9 +27,16 @@ function Blog({
     setEditBlog(false);
   }
 
+  function deleteBlog(e) {
+    e.preventDefault();
+    fetch(`/blogs/${id}`, {
+      method: "DELETE",
+    });
+    handleDeleteBlog(id)
+  }
+
   const editBlogForm = (
     <motion.form
-      onSubmit={submitEditBlog}
       initial={{ y: -5, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.2, ease: "easeIn" }}
@@ -44,7 +52,8 @@ function Blog({
         value={newBlogEntry}
         onChange={(e) => setNewBlogEntry(e.target.value)}
       ></textarea>
-      <button>Submit</button>
+      <button onClick={submitEditBlog}>Submit</button>
+      <button onClick={deleteBlog}>Delete Blog</button>
     </motion.form>
   );
 
@@ -69,9 +78,7 @@ function Blog({
             <div>{blog_entry}</div>
           </div>
 
-          <div>
-            {editBlog ? cancelEditBtn : editBtn}
-          </div>
+          <div>{editBlog ? cancelEditBtn : editBtn}</div>
           <button onClick={changeBackToBlogDispaly}>Back</button>
           <div className="blog-edit-form-container">
             <AnimatePresence>{editBlog ? editBlogForm : null}</AnimatePresence>
@@ -84,7 +91,7 @@ function Blog({
               <img src={user.profile_picture} />
             </div>
             <div className="user-category">
-            <p className="about-head">Interests</p>
+              <p className="about-head">Interests</p>
               <span>{displayUserCategories}</span>
             </div>
           </div>

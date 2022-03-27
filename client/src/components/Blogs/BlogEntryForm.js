@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion/dist/framer-motion";
 
-function BlogEntryForm() {
+function BlogEntryForm({ setBlogsArray }) {
   const [title, setTitle] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [blogEntry, setBlogEntry] = useState("");
@@ -15,17 +15,17 @@ function BlogEntryForm() {
       user_id: 19,
     };
 
-      fetch("/blogs", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newBlogObj),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("Success:", data);
-        });
+    fetch("/blogs", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newBlogObj),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setBlogsArray((prev) => [...prev, data]);
+      });
   }
 
   return (

@@ -9,6 +9,13 @@ import BlogEntryForm from "./components/Blogs/BlogEntryForm";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
+  const [blogsArray, setBlogsArray] = useState([]);
+
+  useEffect(() => {
+    fetch("/blogs")
+      .then((res) => res.json())
+      .then(setBlogsArray);
+  }, []);
 
   // useEffect(() => {
   //   fetch("/auth").then((res) => {
@@ -45,10 +52,10 @@ function App() {
           <LogInPage />
         </Route>
         <Route exact path="/blogs">
-          <BlogsPage />
+          <BlogsPage setBlogsArray={setBlogsArray} blogsArray={blogsArray}/>
         </Route>
         <Route exact path="/new_blog">
-          <BlogEntryForm />
+          <BlogEntryForm setBlogsArray={setBlogsArray}/>
         </Route>
       </Switch>
     </div>

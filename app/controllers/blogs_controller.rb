@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-    skip_before_action :authorized, only: [:index, :update, :create]
+    skip_before_action :authorized, only: [:index, :update, :create, :destroy]
     def index 
         blogs = Blog.all 
         render json: blogs, status: :ok
@@ -14,6 +14,12 @@ class BlogsController < ApplicationController
     def create 
         create_blog = Blog.create!(blog_params)
         render json: create_blog, status: :created
+    end
+
+    def destroy 
+        destroy_blog = Blog.find_by!(id:params[:id])
+        destroy_blog.destroy
+        render json: {}, status: :accepted
     end
 
     private 
