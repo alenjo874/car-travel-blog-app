@@ -9,6 +9,7 @@ function BlogCard({
   like,
   user,
   changeShowBlogState,
+  blog_teaser,
 }) {
   function handleShowBlog() {
     changeShowBlogState(id);
@@ -19,7 +20,7 @@ function BlogCard({
       <div className="blog-card-teaser">
         <span>
           <h5 onClick={handleShowBlog}>{title}</h5>
-          <p onClick={handleShowBlog}>{blog_entry}</p>
+          <p onClick={handleShowBlog}>{blog_teaser}...</p>
           <p>
             Author: <b>{user.name}</b>
           </p>

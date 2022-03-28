@@ -567,6 +567,7 @@ button:active {
 
 .blogs-page-container .user-blog-container .user-blog-thumbnail h3 {
   font-size: 3.8rem;
+  margin: 45px 0;
 }
 
 .blogs-page-container .user-blog-container .user-blog-entry .created-date {

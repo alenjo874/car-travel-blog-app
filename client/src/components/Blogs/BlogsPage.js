@@ -28,8 +28,6 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
     });
   }
 
-  console.log(clickedBlog);
-
   function changeBackToBlogDispaly() {
     setShowBlog(false);
   }
@@ -101,12 +99,35 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
       });
   }
 
+  function handleExploreBlogs() {
+    
+  }
+
   const blogIntroPage = (
     <div className="blog-page-intro">
       <span className="intro-overlay">
-        <p>Cars & Travel</p>
-        <h2>Tell your Story Today</h2>
-        <button>Explore</button>
+        <motion.p
+          initial={{ y: 5, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeIn" }}
+        >
+          Cars & Travel
+        </motion.p>
+        <motion.h2
+          initial={{ y: 5, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.1, duration: 0.6, ease: "easeIn" }}
+        >
+          Tell your Story Today
+        </motion.h2>
+        <motion.button
+          initial={{ y: 5, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6, ease: "easeIn" }}
+          onClick={handleExploreBlogs}
+        >
+          Explore
+        </motion.button>
       </span>
       <div className="blog-intro-banner">
         <img src={Road} loading="lazy" alt="open road" />
