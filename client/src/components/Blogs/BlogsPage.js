@@ -13,6 +13,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   const [showBlog, setShowBlog] = useState(false);
   const [clickedBlog, setClickedBlog] = useState("");
   const [searchBlog, setSearchBlog] = useState("");
+  const [editBlog, setEditBlog] = useState(false);
 
   function changeShowBlogState(id) {
     setShowBlog(true);
@@ -20,6 +21,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   }
 
   function showNextBlogPage() {
+    setEditBlog(false);
     setClickedBlog((prev) => {
       if (blogsArray[blogsArray.length - 1].id === prev) {
         return prev;
@@ -30,6 +32,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   }
 
   function changeBackToBlogDispaly() {
+    setEditBlog(false);
     if (blogsArray[0].id === clickedBlog) {
       setShowBlog(false);
     } else {
@@ -168,6 +171,8 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
           >
             {showBlog ? (
               <Blog
+                editBlog={editBlog}
+                setEditBlog={setEditBlog}
                 {...clickedBlogObj}
                 handleBlogUpdate={handleBlogUpdate}
                 handleDeleteBlog={handleDeleteBlog}

@@ -18,8 +18,9 @@ function Blog({
   handleDeleteBlog,
   showNextBlogPage,
   blogsArray,
+  editBlog,
+  setEditBlog,
 }) {
-  const [editBlog, setEditBlog] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
   const [newBlogEntry, setNewBlogEntry] = useState(blog_entry);
 
@@ -58,17 +59,17 @@ function Blog({
         onChange={(e) => setNewTitle(e.target.value)}
       ></input>
       <label>Entry</label>
-      <textarea
+      {/* <textarea
         value={newBlogEntry}
         onChange={(e) => setNewBlogEntry(e.target.value)}
-      ></textarea>
+      ></textarea> */}
       <CKEditor
         editor={ClassicEditor}
-        data={newBlogEntry}
+        data={blog_entry}
         onReady={(editor) => {}}
         onChange={(event, editor) => {
           const data = editor.getData();
-          // setBlogEntry(data);
+          setNewBlogEntry(data);
         }}
         onBlur={(event, editor) => {}}
         onFocus={(event, editor) => {}}
