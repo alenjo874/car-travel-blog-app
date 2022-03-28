@@ -348,6 +348,7 @@ button:active {
     padding: $blog-card-padding;
     border-bottom: 1px solid $secondary-color;
     width: 80%;
+    max-width: 900px;
     padding: 50px;
 
     .blog-card-teaser {

@@ -134,7 +134,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
         >
           <button onClick={handleExploreBlogs}>Explore</button>
           <Link to="/new_blog">
-            <button>+ Add Blog</button>
+            <button>+ Write Blog</button>
           </Link>
         </motion.div>
       </span>

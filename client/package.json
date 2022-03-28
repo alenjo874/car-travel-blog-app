@@ -7,12 +7,15 @@
     "node": "16.x"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^33.0.0",
+    "@ckeditor/ckeditor5-react": "^4.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@tinymce/tinymce-react": "^3.13.1",
     "draft-js": "^0.11.7",
     "framer-motion": "^6.2.8",
     "react": "^17.0.2",

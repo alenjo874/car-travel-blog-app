@@ -441,6 +441,7 @@ button:active {
   padding: 10px;
   border-bottom: 1px solid #121212;
   width: 80%;
+  max-width: 900px;
   padding: 50px;
 }
 
