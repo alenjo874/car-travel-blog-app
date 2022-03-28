@@ -386,14 +386,17 @@ button:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
 .blogs-page-container .blog-list .blog-page-intro .intro-overlay {
-  top: 150px;
   position: absolute;
   text-align: center;
   color: #fff;
+  font-size: 1.5rem;
 }
 
 .blogs-page-container .blog-list .blog-page-intro .blog-intro-banner {
@@ -670,6 +673,10 @@ button:active {
   width: 100%;
 }
 
+.blogs-page-container .user-blog-container .blog-edit-form-container form input {
+  margin-bottom: 15px;
+}
+
 .blogs-page-container .user-blog-container .blog-edit-form-container form button {
   margin-top: 15px;
 }
@@ -679,25 +686,43 @@ button:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   position: absolute;
   z-index: -200;
   min-height: 150vh;
   top: 80px;
-  color: #fff;
-  background-color: #121212;
   background-color: #fff;
   color: #141414;
+}
+
+.new-blog-container .blog-page-intro {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border: 5px solid blue;
+}
+
+.new-blog-container .blog-page-intro .blog-intro-banner {
+  height: 50vh;
+  width: 100%;
+}
+
+.new-blog-container .blog-page-intro .blog-intro-banner img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .new-blog-container form {
@@ -708,6 +733,16 @@ button:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 80%;
+  margin: 15px;
+}
+
+.new-blog-container form input {
+  margin-bottom: 15px;
+}
+
+.new-blog-container form button {
+  margin-top: 15px;
 }
 
 @media only screen and (max-width: 800px) {

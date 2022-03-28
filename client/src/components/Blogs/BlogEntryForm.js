@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion/dist/framer-motion";
+import GTR from "../../style/images/GTR.jpg";
 
 function BlogEntryForm({ setBlogsArray }) {
   const [title, setTitle] = useState("");
@@ -30,6 +31,12 @@ function BlogEntryForm({ setBlogsArray }) {
 
   return (
     <div className="new-blog-container">
+      <div className="blog-page-intro">
+        <div className="blog-intro-banner">
+          <img src={GTR} alt="GTR open road" />
+        </div>
+      </div>
+
       <motion.form
         initial={{ y: -5, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

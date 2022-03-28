@@ -301,13 +301,14 @@ button:active {
       width: 100%;
       display: flex;
       justify-content: center;
+      align-items: center;
       position: relative;
 
       .intro-overlay {
-        top: 150px;
         position: absolute;
         text-align: center;
         color: $accent-color;
+        font-size: 1.5rem;
       }
 
       .blog-intro-banner {
@@ -434,7 +435,7 @@ button:active {
 
       h3 {
         font-size: 3.8rem;
-        margin: $elements-margin*3 0;
+        margin: $elements-margin * 3 0;
       }
     }
 
@@ -500,6 +501,10 @@ button:active {
         flex-direction: column;
         width: 100%;
 
+        input {
+          margin-bottom: $elements-margin;
+        }
+
         button {
           margin-top: $elements-margin;
         }
@@ -511,22 +516,46 @@ button:active {
 .new-blog-container {
   border: 2px solid red;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   position: absolute;
   z-index: -200;
   min-height: 150vh;
   top: $nav-bar-height;
-  color: $accent-color;
-  background-color: $secondary-color;
   background-color: #fff;
   color: $primary-color;
+
+  .blog-page-intro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border: 5px solid blue;
+
+    .blog-intro-banner {
+      height: 50vh;
+      width: 100%;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 
   form {
     display: flex;
     flex-direction: column;
+    width: 80%;
+    margin: $elements-margin;
+
+    input {
+      margin-bottom: $elements-margin;
+    }
+
+    button {
+      margin-top: $elements-margin;
+    }
   }
 }
 

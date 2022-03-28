@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
 function Blog({
@@ -12,11 +12,16 @@ function Blog({
   create_date,
   handleBlogUpdate,
   handleDeleteBlog,
-  showNextBlogPage
+  showNextBlogPage,
+  blogsArray,
 }) {
   const [editBlog, setEditBlog] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
   const [newBlogEntry, setNewBlogEntry] = useState(blog_entry);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   function handleEditBlog() {
     setEditBlog((prev) => !prev);
@@ -64,12 +69,17 @@ function Blog({
     return <p>{category}</p>;
   });
 
+  const blogPageNumber = blogsArray.map((blog) => blog.id).indexOf(id);
+
   return (
     <div className="user-blog-container">
       <div className="user-blog-columns">
         <div className="blog-col left">
           <div className="user-blog-head-btn">
             <button onClick={changeBackToBlogDispaly}>Back</button>
+            <p>
+              {blogPageNumber + 1} of {blogsArray.length}
+            </p>
             <button onClick={showNextBlogPage}>Next</button>
           </div>
           <div className="user-blog-thumbnail">

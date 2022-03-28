@@ -23,13 +23,18 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
       if (blogsArray[blogsArray.length - 1].id === prev) {
         return prev;
       } else {
+        console.log(prev);
         return prev + 1;
       }
     });
   }
 
   function changeBackToBlogDispaly() {
-    setShowBlog(false);
+    if (blogsArray[0].id === clickedBlog) {
+      setShowBlog(false);
+    } else {
+      setClickedBlog((prev) => prev - 1);
+    }
   }
 
   const searchBlogArray = blogsArray.filter(
@@ -100,7 +105,8 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   }
 
   function handleExploreBlogs() {
-    
+    setShowBlog(true);
+    setClickedBlog(blogsArray[0].id);
   }
 
   const blogIntroPage = (
@@ -161,6 +167,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
                 handleDeleteBlog={handleDeleteBlog}
                 changeBackToBlogDispaly={changeBackToBlogDispaly}
                 showNextBlogPage={showNextBlogPage}
+                blogsArray={blogsArray}
               />
             ) : (
               displayBlogCard
