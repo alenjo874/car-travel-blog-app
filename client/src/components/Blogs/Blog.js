@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
 function Blog({
@@ -66,11 +67,11 @@ function Blog({
   const editBtn = <button onClick={handleEditBlog}>Edit</button>;
   const cancelEditBtn = <button onClick={handleEditBlog}>Cancel</button>;
   const displayUserCategories = user.category.split(" ").map((category) => {
-    return <p>{category}</p>;
+    return <p key={uuidv4()}>{category}</p>;
   });
 
   const blogPageNumber = blogsArray.map((blog) => blog.id).indexOf(id);
-
+ 
   return (
     <div className="user-blog-container">
       <div className="user-blog-columns">

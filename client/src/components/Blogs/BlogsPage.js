@@ -23,7 +23,6 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
       if (blogsArray[blogsArray.length - 1].id === prev) {
         return prev;
       } else {
-        console.log(prev);
         return prev + 1;
       }
     });
@@ -79,6 +78,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   );
 
   const clickedBlogObj = blogsArray.find((blog) => blog.id === clickedBlog);
+  console.log(clickedBlogObj);
 
   function handleBlogUpdate(id, newTitle, newEntry) {
     const editBlogObj = { title: newTitle, blog_entry: newEntry };

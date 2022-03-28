@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
     skip_before_action :authorized, only: [:index, :update, :create, :destroy]
     def index 
-        blogs = Blog.all 
+        blogs = Blog.all.sort
         render json: blogs, status: :ok
     end
 
