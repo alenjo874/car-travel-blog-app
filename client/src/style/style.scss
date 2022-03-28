@@ -491,14 +491,17 @@ button:active {
     .blog-edit-form-container {
       display: flex;
       justify-content: center;
-      width: 80%;
-
-      border: 2px solid red;
-
+      align-items: center;
+      width: 100%;
+      margin: $elements-margin 0;
       form {
         display: flex;
         flex-direction: column;
         width: 100%;
+
+        button {
+          margin-top: $elements-margin;
+        }
       }
     }
   }

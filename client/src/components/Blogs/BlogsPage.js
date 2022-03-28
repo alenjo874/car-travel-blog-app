@@ -18,6 +18,18 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
     setClickedBlog(id);
   }
 
+  function showNextBlogPage() {
+    setClickedBlog((prev) => {
+      if (blogsArray[blogsArray.length - 1].id === prev) {
+        return prev;
+      } else {
+        return prev + 1;
+      }
+    });
+  }
+
+  console.log(clickedBlog);
+
   function changeBackToBlogDispaly() {
     setShowBlog(false);
   }
@@ -127,6 +139,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
                 handleBlogUpdate={handleBlogUpdate}
                 handleDeleteBlog={handleDeleteBlog}
                 changeBackToBlogDispaly={changeBackToBlogDispaly}
+                showNextBlogPage={showNextBlogPage}
               />
             ) : (
               displayBlogCard

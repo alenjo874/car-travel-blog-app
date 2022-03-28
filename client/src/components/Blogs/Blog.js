@@ -12,6 +12,7 @@ function Blog({
   create_date,
   handleBlogUpdate,
   handleDeleteBlog,
+  showNextBlogPage
 }) {
   const [editBlog, setEditBlog] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
@@ -69,7 +70,7 @@ function Blog({
         <div className="blog-col left">
           <div className="user-blog-head-btn">
             <button onClick={changeBackToBlogDispaly}>Back</button>
-            <button onClick={changeBackToBlogDispaly}>Next</button>
+            <button onClick={showNextBlogPage}>Next</button>
           </div>
           <div className="user-blog-thumbnail">
             <h3>{title}</h3>

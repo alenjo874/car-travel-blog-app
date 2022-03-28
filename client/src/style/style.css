@@ -651,8 +651,11 @@ button:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 80%;
-  border: 2px solid red;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 15px 0;
 }
 
 .blogs-page-container .user-blog-container .blog-edit-form-container form {
@@ -664,6 +667,10 @@ button:active {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+}
+
+.blogs-page-container .user-blog-container .blog-edit-form-container form button {
+  margin-top: 15px;
 }
 
 .new-blog-container {
