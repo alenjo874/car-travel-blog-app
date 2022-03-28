@@ -192,12 +192,13 @@ button:active {
       justify-content: center;
 
       input {
-        margin: 10px 0;
+        margin: $elements-margin 0;
         padding: $login-elem-padding;
       }
 
       button {
         color: $accent-color;
+        margin-bottom: $elements-margin;
         border: 1px solid $accent-color;
       }
 
@@ -248,19 +249,20 @@ button:active {
 
   .blogs-page-forms {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+    margin: $elements-margin;
 
     .search-form-container {
-      position: sticky;
-      top: 0;
+      width: 40%;
     }
 
     .search {
       width: 100%;
       top: 0;
       display: flex;
+      margin: $elements-margin;
     }
 
     .search-term {
@@ -280,7 +282,6 @@ button:active {
       color: #fff;
       border-radius: 0 5px 5px 0;
       cursor: pointer;
-      font-size: 1rem;
     }
   }
 
@@ -322,6 +323,7 @@ button:active {
 
       button {
         color: $accent-color;
+        margin: $elements-margin;
         border: 1px solid $accent-color;
       }
 
@@ -391,7 +393,7 @@ button:active {
     margin: 50px;
     font-size: $user-blog-fontsize;
     width: 80%;
-    min-height: 100vh;
+    min-height: 200vh;
 
     img {
       border-radius: $img-border-radius;
@@ -422,6 +424,11 @@ button:active {
       .user-blog-head-btn {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        em {
+          font-size: 1rem;
+        }
       }
     }
 
@@ -514,14 +521,14 @@ button:active {
 }
 
 .new-blog-container {
-  border: 2px solid red;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
   position: absolute;
   z-index: -200;
-  min-height: 150vh;
+  min-height: 100vh;
   top: $nav-bar-height;
   background-color: #fff;
   color: $primary-color;
@@ -546,7 +553,7 @@ button:active {
   form {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 60%;
     margin: $elements-margin;
 
     input {
@@ -555,6 +562,35 @@ button:active {
 
     button {
       margin-top: $elements-margin;
+    }
+  }
+
+  .custom-shape-divider-top-1648484410 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .custom-shape-divider-top-1648484410 svg {
+    position: relative;
+    display: block;
+    width: calc(119% + 1.3px);
+    height: 68px;
+  }
+
+  .custom-shape-divider-top-1648484410 .shape-fill {
+    fill: $primary-color;
+  }
+
+  .form-about {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    .undraw-blog {
+      width: 40%;
     }
   }
 }

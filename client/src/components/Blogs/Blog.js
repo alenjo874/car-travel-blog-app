@@ -71,16 +71,20 @@ function Blog({
   });
 
   const blogPageNumber = blogsArray.map((blog) => blog.id).indexOf(id);
- 
+  const relatedBlogs = blogsArray.filter((blog) => blog.user.id === user.id);
+  const displayRelatedBlogs = relatedBlogs.map((blog) => {
+    return <p key={uuidv4()}>{blog.title}</p>;
+  });
+
   return (
     <div className="user-blog-container">
       <div className="user-blog-columns">
         <div className="blog-col left">
           <div className="user-blog-head-btn">
             <button onClick={changeBackToBlogDispaly}>Back</button>
-            <p>
+            <em>
               {blogPageNumber + 1} of {blogsArray.length}
-            </p>
+            </em>
             <button onClick={showNextBlogPage}>Next</button>
           </div>
           <div className="user-blog-thumbnail">
@@ -110,6 +114,12 @@ function Blog({
             <div className="user-category">
               <p className="about-head">Interests</p>
               <span>{displayUserCategories}</span>
+            </div>
+            <div>
+              <p className="about-head">Related</p>
+              <span>
+                <b>{displayRelatedBlogs}</b>
+              </span>
             </div>
           </div>
         </div>

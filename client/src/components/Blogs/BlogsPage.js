@@ -7,6 +7,7 @@ import { motion } from "framer-motion/dist/framer-motion";
 import Blog from "./Blog";
 import BlogEntryForm from "./BlogEntryForm";
 import Road from "../../style/images/Road.jpg";
+import { Link } from "react-router-dom";
 
 function BlogsPage({ blogsArray, setBlogsArray }) {
   const [showBlog, setShowBlog] = useState(false);
@@ -126,14 +127,16 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
         >
           Tell your Story Today
         </motion.h2>
-        <motion.button
+        <motion.div
           initial={{ y: 5, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6, ease: "easeIn" }}
-          onClick={handleExploreBlogs}
         >
-          Explore
-        </motion.button>
+          <button onClick={handleExploreBlogs}>Explore</button>
+          <Link to="/new_blog">
+            <button>+ Add Blog</button>
+          </Link>
+        </motion.div>
       </span>
       <div className="blog-intro-banner">
         <img src={Road} loading="lazy" alt="open road" />
@@ -153,7 +156,10 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
       <div className="blog-list">
         {showBlog ? null : blogIntroPage}
         <div>
-          {/* <div className="blogs-page-forms">{searchBlogForm}</div> */}
+          {showBlog ? null : (
+            <div className="blogs-page-forms">{searchBlogForm}</div>
+          )}
+
           <motion.div
             className="blog-display"
             initial={{ y: -5, opacity: 0 }}
