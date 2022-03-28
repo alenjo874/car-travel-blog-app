@@ -17,8 +17,6 @@ function App() {
       .then(setBlogsArray);
   }, []);
 
-  console.log(blogsArray);
-
   // useEffect(() => {
   //   fetch("/auth").then((res) => {
   //     if (res.ok) {

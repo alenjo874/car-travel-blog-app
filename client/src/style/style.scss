@@ -564,6 +564,11 @@ button:active {
     button {
       margin-top: $elements-margin;
     }
+
+    .ck-content {
+      border: 2px solid red;
+      height: 500px;
+    }
   }
 
   .custom-shape-divider-top-1648484410 {

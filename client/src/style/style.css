@@ -756,6 +756,11 @@ button:active {
   margin-top: 15px;
 }
 
+.new-blog-container form .ck-content {
+  border: 2px solid red;
+  height: 500px;
+}
+
 .new-blog-container .custom-shape-divider-top-1648484410 {
   position: absolute;
   top: 0;

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import parse from "html-react-parser";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 function Blog({
   id,
@@ -59,6 +62,17 @@ function Blog({
         value={newBlogEntry}
         onChange={(e) => setNewBlogEntry(e.target.value)}
       ></textarea>
+      <CKEditor
+        editor={ClassicEditor}
+        data={newBlogEntry}
+        onReady={(editor) => {}}
+        onChange={(event, editor) => {
+          const data = editor.getData();
+          // setBlogEntry(data);
+        }}
+        onBlur={(event, editor) => {}}
+        onFocus={(event, editor) => {}}
+      />
       <button onClick={submitEditBlog}>Submit</button>
       <button onClick={deleteBlog}>Delete Blog</button>
     </motion.form>
@@ -95,9 +109,7 @@ function Blog({
             <div>
               <p className="created-date">Created At: {create_date}</p>
             </div>
-            <div>
-              <p> {blog_entry}</p>
-            </div>
+            <div>{parse(blog_entry)}</div>
           </div>
 
           <div>{editBlog ? cancelEditBtn : editBtn}</div>

@@ -8,7 +8,7 @@ class BlogSerializer < ActiveModel::Serializer
   end
 
   def blog_teaser 
-    self.object.blog_entry.split[0..20].join(" ")
+    self.object.blog_entry.split[0..20].join(" ").gsub(/<\/?[^>]+>/, '')
   end
 
 end

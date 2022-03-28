@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion/dist/framer-motion";
+import parse from "html-react-parser";
 
 function BlogCard({
   id,

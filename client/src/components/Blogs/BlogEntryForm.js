@@ -1,22 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion/dist/framer-motion";
-import GTR from "../../style/images/GTR.jpg";
 import Bloggers from "../../style/images/UndrawBlog.png";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { useHistory } from "react-router-dom";
 
 function BlogEntryForm({ setBlogsArray }) {
   const [title, setTitle] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [blogEntry, setBlogEntry] = useState("");
-
-  const editorRef = useRef(null);
-  const log = () => {
-    if (editorRef.current) {
-      console.log(editorRef.current.getContent());
-    }
-  };
-
+  const history = useHistory();
   function submitNewBlog(e) {
     e.preventDefault();
     const newBlogObj = {
@@ -41,6 +34,7 @@ function BlogEntryForm({ setBlogsArray }) {
     setTitle("");
     setThumbnail("");
     setBlogEntry("");
+    history.push("/blogs");
   }
 
   return (
@@ -51,7 +45,7 @@ function BlogEntryForm({ setBlogsArray }) {
         </div>
       </div> */}
 
-      <div class="custom-shape-divider-top-1648484410">
+      <div className="custom-shape-divider-top-1648484410">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +54,7 @@ function BlogEntryForm({ setBlogsArray }) {
         >
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill"
+            className="shape-fill"
           ></path>
         </svg>
       </div>
@@ -94,23 +88,17 @@ function BlogEntryForm({ setBlogsArray }) {
         ></textarea> */}
         <CKEditor
           editor={ClassicEditor}
-          data="<p>Hello from CKEditor 5!</p>"
-          onReady={(editor) => {
-            // You can store the "editor" and use when it is needed.
-            console.log("Editor is ready to use!", editor);
-          }}
+          data=""
+          onReady={(editor) => {}}
           onChange={(event, editor) => {
             const data = editor.getData();
             setBlogEntry(data);
           }}
-          onBlur={(event, editor) => {
-            console.log("Blur.", editor);
-          }}
-          onFocus={(event, editor) => {
-            console.log("Focus.", editor);
-          }}
+          onBlur={(event, editor) => {}}
+          onFocus={(event, editor) => {}}
         />
-        <button>Submit</button>
+
+        <button type="submit">Submit</button>
       </motion.form>
     </div>
   );
