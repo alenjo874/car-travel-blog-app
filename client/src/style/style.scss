@@ -323,7 +323,7 @@ input {
       }
 
       .blog-intro-banner {
-        height: 50vh;
+        height: 40vh;
         width: 100%;
         img {
           height: 100%;
@@ -544,19 +544,30 @@ input {
   background-color: #fff;
   color: $primary-color;
 
-  .blog-page-intro {
+  .new-blog-head {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    border: 5px solid blue;
 
-    .blog-intro-banner {
-      height: 50vh;
+    .blog-page-intro {
       width: 100%;
-      img {
-        height: 100%;
-        object-fit: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .intro-overlay {
+        position: absolute;
+        text-align: center;
+        color: $accent-color;
+        font-size: 1.5rem;
+      }
+
+      .blog-intro-banner {
+        height: 40vh;
+        width: 100%;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
   }
@@ -580,35 +591,6 @@ input {
       height: 500px;
     }
   }
-
-  .custom-shape-divider-top-1648484410 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-
-  .custom-shape-divider-top-1648484410 svg {
-    position: relative;
-    display: block;
-    width: calc(119% + 1.3px);
-    height: 68px;
-  }
-
-  .custom-shape-divider-top-1648484410 .shape-fill {
-    fill: $primary-color;
-  }
-
-  .form-about {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    .undraw-blog {
-      width: 40%;
-    }
-  }
 }
 
 .profile-container {
@@ -624,28 +606,32 @@ input {
   background-color: #fff;
   color: $primary-color;
 
-  .update-pro-popup {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
+  .pro-head {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-    height: 100vh;
-  }
 
-  .submit-confirm {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    max-width: 900px;
-    background-color: #1a1a1a;
- 
-    border-radius: 12px;
-    margin: 0 25px;
-    padding: 10px 20px;
+    .blog-page-intro {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .intro-overlay {
+        position: absolute;
+        text-align: center;
+        color: $accent-color;
+        font-size: 1.5rem;
+      }
+
+      .blog-intro-banner {
+        height: 40vh;
+        width: 100%;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
   }
 
   .pro-body {
@@ -654,6 +640,10 @@ input {
     justify-content: center;
     align-items: center;
     width: 100%;
+
+    p {
+      font-size: 1.5rem;
+    }
 
     .pro-page-pic {
       width: 10%;
@@ -674,6 +664,33 @@ input {
 
   button {
     margin-bottom: $elements-margin;
+  }
+
+  .update-pro-popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(211, 211, 211, 0.4);
+    height: 100vh;
+  }
+
+  .submit-confirm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 25%;
+    max-width: 300px;
+    background-color: $accent-color;
+    padding: 10px 20px;
+
+    button {
+      margin: 0;
+    }
   }
 }
 

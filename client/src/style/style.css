@@ -409,7 +409,7 @@ input {
 }
 
 .blogs-page-container .blog-list .blog-page-intro .blog-intro-banner {
-  height: 50vh;
+  height: 40vh;
   width: 100%;
 }
 
@@ -722,7 +722,11 @@ input {
   color: #141414;
 }
 
-.new-blog-container .blog-page-intro {
+.new-blog-container .new-blog-head {
+  width: 100%;
+}
+
+.new-blog-container .new-blog-head .blog-page-intro {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -730,16 +734,25 @@ input {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
-  border: 5px solid blue;
 }
 
-.new-blog-container .blog-page-intro .blog-intro-banner {
-  height: 50vh;
+.new-blog-container .new-blog-head .blog-page-intro .intro-overlay {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.new-blog-container .new-blog-head .blog-page-intro .blog-intro-banner {
+  height: 40vh;
   width: 100%;
 }
 
-.new-blog-container .blog-page-intro .blog-intro-banner img {
+.new-blog-container .new-blog-head .blog-page-intro .blog-intro-banner img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -770,40 +783,6 @@ input {
   height: 500px;
 }
 
-.new-blog-container .custom-shape-divider-top-1648484410 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.new-blog-container .custom-shape-divider-top-1648484410 svg {
-  position: relative;
-  display: block;
-  width: calc(119% + 1.3px);
-  height: 68px;
-}
-
-.new-blog-container .custom-shape-divider-top-1648484410 .shape-fill {
-  fill: #141414;
-}
-
-.new-blog-container .form-about {
-  margin-top: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.new-blog-container .form-about .undraw-blog {
-  width: 40%;
-}
-
 .profile-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -827,37 +806,40 @@ input {
   color: #141414;
 }
 
-.profile-container .update-pro-popup {
+.profile-container .pro-head {
+  width: 100%;
+}
+
+.profile-container .pro-head .blog-page-intro {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
 }
 
-.profile-container .submit-confirm {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  position: relative;
-  max-width: 900px;
-  background-color: #1a1a1a;
-  border-radius: 12px;
-  margin: 0 25px;
-  padding: 10px 20px;
+.profile-container .pro-head .blog-page-intro .intro-overlay {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.profile-container .pro-head .blog-page-intro .blog-intro-banner {
+  height: 40vh;
+  width: 100%;
+}
+
+.profile-container .pro-head .blog-page-intro .blog-intro-banner img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .profile-container .pro-body {
@@ -875,6 +857,10 @@ input {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+}
+
+.profile-container .pro-body p {
+  font-size: 1.5rem;
 }
 
 .profile-container .pro-body .pro-page-pic {
@@ -902,6 +888,45 @@ input {
 
 .profile-container button {
   margin-bottom: 15px;
+}
+
+.profile-container .update-pro-popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(211, 211, 211, 0.4);
+  height: 100vh;
+}
+
+.profile-container .submit-confirm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 25%;
+  max-width: 300px;
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+.profile-container .submit-confirm button {
+  margin: 0;
 }
 
 @media only screen and (max-width: 800px) {
