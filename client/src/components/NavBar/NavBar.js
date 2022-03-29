@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavBar() {
+function NavBar({blogsArray}) {
   return (
     <div className="navbar-container">
       <div>
@@ -17,8 +17,8 @@ function NavBar() {
           </Link>
         </ul>
         <div>
-          <Link to="/login">
-            <p>signin</p>
+          <Link to="/profile">
+            <p>Profile</p>
             {/* <img > */}
           </Link>
         </div>

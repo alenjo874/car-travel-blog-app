@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
     skip_before_action :authorized, only: :create
+    def index
+        users = User.all 
+        render json: users, status: :ok
+    end
     
     def create 
        create_user = User.create!(user_params)
@@ -17,9 +21,7 @@ class UsersController < ApplicationController
     end
 
  
-    def index
-        render json: {hello: "heello"}
-    end
+  
 
     private 
 

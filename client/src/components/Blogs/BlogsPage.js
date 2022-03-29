@@ -15,6 +15,8 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   const [searchBlog, setSearchBlog] = useState("");
   const [editBlog, setEditBlog] = useState(false);
 
+  const blogIdArray = blogsArray.map((blog) => blog.id);
+
   function changeShowBlogState(id) {
     setShowBlog(true);
     setClickedBlog(id);
@@ -26,7 +28,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
       if (blogsArray[blogsArray.length - 1].id === prev) {
         return prev;
       } else {
-        return prev + 1;
+        return blogsArray[blogIdArray.indexOf(prev) + 1].id;
       }
     });
   }
@@ -36,7 +38,9 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
     if (blogsArray[0].id === clickedBlog) {
       setShowBlog(false);
     } else {
-      setClickedBlog((prev) => prev - 1);
+      setClickedBlog((prev) => {
+        return blogsArray[blogIdArray.indexOf(prev) - 1].id;
+      });
     }
   }
 
@@ -82,7 +86,6 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   );
 
   const clickedBlogObj = blogsArray.find((blog) => blog.id === clickedBlog);
-  console.log(clickedBlogObj);
 
   function handleBlogUpdate(id, newTitle, newEntry) {
     const editBlogObj = { title: newTitle, blog_entry: newEntry };

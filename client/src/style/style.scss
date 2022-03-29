@@ -57,6 +57,15 @@ button:active {
   background-color: #edeff2;
 }
 
+input {
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid $secondary-color;
+  font-size: 1.3rem;
+  padding: 7px 0;
+  background: transparent;
+}
+
 .home-page-container {
   display: flex;
   justify-content: flex-start;
@@ -267,8 +276,9 @@ button:active {
 
     .search-term {
       width: 100%;
-      border: 2px solid $highlight-color;
-      border-right: none;
+      border: 2px solid $secondary-color;
+      border: 0;
+      border-bottom: 1px solid $secondary-color;
       padding: 5px;
       height: 20px;
       border-radius: 5px 0 0 5px;
@@ -276,10 +286,10 @@ button:active {
     }
 
     .search-button {
-      border: 1px solid $highlight-color;
-      background: $highlight-color;
+      border: none;
+      background: transparent;
       text-align: center;
-      color: #fff;
+      color: $secondary-color;
       border-radius: 0 5px 5px 0;
       cursor: pointer;
     }
@@ -601,6 +611,30 @@ button:active {
   }
 }
 
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  z-index: -200;
+  min-height: 100vh;
+  top: $nav-bar-height;
+  background-color: #fff;
+  color: $primary-color;
+
+  .pro-body {
+    form {
+      display: flex;
+      flex-direction: column;
+      input {
+        margin-bottom: $elements-margin;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .blog-card-container {
     flex-direction: column;
@@ -615,9 +649,4 @@ button:active {
       order: 1;
     }
   }
-}
-
-.logout {
-  border: 2px solid red;
-  color: white;
 }

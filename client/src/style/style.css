@@ -48,6 +48,15 @@ button:active {
   background-color: #edeff2;
 }
 
+input {
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #121212;
+  font-size: 1.3rem;
+  padding: 7px 0;
+  background: transparent;
+}
+
 .home-page-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -335,8 +344,9 @@ button:active {
 
 .blogs-page-container .blogs-page-forms .search-term {
   width: 100%;
-  border: 2px solid #ac0b0a;
-  border-right: none;
+  border: 2px solid #121212;
+  border: 0;
+  border-bottom: 1px solid #121212;
   padding: 5px;
   height: 20px;
   border-radius: 5px 0 0 5px;
@@ -344,10 +354,10 @@ button:active {
 }
 
 .blogs-page-container .blogs-page-forms .search-button {
-  border: 1px solid #ac0b0a;
-  background: #ac0b0a;
+  border: none;
+  background: transparent;
   text-align: center;
-  color: #fff;
+  color: #121212;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
 }
@@ -795,6 +805,43 @@ button:active {
   width: 40%;
 }
 
+.profile-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  position: absolute;
+  z-index: -200;
+  min-height: 100vh;
+  top: 80px;
+  background-color: #fff;
+  color: #141414;
+}
+
+.profile-container .pro-body form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile-container .pro-body form input {
+  margin-bottom: 15px;
+}
+
 @media only screen and (max-width: 800px) {
   .blog-card-container {
     -webkit-box-orient: vertical;
@@ -819,10 +866,5 @@ button:active {
         -ms-flex-order: 1;
             order: 1;
   }
-}
-
-.logout {
-  border: 2px solid red;
-  color: white;
 }
 /*# sourceMappingURL=style.css.map */
