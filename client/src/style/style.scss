@@ -40,6 +40,13 @@ $user-blog-pad: 15px;
   }
 }
 
+@mixin flexbox-positions($justify, $align, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
 body {
   font-family: "Playfair Display";
   background-color: $secondary-color;
@@ -98,9 +105,7 @@ input {
   position: absolute;
 
   .home-background {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    @include flexbox-positions($justify: flex-start, $align: flex-start);
     min-height: 100vh;
 
     img {
@@ -115,10 +120,11 @@ input {
     z-index: 100;
     top: 250px;
     left: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    @include flexbox-positions(
+      $justify: flex-start,
+      $align: flex-start,
+      $direction: column
+    );
     p {
       font-size: 5rem;
       font-weight: 500;
@@ -155,9 +161,7 @@ input {
 }
 
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexbox-positions($justify: space-between, $align: center);
   position: absolute;
   z-index: 200;
   height: $nav-bar-height;
@@ -212,9 +216,7 @@ input {
     margin-right: auto;
     width: 35%;
     // height: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    @include flexbox-positions($justify: center, $align: flex-start);
     background-color: rgba(0, 0, 0, 0.75);
     color: $accent-color;
     form {
@@ -252,10 +254,7 @@ input {
 }
 
 .blogs-page-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
+  @include flexbox-positions($justify: center, $align: flex-start);
   width: 100%;
   position: absolute;
   z-index: -200;
@@ -282,10 +281,11 @@ input {
   }
 
   .blogs-page-forms {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flexbox-positions(
+      $justify: center,
+      $align: center,
+      $direction: column
+    );
     margin: $elements-margin;
 
     .search-form-container {
@@ -304,7 +304,6 @@ input {
       border: 2px solid $secondary-color;
       border: 0;
       border-bottom: 1px solid $secondary-color;
-
       border-radius: 5px 0 0 5px;
       outline: none;
     }
@@ -475,10 +474,11 @@ input {
       }
     }
     .user-blog-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      @include flexbox-positions(
+        $justify: center,
+        $align: center,
+        $direction: column
+      );
       position: sticky;
       top: 0;
       width: 80%;
@@ -489,17 +489,16 @@ input {
       }
 
       .user-category {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flexbox-positions(
+          $justify: center,
+          $align: center,
+          $direction: column
+        );
         border: 2px solid purple;
 
         span {
-          display: flex;
+          @include flexbox-positions($justify: center, $align: center);
           flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
           border: 2px solid red;
         }
 
@@ -521,9 +520,7 @@ input {
     }
 
     .blog-edit-form-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexbox-positions($justify: center, $align: center);
       width: 100%;
       margin: $elements-margin 0;
       form {
@@ -544,10 +541,11 @@ input {
 }
 
 .new-blog-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  @include flexbox-positions(
+    $justify: center,
+    $align: center,
+    $direction: column
+  );
   width: 100%;
   position: absolute;
   z-index: -200;
@@ -594,10 +592,11 @@ input {
 }
 
 .profile-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  @include flexbox-positions(
+    $justify: center,
+    $align: center,
+    $direction: column
+  );
   width: 100%;
   position: absolute;
   z-index: -200;
@@ -623,10 +622,11 @@ input {
   }
 
   .pro-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexbox-positions(
+      $justify: center,
+      $align: center,
+      $direction: column
+    );
     width: 100%;
 
     p {
@@ -655,9 +655,7 @@ input {
   }
 
   .update-pro-popup {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexbox-positions($justify: center, $align: center);
     position: fixed;
     top: 0;
     left: 0;
@@ -667,9 +665,7 @@ input {
   }
 
   .submit-confirm {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexbox-positions($justify: space-between, $align: center);
     position: relative;
     width: 25%;
     max-width: 300px;
@@ -684,9 +680,11 @@ input {
 
 @media only screen and (max-width: 800px) {
   .blog-card-container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexbox-positions(
+      $justify: space-between,
+      $align: center,
+      $direction: column
+    );
 
     .blog-card-teaser {
       order: 2;
