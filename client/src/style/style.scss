@@ -435,16 +435,14 @@ input {
       }
 
       .left {
-        border: 2px dotted purple;
-        width: 80%;
+        width: 75%;
         padding: $user-blog-pad;
       }
       .right {
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 2px solid green;
-        width: 20%;
+        width: 30%;
         padding: $user-blog-pad;
       }
 
@@ -487,24 +485,29 @@ input {
       position: sticky;
       top: 0;
       width: 80%;
-      border: 2px solid red;
+
+      .about-head {
+        text-align: center;
+        width: 100%;
+        border-top: 1px solid $secondary-color;
+        border-bottom: 1px solid $secondary-color;
+      }
 
       .user-profile-picture {
         width: 60%;
       }
 
       .user-category {
+
         @include flexbox-positions(
           $justify: center,
           $align: center,
           $direction: column
         );
-        border: 2px solid purple;
 
         span {
           @include flexbox-positions($justify: center, $align: center);
           flex-wrap: wrap;
-          border: 2px solid red;
         }
 
         p {
@@ -516,11 +519,9 @@ input {
         text-align: center;
         padding: 0.5rem;
       }
-    }
-    .user-blog-info {
-      .about-head {
-        border-top: 1px solid $secondary-color;
-        border-bottom: 1px solid $secondary-color;
+
+      .user-sidebar {
+        width: 100%;
       }
     }
 

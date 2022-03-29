@@ -120,18 +120,22 @@ function Blog({
         </div>
         <div className="blog-col right">
           <div className="user-blog-info">
-            <p className="about-head">About the Author</p>
-            <div className="user-profile-picture">
-              <img src={user.profile_picture} alt="profile" />
+            <div className="user-about user-sidebar">
+              <p className="about-head">About the Author</p>
+              <div className="user-profile-picture">
+                <img src={user.profile_picture} alt="profile" />
+              </div>
             </div>
-            <div className="user-category">
+            <div className="user-category  user-sidebar">
               <p className="about-head">Interests</p>
               <span>{displayUserCategories}</span>
             </div>
-            <div>
+            <div className="user-related  user-sidebar">
               <p className="about-head">Related</p>
               <span>
-                <b>{displayRelatedBlogs}</b>
+                {displayRelatedBlogs[0]}
+                {displayRelatedBlogs[1]}
+                {displayRelatedBlogs[2]}
               </span>
             </div>
           </div>
