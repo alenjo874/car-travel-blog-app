@@ -20,6 +20,7 @@ function Blog({
   blogsArray,
   editBlog,
   setEditBlog,
+  showRelatedBlog,
 }) {
   const [newTitle, setNewTitle] = useState(title);
   const [newBlogEntry, setNewBlogEntry] = useState(blog_entry);
@@ -63,17 +64,19 @@ function Blog({
         value={newBlogEntry}
         onChange={(e) => setNewBlogEntry(e.target.value)}
       ></textarea> */}
-      <CKEditor
-        editor={ClassicEditor}
-        data={blog_entry}
-        onReady={(editor) => {}}
-        onChange={(event, editor) => {
-          const data = editor.getData();
-          setNewBlogEntry(data);
-        }}
-        onBlur={(event, editor) => {}}
-        onFocus={(event, editor) => {}}
-      />
+      <span>
+        <CKEditor
+          editor={ClassicEditor}
+          data={blog_entry}
+          onReady={(editor) => {}}
+          onChange={(event, editor) => {
+            const data = editor.getData();
+            setNewBlogEntry(data);
+          }}
+          onBlur={(event, editor) => {}}
+          onFocus={(event, editor) => {}}
+        />
+      </span>
       <button onClick={submitEditBlog}>Submit</button>
       <button onClick={deleteBlog}>Delete Blog</button>
     </motion.form>
@@ -88,7 +91,11 @@ function Blog({
   const blogPageNumber = blogsArray.map((blog) => blog.id).indexOf(id);
   const relatedBlogs = blogsArray.filter((blog) => blog.user.id === user.id);
   const displayRelatedBlogs = relatedBlogs.map((blog) => {
-    return <p key={uuidv4()}>{blog.title}</p>;
+    return (
+      <p key={uuidv4()} onClick={(e) => showRelatedBlog(blog.id)}>
+        {blog.title}
+      </p>
+    );
   });
 
   return (
@@ -113,7 +120,9 @@ function Blog({
             <div>{parse(blog_entry)}</div>
           </div>
 
-          <div>{editBlog ? cancelEditBtn : editBtn}</div>
+          <div className="editCancelBtn">
+            {editBlog ? cancelEditBtn : editBtn}
+          </div>
           <div className="blog-edit-form-container">
             <AnimatePresence>{editBlog ? editBlogForm : null}</AnimatePresence>
           </div>
@@ -131,7 +140,7 @@ function Blog({
               <span>{displayUserCategories}</span>
             </div>
             <div className="user-related  user-sidebar">
-              <p className="about-head">Related</p>
+              <p className="about-head">Read More</p>
               <span>
                 {displayRelatedBlogs[0]}
                 {displayRelatedBlogs[1]}

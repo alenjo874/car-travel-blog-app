@@ -10,6 +10,14 @@ function BlogEntryForm({ setBlogsArray }) {
   const [thumbnail, setThumbnail] = useState("");
   const [blogEntry, setBlogEntry] = useState("");
   const history = useHistory();
+
+  function SubmitButton() {
+    if (title && thumbnail && blogEntry.length > 30) {
+      return <button type="submit">Submit</button>;
+    } else {
+      return null;
+    }
+  }
   function submitNewBlog(e) {
     e.preventDefault();
     const newBlogObj = {
@@ -37,7 +45,7 @@ function BlogEntryForm({ setBlogsArray }) {
     history.push("/blogs");
   }
 
-  const profileIntroBanner = (
+  const newBlogIntroBanner = (
     <div className="blog-page-intro">
       <span className="intro-overlay">
         <motion.h2
@@ -45,9 +53,9 @@ function BlogEntryForm({ setBlogsArray }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.1, duration: 0.6, ease: "easeIn" }}
         >
-          Welcome
+          Write Your Story Today
         </motion.h2>
-        <p>Update Profile</p>
+        <p>We Would Love to Hear From You</p>
       </span>
       <div className="blog-intro-banner">
         <img src={DirtRoad} loading="lazy" alt="open road" />
@@ -57,7 +65,7 @@ function BlogEntryForm({ setBlogsArray }) {
 
   return (
     <div className="new-blog-container">
-      <div className="new-blog-head">{profileIntroBanner}</div>
+      <div className="new-blog-head">{newBlogIntroBanner}</div>
 
       <motion.form
         initial={{ y: -5, opacity: 0 }}
@@ -90,7 +98,9 @@ function BlogEntryForm({ setBlogsArray }) {
             onFocus={(event, editor) => {}}
           />
         </span>
-        <button type="submit">Submit</button>
+
+        {/* <button type="submit">Submit</button> */}
+        <SubmitButton />
       </motion.form>
     </div>
   );

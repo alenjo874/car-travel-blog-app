@@ -85,7 +85,7 @@ function ProfilePage({ setCurrentUser, currentUser }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeIn" }}
         >
-          Welcome {currentUser.name}
+          Welcome {currentUser.name} 
         </motion.h2>
       </span>
       <div className="blog-intro-banner">

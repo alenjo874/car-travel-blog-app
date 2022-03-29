@@ -14,7 +14,9 @@ function HomePage() {
           className="home-blurb"
         >
           <p>Tell Us Your Story</p>
-          <em>Connect and Share stories with car enthusiasts</em>
+          <em>
+            Share your passion with other car enthusiasts and travelers
+          </em>
           <Link to="/new_blog">
             <button>Get Started</button>
           </Link>

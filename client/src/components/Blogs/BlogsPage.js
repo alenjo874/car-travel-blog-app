@@ -18,6 +18,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
 
   function changeShowBlogState(id) {
     setShowBlog(true);
+    setEditBlog(false);
     setClickedBlog(id);
   }
 
@@ -41,6 +42,11 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
         return blogsArray[blogIdArray.indexOf(prev) - 1].id;
       });
     }
+  }
+
+  function showRelatedBlog(id) {
+    setEditBlog(false);
+    setClickedBlog(id);
   }
 
   const searchBlogArray = blogsArray.filter(
@@ -112,6 +118,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
 
   function handleExploreBlogs() {
     setShowBlog(true);
+    setEditBlog(false);
     setClickedBlog(blogsArray[0].id);
   }
 
@@ -130,7 +137,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.1, duration: 0.6, ease: "easeIn" }}
         >
-          Tell your Story Today
+          Connecting Through Conversation
         </motion.h2>
         <motion.div
           initial={{ y: 5, opacity: 0 }}
@@ -181,6 +188,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
                 changeBackToBlogDispaly={changeBackToBlogDispaly}
                 showNextBlogPage={showNextBlogPage}
                 blogsArray={blogsArray}
+                showRelatedBlog={showRelatedBlog}
               />
             ) : (
               displayBlogCard

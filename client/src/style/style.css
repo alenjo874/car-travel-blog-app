@@ -14,13 +14,17 @@ img {
   width: 100%;
 }
 
+input {
+  font-family: "Playfair Display";
+}
+
 textarea {
   min-height: 200px;
   font-family: "Playfair Display";
 }
 
 button {
-  border: 2px solid #121212;
+  border: 1.5px solid #121212;
   padding: 0.5rem 1.2rem;
   background-color: transparent;
   -webkit-transition: 0.2s;
@@ -552,8 +556,26 @@ input {
   min-height: 200vh;
 }
 
+.blogs-page-container .user-blog-container .about-head {
+  text-align: center;
+  font-size: 1rem;
+  width: 100%;
+  border-top: 1.5px solid #121212;
+  border-bottom: 1.5px solid #121212;
+}
+
+.blogs-page-container .user-blog-container p {
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
 .blogs-page-container .user-blog-container img {
   border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.blogs-page-container .user-blog-container .editCancelBtn {
+  margin: 15px 0;
 }
 
 .blogs-page-container .user-blog-container .user-blog-columns {
@@ -561,10 +583,6 @@ input {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-}
-
-.blogs-page-container .user-blog-container .user-blog-columns p {
-  margin: 15px 0;
 }
 
 .blogs-page-container .user-blog-container .user-blog-columns .left {
@@ -642,15 +660,8 @@ input {
   width: 80%;
 }
 
-.blogs-page-container .user-blog-container .user-blog-info .about-head {
-  text-align: center;
-  width: 100%;
-  border-top: 1px solid #121212;
-  border-bottom: 1px solid #121212;
-}
-
 .blogs-page-container .user-blog-container .user-blog-info .user-profile-picture {
-  width: 60%;
+  width: 40%;
 }
 
 .blogs-page-container .user-blog-container .user-blog-info .user-category {
@@ -697,7 +708,25 @@ input {
 }
 
 .blogs-page-container .user-blog-container .user-blog-info .user-sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
+}
+
+.blogs-page-container .user-blog-container .user-related span p:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #121212;
 }
 
 .blogs-page-container .user-blog-container .blog-edit-form-container {
@@ -731,6 +760,10 @@ input {
 
 .blogs-page-container .user-blog-container .blog-edit-form-container form input {
   margin-bottom: 15px;
+}
+
+.blogs-page-container .user-blog-container .blog-edit-form-container form span {
+  margin-top: 15px;
 }
 
 .blogs-page-container .user-blog-container .blog-edit-form-container form button {
