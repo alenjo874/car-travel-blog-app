@@ -191,19 +191,25 @@ input {
   margin-left: 1.5em;
 }
 
-.navbar-container .nav-elements {
+.navbar-container .nav-elements-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   font-weight: 600;
 }
 
-.navbar-container .nav-elements p {
+.navbar-container .nav-elements-container .nav-elements:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #fff;
+}
+
+.navbar-container .pro-pic {
+  width: 40px;
   margin-right: 1.5em;
 }
 
-.navbar-container .nav-elements :hover {
-  cursor: pointer;
+.navbar-container .pro-pic img {
+  border-radius: 50%;
 }
 
 .login-page-container {
@@ -828,6 +834,10 @@ input {
 
 .profile-container .pro-head {
   width: 100%;
+}
+
+.profile-container .pro-head h2 {
+  font-size: 4rem;
 }
 
 .profile-container .pro-head .blog-page-intro {

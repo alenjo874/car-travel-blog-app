@@ -185,18 +185,26 @@ input {
       margin-left: $nav-margin;
     }
   }
-  .nav-elements {
+  .nav-elements-container {
     display: flex;
     font-weight: 600;
 
-    p {
-      margin-right: $nav-margin;
-    }
-    :hover {
-      cursor: pointer;
+    .nav-elements {
+      &:hover {
+        cursor: pointer;
+        border-bottom: 1px solid $accent-color;
+      }
     }
   }
   font-size: $nav-fontsize;
+
+  .pro-pic {
+    width: 40px;
+    margin-right: $nav-margin;
+    img {
+      border-radius: 50%;
+    }
+  }
 }
 
 .login-page-container {
@@ -607,6 +615,10 @@ input {
 
   .pro-head {
     width: 100%;
+
+    h2 {
+      font-size: 4rem;
+    }
 
     .blog-page-intro {
       @include blog-intro();

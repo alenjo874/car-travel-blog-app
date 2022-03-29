@@ -1,27 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavBar({blogsArray}) {
+function NavBar({ blogsArray }) {
   return (
     <div className="navbar-container">
       <div>
         <h4>Logo</h4>
       </div>
-      <div className="nav-elements">
+      <div className="nav-elements-container">
         <ul>
           <Link to="/">
-            <li>Home</li>
+            <li className="nav-elements">Home</li>
           </Link>
           <Link to="/blogs">
-            <li>Blogs</li>
+            <li className="nav-elements">Blogs</li>
+          </Link>
+          <Link to="/profile">
+            <li className="nav-elements">Profile</li>
           </Link>
         </ul>
-        <div>
-          <Link to="/profile">
-            <p>Profile</p>
-            {/* <img > */}
-          </Link>
-        </div>
       </div>
     </div>
   );

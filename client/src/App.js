@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar blogsArray={blogsArray} />
+      <NavBar blogsArray={blogsArray} {...currentUser} />
       <Switch>
         <Route exact path="/">
           <HomePage />
