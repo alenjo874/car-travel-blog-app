@@ -745,4 +745,23 @@ input {
       font-size: 1.5rem;
     }
   }
+
+  .ham-elements-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+    // background-color: $secondary-color;
+
+    ul {
+      text-align: center;
+      padding: 0;
+
+      li {
+        margin-bottom: $elements-margin;
+      }
+    }
+  }
 }

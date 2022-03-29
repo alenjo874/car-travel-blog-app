@@ -1060,5 +1060,29 @@ input {
     outline: 0;
     font-size: 1.5rem;
   }
+  .ham-elements-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    font-weight: 600;
+  }
+  .ham-elements-container ul {
+    text-align: center;
+    padding: 0;
+  }
+  .ham-elements-container ul li {
+    margin-bottom: 15px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
