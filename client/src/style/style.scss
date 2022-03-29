@@ -4,6 +4,7 @@ $blog-card-padding: 10px;
 $primary-color: #141414;
 $secondary-color: #121212;
 $accent-color: #fff;
+$active-color: #7a7a7a;
 $highlight-color: #ac0b0a;
 $user-blog-fontsize: 1.25rem;
 $nav-bar-height: 80px;
@@ -144,13 +145,13 @@ input {
   button:hover {
     cursor: pointer;
     transition: 0.2s;
-    background-color: #7a7a7a;
+    background-color: $active-color;
   }
 
   button:active {
     cursor: pointer;
     transition: 0.2s;
-    background-color: #7a7a7a;
+    background-color: $active-color;
   }
 
   p,
@@ -177,22 +178,26 @@ input {
     margin-left: $nav-margin;
   }
 
-  ul {
-    display: flex;
-    margin-right: $nav-margin;
-
-    li {
-      margin-left: $nav-margin;
-    }
-  }
   .nav-elements-container {
     display: flex;
     font-weight: 600;
 
-    .nav-elements {
+    ul {
+      display: flex;
+      margin-right: $nav-margin;
+    }
+
+    li {
+      transition: 0.2s;
+      margin-left: $nav-margin;
       &:hover {
         cursor: pointer;
         border-bottom: 1px solid $accent-color;
+      }
+
+      &:active {
+        color: $active-color;
+        transition: 0.2s;
       }
     }
   }
@@ -249,13 +254,13 @@ input {
       button:hover {
         cursor: pointer;
         transition: 0.2s;
-        background-color: #7a7a7a;
+        background-color: $active-color;
       }
 
       button:active {
         cursor: pointer;
         transition: 0.2s;
-        background-color: #7a7a7a;
+        background-color: $active-color;
       }
     }
   }
@@ -359,13 +364,13 @@ input {
       button:hover {
         cursor: pointer;
         transition: 0.2s;
-        background-color: #7a7a7a;
+        background-color: $active-color;
       }
 
       button:active {
         cursor: pointer;
         transition: 0.2s;
-        background-color: #7a7a7a;
+        background-color: $active-color;
       }
     }
   }
@@ -581,11 +586,15 @@ input {
   form {
     display: flex;
     flex-direction: column;
-    width: 60%;
-    margin: $elements-margin;
+    width: 75%;
+    margin: $elements-margin * 4;
 
-    input {
-      margin-bottom: $elements-margin;
+    label {
+      margin-top: $elements-margin;
+    }
+
+    span {
+      margin: $elements-margin 0;
     }
 
     button {
@@ -593,7 +602,6 @@ input {
     }
 
     .ck-content {
-      border: 2px solid red;
       height: 500px;
     }
   }

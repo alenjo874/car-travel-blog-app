@@ -78,18 +78,19 @@ function BlogEntryForm({ setBlogsArray }) {
           value={blogEntry}
           onChange={(e) => setBlogEntry(e.target.value)}
         ></textarea> */}
-        <CKEditor
-          editor={ClassicEditor}
-          data=""
-          onReady={(editor) => {}}
-          onChange={(event, editor) => {
-            const data = editor.getData();
-            setBlogEntry(data);
-          }}
-          onBlur={(event, editor) => {}}
-          onFocus={(event, editor) => {}}
-        />
-
+        <span>
+          <CKEditor
+            editor={ClassicEditor}
+            data=""
+            onReady={(editor) => {}}
+            onChange={(event, editor) => {
+              const data = editor.getData();
+              setBlogEntry(data);
+            }}
+            onBlur={(event, editor) => {}}
+            onFocus={(event, editor) => {}}
+          />
+        </span>
         <button type="submit">Submit</button>
       </motion.form>
     </div>

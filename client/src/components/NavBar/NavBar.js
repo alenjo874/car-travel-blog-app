@@ -10,13 +10,13 @@ function NavBar({ blogsArray }) {
       <div className="nav-elements-container">
         <ul>
           <Link to="/">
-            <li className="nav-elements">Home</li>
+            <li>Home</li>
           </Link>
           <Link to="/blogs">
-            <li className="nav-elements">Blogs</li>
+            <li>Blogs</li>
           </Link>
           <Link to="/profile">
-            <li className="nav-elements">Profile</li>
+            <li>Profile</li>
           </Link>
         </ul>
       </div>

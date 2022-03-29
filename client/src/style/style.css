@@ -180,17 +180,6 @@ input {
   margin-left: 1.5em;
 }
 
-.navbar-container ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: 1.5em;
-}
-
-.navbar-container ul li {
-  margin-left: 1.5em;
-}
-
 .navbar-container .nav-elements-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -198,9 +187,28 @@ input {
   font-weight: 600;
 }
 
-.navbar-container .nav-elements-container .nav-elements:hover {
+.navbar-container .nav-elements-container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 1.5em;
+}
+
+.navbar-container .nav-elements-container li {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  margin-left: 1.5em;
+}
+
+.navbar-container .nav-elements-container li:hover {
   cursor: pointer;
   border-bottom: 1px solid #fff;
+}
+
+.navbar-container .nav-elements-container li:active {
+  color: #7a7a7a;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .navbar-container .pro-pic {
@@ -792,12 +800,16 @@ input {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 60%;
-  margin: 15px;
+  width: 75%;
+  margin: 60px;
 }
 
-.new-blog-container form input {
-  margin-bottom: 15px;
+.new-blog-container form label {
+  margin-top: 15px;
+}
+
+.new-blog-container form span {
+  margin: 15px 0;
 }
 
 .new-blog-container form button {
@@ -805,7 +817,6 @@ input {
 }
 
 .new-blog-container form .ck-content {
-  border: 2px solid red;
   height: 500px;
 }
 
