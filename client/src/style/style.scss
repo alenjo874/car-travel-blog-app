@@ -16,6 +16,30 @@ $user-blog-pad: 15px;
   src: url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 }
 
+@mixin blog-intro() {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@mixin intro-overlay() {
+  position: absolute;
+  text-align: center;
+  color: $accent-color;
+  font-size: 1.5rem;
+}
+
+@mixin page-banner() {
+  height: 40vh;
+  width: 100%;
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 body {
   font-family: "Playfair Display";
   background-color: $secondary-color;
@@ -309,26 +333,14 @@ input {
     margin-top: 80px;
 
     .blog-page-intro {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
+      @include blog-intro();
 
       .intro-overlay {
-        position: absolute;
-        text-align: center;
-        color: $accent-color;
-        font-size: 1.5rem;
+        @include intro-overlay();
       }
 
       .blog-intro-banner {
-        height: 40vh;
-        width: 100%;
-        img {
-          height: 100%;
-          object-fit: cover;
-        }
+        @include page-banner();
       }
 
       button {
@@ -548,26 +560,14 @@ input {
     width: 100%;
 
     .blog-page-intro {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
+      @include blog-intro();
 
       .intro-overlay {
-        position: absolute;
-        text-align: center;
-        color: $accent-color;
-        font-size: 1.5rem;
+        @include intro-overlay();
       }
 
       .blog-intro-banner {
-        height: 40vh;
-        width: 100%;
-        img {
-          height: 100%;
-          object-fit: cover;
-        }
+        @include page-banner();
       }
     }
   }
@@ -610,26 +610,14 @@ input {
     width: 100%;
 
     .blog-page-intro {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
+      @include blog-intro();
 
       .intro-overlay {
-        position: absolute;
-        text-align: center;
-        color: $accent-color;
-        font-size: 1.5rem;
+        @include intro-overlay();
       }
 
       .blog-intro-banner {
-        height: 40vh;
-        width: 100%;
-        img {
-          height: 100%;
-          object-fit: cover;
-        }
+        @include page-banner();
       }
     }
   }
