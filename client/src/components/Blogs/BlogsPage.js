@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import BlogCard from "./BlogCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion/dist/framer-motion";
 import Blog from "./Blog";
-import BlogEntryForm from "./BlogEntryForm";
 import Road from "../../style/images/Road.jpg";
 import { Link } from "react-router-dom";
 

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion/dist/framer-motion";
-import Bloggers from "../../style/images/UndrawBlog.png";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { useHistory } from "react-router-dom";

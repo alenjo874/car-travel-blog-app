@@ -122,7 +122,7 @@ function Blog({
           <div className="user-blog-info">
             <p className="about-head">About the Author</p>
             <div className="user-profile-picture">
-              <img src={user.profile_picture} />
+              <img src={user.profile_picture} alt="profile" />
             </div>
             <div className="user-category">
               <p className="about-head">Interests</p>

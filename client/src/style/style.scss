@@ -12,10 +12,6 @@ $img-border-radius: 4px;
 $elements-margin: 15px;
 $user-blog-pad: 15px;
 // box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.6);
-@font-face {
-  font-family: "Playfair Display";
-  src: url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
-}
 
 @mixin blog-intro() {
   width: 100%;
@@ -169,6 +165,10 @@ input {
   width: 100%;
   color: $accent-color;
   background-color: transparent;
+  .nav-elem-ham {
+    width: 100%;
+    @include flexbox-positions($justify: space-between, $align: center);
+  }
   a {
     text-decoration: none;
     color: $accent-color;
@@ -185,31 +185,23 @@ input {
     ul {
       display: flex;
       margin-right: $nav-margin;
-    }
 
-    li {
-      transition: 0.2s;
-      margin-left: $nav-margin;
-      &:hover {
-        cursor: pointer;
-        border-bottom: 1px solid $accent-color;
-      }
-
-      &:active {
-        color: $active-color;
+      li {
         transition: 0.2s;
+        margin-left: $nav-margin;
+        &:hover {
+          cursor: pointer;
+          border-bottom: 1px solid $accent-color;
+        }
+
+        &:active {
+          color: $active-color;
+          transition: 0.2s;
+        }
       }
     }
   }
   font-size: $nav-fontsize;
-
-  .pro-pic {
-    width: 40px;
-    margin-right: $nav-margin;
-    img {
-      border-radius: 50%;
-    }
-  }
 }
 
 .login-page-container {
@@ -616,7 +608,6 @@ input {
   width: 100%;
   position: absolute;
   z-index: -200;
-  min-height: 100vh;
   top: $nav-bar-height;
   background-color: #fff;
   color: $primary-color;
@@ -712,6 +703,46 @@ input {
     }
     .blog-thumbnail {
       order: 1;
+    }
+  }
+}
+.nav-hamburger-container {
+  display: none;
+  text-align: center;
+  top: 80px;
+  right: 0;
+  background-color: transparent;
+}
+
+@media only screen and (min-width: 500px) {
+  .ham-elements-container {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar-container {
+    flex-direction: column;
+    .nav-elements-container {
+      display: none;
+    }
+  }
+
+  .nav-elem-ham {
+    width: 100%;
+    @include flexbox-positions($justify: space-between, $align: center);
+  }
+
+  .nav-hamburger-container {
+    display: block;
+    margin-right: $elements-margin;
+
+    .nav-hamburger-btn {
+      background-color: transparent;
+      color: $accent-color;
+      border: 0;
+      outline: 0;
+      font-size: 1.5rem;
     }
   }
 }
