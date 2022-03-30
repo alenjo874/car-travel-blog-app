@@ -47,7 +47,7 @@ function LogInForm({ handleLogIn }) {
         <input
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="Email"
+          placeholder="Username"
         ></input>
         <label>Password</label>
         <input

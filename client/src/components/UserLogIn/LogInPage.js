@@ -1,12 +1,12 @@
 import React from "react";
-import OverheadRoad from "../../style/images/OverheadRoad.jpg";
+import Roadtrip from "../../style/images/Roadtrip.jpg";
 import LogInForm from "./LogInForm";
 
 function LogInPage({ handleLogIn }) {
   return (
     <div className="login-page-container">
       <div>
-        <img src={OverheadRoad} alt="BMW" />
+        <img src={Roadtrip} alt="BMW" />
       </div>
       <LogInForm handleLogIn={handleLogIn} />
     </div>

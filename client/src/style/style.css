@@ -97,6 +97,7 @@ input {
   z-index: 100;
   top: 250px;
   left: 50px;
+  padding: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -236,6 +237,7 @@ input {
      object-fit: cover;
   max-height: 100vh;
   width: 100%;
+  filter: lur(4px);
   -webkit-filter: blur(4px);
   -moz-filter: blur(4px);
   -o-filter: blur(4px);
@@ -266,6 +268,7 @@ input {
       -ms-flex-direction: row;
           flex-direction: row;
   background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
   color: #fff;
 }
 
@@ -1109,6 +1112,7 @@ input {
   position: relative;
   width: 25%;
   max-width: 300px;
+  min-width: 150px;
   background-color: #fff;
   padding: 10px 20px;
 }
@@ -1176,7 +1180,13 @@ input {
 }
 
 @media only screen and (max-width: 500px) {
+  * {
+    font-size: 14px;
+  }
   .navbar-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1213,6 +1223,7 @@ input {
     font-size: 1.5rem;
   }
   .ham-elements-container {
+    position: absolute;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1227,14 +1238,29 @@ input {
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
+    top: 50px;
     font-weight: 600;
   }
   .ham-elements-container ul {
     text-align: center;
     padding: 0;
+    background-color: #121212;
+    width: 100%;
   }
   .ham-elements-container ul li {
-    margin-bottom: 15px;
+    margin: 15px 0;
+  }
+  .home-page-container .home-blurb {
+    top: 100px;
+    left: 0;
+  }
+  .blogs-page-container .user-blog-container .user-blog-columns {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .blogs-page-container .user-blog-container .user-blog-columns .right {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

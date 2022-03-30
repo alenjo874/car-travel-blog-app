@@ -122,6 +122,8 @@ input {
     z-index: 100;
     top: 250px;
     left: 50px;
+    // border: 1.5px solid $accent-color;
+    padding: 30px;
     @include flexbox-positions(
       $justify: flex-start,
       $align: flex-start,
@@ -215,6 +217,7 @@ input {
     object-fit: cover;
     max-height: 100vh;
     width: 100%;
+    filter: lur($blur);
     -webkit-filter: blur($blur);
     -moz-filter: blur($blur);
     -o-filter: blur($blur);
@@ -231,9 +234,9 @@ input {
     width: 30%;
     max-width: 500px;
     min-width: 350px;
-    // height: 60%;
     @include flexbox-positions($justify: center, $align: flex-start);
     background-color: rgba(0, 0, 0, 0.75);
+    border-radius: $img-border-radius;
     color: $accent-color;
     form {
       font-size: 1.25rem;
@@ -781,6 +784,7 @@ input {
     position: relative;
     width: 25%;
     max-width: 300px;
+    min-width: 150px;
     background-color: $accent-color;
     padding: 10px 20px;
 
@@ -844,7 +848,12 @@ input {
 }
 
 @media only screen and (max-width: 500px) {
+  * {
+    font-size: 14px;
+  }
+
   .navbar-container {
+    justify-content: center;
     flex-direction: column;
     .nav-elements-container {
       display: none;
@@ -858,6 +867,7 @@ input {
 
   .nav-hamburger-container {
     display: block;
+
     margin-right: $elements-margin;
 
     .nav-hamburger-btn {
@@ -870,20 +880,40 @@ input {
   }
 
   .ham-elements-container {
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    top: 50px;
     font-weight: 600;
-    // background-color: $secondary-color;
-
+  
     ul {
       text-align: center;
       padding: 0;
-
+      background-color: $secondary-color;
+      width: 100%;
       li {
-        margin-bottom: $elements-margin;
+        margin: $elements-margin 0;
+      }
+    }
+  }
+
+  .home-page-container {
+    .home-blurb {
+      top: 100px;
+      left: 0;
+    }
+  }
+
+  .blogs-page-container {
+    .user-blog-container {
+      .user-blog-columns {
+        justify-content: center;
+        .right {
+          display: none;
+        }
       }
     }
   }

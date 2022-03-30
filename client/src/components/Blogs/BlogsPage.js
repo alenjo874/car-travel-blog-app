@@ -33,7 +33,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
       .then((response) => setNewsArray(response.articles));
   }, []);
 
-  console.log(newsArray);
+
 
   const displayNewsCard = newsArray.map((news) => {
     return <NewsCard {...news} />;
