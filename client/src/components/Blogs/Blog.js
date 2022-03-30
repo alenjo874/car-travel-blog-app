@@ -30,6 +30,7 @@ function Blog({
   }, []);
 
   function handleEditBlog() {
+    setNewTitle(title);
     setEditBlog((prev) => !prev);
   }
 
@@ -60,10 +61,7 @@ function Blog({
         onChange={(e) => setNewTitle(e.target.value)}
       ></input>
       <label>Entry</label>
-      {/* <textarea
-        value={newBlogEntry}
-        onChange={(e) => setNewBlogEntry(e.target.value)}
-      ></textarea> */}
+
       <span>
         <CKEditor
           editor={ClassicEditor}
