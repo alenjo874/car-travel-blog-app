@@ -51,11 +51,17 @@ function BlogEntryForm({ setBlogsArray }) {
         <motion.h2
           initial={{ y: 5, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.1, duration: 0.6, ease: "easeIn" }}
+          transition={{ duration: 0.6, ease: "easeIn" }}
         >
           Write Your Story Today
         </motion.h2>
-        <p>We Would Love to Hear From You</p>
+        <motion.p
+          initial={{ y: 5, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.1, duration: 0.6, ease: "easeIn" }}
+        >
+          We Would Love to Hear From You
+        </motion.p>
       </span>
       <div className="blog-intro-banner">
         <img src={DirtRoad} loading="lazy" alt="open road" />

@@ -550,6 +550,9 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 50px;
   font-size: 1.25rem;
   width: 80%;
@@ -582,12 +585,16 @@ input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
 }
 
 .blogs-page-container .user-blog-container .user-blog-columns .left {
   width: 75%;
   padding: 15px;
+  margin: 0 15px;
 }
 
 .blogs-page-container .user-blog-container .user-blog-columns .right {
@@ -603,6 +610,7 @@ input {
           align-items: center;
   width: 30%;
   padding: 15px;
+  margin: 0 15px;
 }
 
 .blogs-page-container .user-blog-container .user-blog-columns .user-blog-head-btn {

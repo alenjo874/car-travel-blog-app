@@ -421,6 +421,7 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     margin: 50px;
     font-size: $user-blog-fontsize;
     width: 80%;
@@ -451,11 +452,13 @@ input {
 
     .user-blog-columns {
       display: flex;
+      justify-content: space-between;
       width: 100%;
 
       .left {
         width: 75%;
         padding: $user-blog-pad;
+        margin: 0 $elements-margin;
       }
       .right {
         display: flex;
@@ -463,6 +466,7 @@ input {
         align-items: center;
         width: 30%;
         padding: $user-blog-pad;
+        margin: 0 $elements-margin;
       }
 
       .user-blog-head-btn {
