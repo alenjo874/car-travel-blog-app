@@ -1,31 +1,19 @@
 import React from "react";
 
-function NewsCard(
-  {
-    source,
-    author,
-    title,
-    description,
-    url,
-    urlToImage,
-    publishedAt,
-    content,
-  }
-) {
-
+function NewsCard({ title, summary, media, rights, link }) {
   return (
     <div className="news-card-container">
       <div className="news-head">
         <span>
-          <b>{title} </b>
-          <p>{source.name} </p>
+          <b>{title}</b>
+          <p>{rights} </p>
         </span>
-        <a className="news-thumbnail" href={url} target="_blank">
-          <img src={urlToImage} />
+        <a className="news-thumbnail" href={link} target="_blank">
+          <img src={media} />
         </a>
       </div>
       <div className="news-body">
-        <p>{description} </p>
+        <p>{summary} </p>
       </div>
     </div>
   );

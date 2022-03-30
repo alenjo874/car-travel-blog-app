@@ -18,4 +18,6 @@ In this project you can:
     - Write Blogs
     - Edit Blogs
     - Delete Blogs
+    - View Related News Articles using external api
+      - https://newscatcherapi.com/free-news-api
 

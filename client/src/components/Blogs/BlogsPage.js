@@ -26,7 +26,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
 
   useEffect(() => {
     fetch(
-      "https://free-news.p.rapidapi.com/v1/search?q=Car%20Travel&lang=en",
+      "https://free-news.p.rapidapi.com/v1/search?q=Car%20Car&lang=en",
       options
     )
       .then((response) => response.json())
@@ -222,11 +222,11 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
               )}
             </div>
 
-            {/* {showBlog ? null : (
+            {showBlog ? null : (
               <div className="news-container">
                 {displayNewsCard}
               </div>
-            )} */}
+            )}
           </motion.div>
         </div>
       </div>
