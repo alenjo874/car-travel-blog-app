@@ -289,6 +289,50 @@ input {
     }
   }
 
+  .blog-news-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .news-container {
+    width: 30%;
+
+    .news-card-container {
+      border: 1px solid $secondary-color;
+      border-radius: $img-border-radius;
+      margin: 25px;
+      max-width: 500px;
+      padding: 35px;
+      @include flexbox-positions(
+        $justify: center,
+        $align: center,
+        $direction: column
+      );
+
+      .news-head {
+        @include flexbox-positions($justify: center, $align: center);
+      }
+
+      .news-thumbnail {
+        max-width: 100px;
+        max-height: 100px;
+        img {
+          border-radius: $img-border-radius;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .news-body {
+        p {
+          margin-top: $elements-margin * 2;
+        }
+      }
+    }
+  }
+
   .blogs-page-forms {
     @include flexbox-positions(
       $justify: center,
@@ -328,17 +372,25 @@ input {
   }
 
   .blog-display {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
+    @include flexbox-positions(
+      $justify: flex-start,
+      $align: center,
+      $direction: column
+    );
+    width: 60%;
   }
 
   .blog-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
     margin-top: 80px;
+
+    .blog-body-container {
+      width: 100%;
+      border: 2px solid yellow;
+    }
 
     .blog-page-intro {
       @include blog-intro();
@@ -375,16 +427,16 @@ input {
     display: flex;
     justify-content: space-evenly;
     margin: 15px;
-    padding: $blog-card-padding;
     border-bottom: 1px solid $secondary-color;
     width: 80%;
+    max-height: 350px;
     max-width: 900px;
-    padding: 50px;
 
     .blog-card-teaser {
       display: flex;
       flex-direction: column;
       width: 80%;
+      padding: 35px;
 
       span {
         padding: $blog-card-padding;
@@ -401,7 +453,7 @@ input {
       justify-content: center;
       align-items: center;
       width: 100%;
-      max-width: 250px;
+      max-width: 200px;
 
       img {
         border-radius: $img-border-radius;
@@ -748,6 +800,29 @@ input {
   top: 80px;
   right: 0;
   background-color: transparent;
+}
+
+@media only screen and (max-width: 1100px) {
+  .news-container {
+    display: none;
+  }
+
+  .blogs-page-container {
+    .blog-card-container {
+      max-height: none;
+    }
+
+    .blog-card-teaser {
+      margin-top: 0;
+    }
+  }
+
+  .blog-news-container {
+    .blog-display {
+      width: 100%;
+      border: 2px solid red;
+    }
+  }
 }
 
 @media only screen and (min-width: 500px) {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import BlogCard from "./BlogCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,12 +7,33 @@ import { motion } from "framer-motion/dist/framer-motion";
 import Blog from "./Blog";
 import Road from "../../style/images/Road.jpg";
 import { Link } from "react-router-dom";
+import NewsCard from "./NewsCard";
 
 function BlogsPage({ blogsArray, setBlogsArray }) {
   const [showBlog, setShowBlog] = useState(false);
   const [clickedBlog, setClickedBlog] = useState("");
   const [searchBlog, setSearchBlog] = useState("");
   const [editBlog, setEditBlog] = useState(false);
+  const [newsArray, setNewsArray] = useState([]);
+
+  const url =
+    "https://newsapi.org/v2/everything?" +
+    "q=Car&" +
+    "from=2022-03-30&" +
+    "sortBy=popularity&" +
+    "apiKey=6a89e8e3ead24766999a488e9b076dd5";
+
+  const req = new Request(url);
+
+  useEffect(() => {
+    fetch(req)
+      .then((res) => res.json())
+      .then(data => setNewsArray(data.articles));
+  }, []);
+
+  const displayNewsCard = newsArray.map((news) => {
+    return <NewsCard {...news} />;
+  });
 
   const blogIdArray = blogsArray.map((blog) => blog.id);
 
@@ -165,33 +186,43 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   return (
     <div className="blogs-page-container">
       <div className="blog-banner"></div>
+
       <div className="blog-list">
         {showBlog ? null : blogIntroPage}
-        <div>
+        <div className="blog-body-container">
           {showBlog ? null : (
             <div className="blogs-page-forms">{searchBlogForm}</div>
           )}
 
           <motion.div
-            className="blog-display"
+            className="blog-news-container"
             initial={{ y: -5, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6, ease: "easeIn" }}
           >
-            {showBlog ? (
-              <Blog
-                editBlog={editBlog}
-                setEditBlog={setEditBlog}
-                {...clickedBlogObj}
-                handleBlogUpdate={handleBlogUpdate}
-                handleDeleteBlog={handleDeleteBlog}
-                changeBackToBlogDispaly={changeBackToBlogDispaly}
-                showNextBlogPage={showNextBlogPage}
-                blogsArray={blogsArray}
-                showRelatedBlog={showRelatedBlog}
-              />
-            ) : (
-              displayBlogCard
+            <div className="blog-display">
+              {showBlog ? (
+                <Blog
+                  editBlog={editBlog}
+                  setEditBlog={setEditBlog}
+                  {...clickedBlogObj}
+                  handleBlogUpdate={handleBlogUpdate}
+                  handleDeleteBlog={handleDeleteBlog}
+                  changeBackToBlogDispaly={changeBackToBlogDispaly}
+                  showNextBlogPage={showNextBlogPage}
+                  blogsArray={blogsArray}
+                  showRelatedBlog={showRelatedBlog}
+                />
+              ) : (
+                displayBlogCard
+              )}
+            </div>
+
+            {showBlog ? null : (
+              <div className="news-container">
+                {displayNewsCard}
+                {/* <NewsCard /> */}
+              </div>
             )}
           </motion.div>
         </div>
