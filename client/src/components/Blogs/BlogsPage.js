@@ -16,22 +16,24 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   const [editBlog, setEditBlog] = useState(false);
   const [newsArray, setNewsArray] = useState([]);
 
-  const url =
-    "https://newsapi.org/v2/everything?" +
-    "q=Car&" +
-    "from=2022-03-30&" +
-    "sortBy=popularity&" +
-    "apiKey=6a89e8e3ead24766999a488e9b076dd5";
-
-  const req = new Request(url);
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Host": "free-news.p.rapidapi.com",
+      "X-RapidAPI-Key": "6c5c904991msh1c71df644d278c1p173e5cjsndc2a28f5c4ca",
+    },
+  };
 
   useEffect(() => {
     fetch(
-      "http://api.mediastack.com/v1/news?access_key=117e7dd5617cb2a0fdab4633594c49ba&keywords=car&countries=us"
+      "https://free-news.p.rapidapi.com/v1/search?q=Car%20Travel&lang=en",
+      options
     )
-      .then((res) => res.json())
-      .then(data => console.log(data));
+      .then((response) => response.json())
+      .then((response) => setNewsArray(response.articles));
   }, []);
+
+  console.log(newsArray);
 
   const displayNewsCard = newsArray.map((news) => {
     return <NewsCard {...news} />;
