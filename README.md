@@ -1,5 +1,7 @@
 # My Blogger App
 
+https://car-travel-blog-app.herokuapp.com/blogs
+
 This project was built for people who love cars, road trips, and traveling to connect through blogs. 
 
 To start the project please run these commands
@@ -16,5 +18,4 @@ In this project you can:
     - Write Blogs
     - Edit Blogs
     - Delete Blogs
-    - See Related News Articles
-      - news fetched from api (https://newsapi.org/)
+

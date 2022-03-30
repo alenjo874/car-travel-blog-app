@@ -16,24 +16,26 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   const [editBlog, setEditBlog] = useState(false);
   const [newsArray, setNewsArray] = useState([]);
 
-  // const url =
-  //   "https://newsapi.org/v2/everything?" +
-  //   "q=Car&" +
-  //   "from=2022-03-30&" +
-  //   "sortBy=popularity&" +
-  //   "apiKey=6a89e8e3ead24766999a488e9b076dd5";
+  const url =
+    "https://newsapi.org/v2/everything?" +
+    "q=Car&" +
+    "from=2022-03-30&" +
+    "sortBy=popularity&" +
+    "apiKey=6a89e8e3ead24766999a488e9b076dd5";
 
-  // const req = new Request(url);
+  const req = new Request(url);
 
-  // useEffect(() => {
-  //   fetch(req)
-  //     .then((res) => res.json())
-  //     .then(data => setNewsArray(data.articles));
-  // }, []);
+  useEffect(() => {
+    fetch(
+      "http://api.mediastack.com/v1/news?access_key=117e7dd5617cb2a0fdab4633594c49ba&keywords=car&countries=us"
+    )
+      .then((res) => res.json())
+      .then(data => console.log(data));
+  }, []);
 
-  // const displayNewsCard = newsArray.map((news) => {
-  //   return <NewsCard {...news} />;
-  // });
+  const displayNewsCard = newsArray.map((news) => {
+    return <NewsCard {...news} />;
+  });
 
   const blogIdArray = blogsArray.map((blog) => blog.id);
 
