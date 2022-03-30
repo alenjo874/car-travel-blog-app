@@ -5,7 +5,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { useHistory } from "react-router-dom";
 import DirtRoad from "../../style/images/DirtRoad.jpg";
 
-function BlogEntryForm({ setBlogsArray }) {
+function BlogEntryForm({ setBlogsArray, currentUser }) {
   const [title, setTitle] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [blogEntry, setBlogEntry] = useState("");
@@ -24,7 +24,7 @@ function BlogEntryForm({ setBlogsArray }) {
       title: title,
       blog_entry: blogEntry,
       thumbnail: thumbnail,
-      user_id: 19,
+      user_id: currentUser.id,
     };
 
     fetch("/blogs", {

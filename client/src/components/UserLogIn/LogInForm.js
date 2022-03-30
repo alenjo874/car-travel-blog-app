@@ -54,6 +54,7 @@ function LogInForm({ handleLogIn }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
+          type="password"
         ></input>
         <button onClick={handleSignUp}>SIGN UP</button>
         <button onClick={handleSignIn}>LOGIN</button>

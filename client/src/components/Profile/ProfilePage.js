@@ -44,35 +44,37 @@ function ProfilePage({ setCurrentUser, currentUser }) {
 
   const updateProfileForm = (
     <form onSubmit={handleUpdatedProfile}>
-      <div className="pro-page-pic">
-        <img src={currentUser.profile_picture} alt="profile pic" />
-      </div>
-      <label>Profile Picture</label>
-      <input
-        value={profilePic}
-        onChange={(e) => setProfilePic(e.target.value)}
-      ></input>
-      <label>Account Name</label>
-      <input
-        value={accountName}
-        onChange={(e) => setAccountName(e.target.value)}
-      ></input>
-      <label>Password</label>
-      <input
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      ></input>
-      <label>Interests</label>
-      <input
-        value={interests}
-        onChange={(e) => setInterests(e.target.value)}
-        placeholder="ex. Cars Roadtrips Travel"
-      ></input>
-      <label>About</label>
-      <input
-        value={aboutMe}
-        onChange={(e) => setAboutMe(e.target.value)}
-      ></input>
+   
+        <div className="pro-page-pic">
+          <img src={currentUser.profile_picture} alt="profile pic" />
+        </div>
+        <label>Profile Picture</label>
+        <input
+          value={profilePic}
+          onChange={(e) => setProfilePic(e.target.value)}
+        ></input>
+        <label>Account Name</label>
+        <input
+          value={accountName}
+          onChange={(e) => setAccountName(e.target.value)}
+        ></input>
+        <label>Password</label>
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        ></input>
+        <label>Interests</label>
+        <input
+          value={interests}
+          onChange={(e) => setInterests(e.target.value)}
+          placeholder="ex. Cars Roadtrips Travel"
+        ></input>
+        <label>About</label>
+        <input
+          value={aboutMe}
+          onChange={(e) => setAboutMe(e.target.value)}
+        ></input>
+     
       <button>Update</button>
     </form>
   );
@@ -85,7 +87,7 @@ function ProfilePage({ setCurrentUser, currentUser }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeIn" }}
         >
-          Welcome {currentUser.name} 
+          Welcome {currentUser.name}
         </motion.h2>
       </span>
       <div className="blog-intro-banner">

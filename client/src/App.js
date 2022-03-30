@@ -57,7 +57,7 @@ function App() {
           <BlogsPage setBlogsArray={setBlogsArray} blogsArray={blogsArray} />
         </Route>
         <Route exact path="/new_blog">
-          <BlogEntryForm setBlogsArray={setBlogsArray} />
+          <BlogEntryForm setBlogsArray={setBlogsArray} currentUser={currentUser}/>
         </Route>
       </Switch>
     </div>
