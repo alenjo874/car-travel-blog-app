@@ -229,13 +229,13 @@ input {
 }
 
 .login-page-container {
-  max-height: 100vh;
+  height: 100%;
 }
 
 .login-page-container img {
   -o-object-fit: cover;
      object-fit: cover;
-  max-height: 100vh;
+  min-height: 100vh;
   width: 100%;
   filter: lur(4px);
   -webkit-filter: blur(4px);
@@ -620,6 +620,7 @@ input {
   border-radius: 4px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  height: 90%;
 }
 
 .blogs-page-container .blog-card-container .blog-thumbnail img:hover {
@@ -1182,6 +1183,9 @@ input {
 @media only screen and (max-width: 500px) {
   * {
     font-size: 14px;
+  }
+  .login-page-container .login-form-container {
+    min-width: 95%;
   }
   .navbar-container {
     -webkit-box-pack: center;

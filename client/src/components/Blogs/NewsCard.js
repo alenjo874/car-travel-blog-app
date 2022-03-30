@@ -8,8 +8,13 @@ function NewsCard({ title, summary, media, rights, link }) {
           <b>{title}</b>
           <p>{rights} </p>
         </span>
-        <a className="news-thumbnail" href={link} target="_blank">
-          <img src={media} />
+        <a
+          className="news-thumbnail"
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={media} alt="news thumbnail" />
         </a>
       </div>
       <div className="news-body">

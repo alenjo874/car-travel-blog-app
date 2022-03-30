@@ -16,15 +16,14 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   const [editBlog, setEditBlog] = useState(false);
   const [newsArray, setNewsArray] = useState([]);
 
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Host": "free-news.p.rapidapi.com",
-      "X-RapidAPI-Key": "6c5c904991msh1c71df644d278c1p173e5cjsndc2a28f5c4ca",
-    },
-  };
-
   useEffect(() => {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Host": "free-news.p.rapidapi.com",
+        "X-RapidAPI-Key": "6c5c904991msh1c71df644d278c1p173e5cjsndc2a28f5c4ca",
+      },
+    };
     fetch(
       "https://free-news.p.rapidapi.com/v1/search?q=Car%20Car&lang=en",
       options
@@ -33,10 +32,8 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
       .then((response) => setNewsArray(response.articles));
   }, []);
 
-
-
   const displayNewsCard = newsArray.map((news) => {
-    return <NewsCard {...news} />;
+    return <NewsCard key={uuidv4()} {...news} />;
   });
 
   const blogIdArray = blogsArray.map((blog) => blog.id);
@@ -223,9 +220,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
             </div>
 
             {showBlog ? null : (
-              <div className="news-container">
-                {displayNewsCard}
-              </div>
+              <div className="news-container">{displayNewsCard}</div>
             )}
           </motion.div>
         </div>

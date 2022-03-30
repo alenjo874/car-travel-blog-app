@@ -212,10 +212,10 @@ input {
 }
 
 .login-page-container {
-  max-height: 100vh;
+ height: 100%;
   img {
     object-fit: cover;
-    max-height: 100vh;
+    min-height: 100vh;
     width: 100%;
     filter: lur($blur);
     -webkit-filter: blur($blur);
@@ -469,6 +469,7 @@ input {
       img {
         border-radius: $img-border-radius;
         transition: 0.2s;
+        height: 90%;
         &:hover {
           transition: 0.2s;
           transform: scale(1.05);
@@ -850,6 +851,12 @@ input {
 @media only screen and (max-width: 500px) {
   * {
     font-size: 14px;
+  }
+
+  .login-page-container {
+    .login-form-container {
+      min-width: 95%;
+    }
   }
 
   .navbar-container {
