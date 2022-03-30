@@ -575,9 +575,9 @@ input {
           justify-content: space-evenly;
   margin: 15px;
   border-bottom: 1px solid #121212;
-  width: 80%;
+  width: 90%;
   max-height: 350px;
-  max-width: 900px;
+  max-width: 1000px;
 }
 
 .blogs-page-container .blog-card-container .blog-card-teaser {
