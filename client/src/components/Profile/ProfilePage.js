@@ -58,11 +58,11 @@ function ProfilePage({ setCurrentUser, currentUser }) {
           value={accountName}
           onChange={(e) => setAccountName(e.target.value)}
         ></input>
-        <label>Password</label>
+        {/* <label>Password</label>
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        ></input>
+        ></input> */}
         <label>Interests</label>
         <input
           value={interests}
