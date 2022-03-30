@@ -302,6 +302,7 @@ input {
       border: 1px solid $secondary-color;
       border-radius: $img-border-radius;
       margin: 25px;
+      height: fit-content;
       max-width: 500px;
       padding: 35px;
       @include flexbox-positions(
@@ -326,6 +327,7 @@ input {
       }
 
       .news-body {
+        width: 100%;
         p {
           margin-top: $elements-margin * 2;
         }
@@ -377,7 +379,7 @@ input {
       $align: center,
       $direction: column
     );
-    width: 60%;
+    width: 80%;
   }
 
   .blog-list {
@@ -389,7 +391,6 @@ input {
 
     .blog-body-container {
       width: 100%;
-      border: 2px solid yellow;
     }
 
     .blog-page-intro {
@@ -476,7 +477,7 @@ input {
     justify-content: space-between;
     margin: 50px;
     font-size: $user-blog-fontsize;
-    width: 80%;
+    width: 100%;
     min-height: 200vh;
 
     .about-head {
@@ -810,17 +811,16 @@ input {
   .blogs-page-container {
     .blog-card-container {
       max-height: none;
-    }
 
-    .blog-card-teaser {
-      margin-top: 0;
+      .blog-card-teaser {
+        padding-top: 0;
+      }
     }
   }
 
   .blog-news-container {
     .blog-display {
       width: 100%;
-      border: 2px solid red;
     }
   }
 }
