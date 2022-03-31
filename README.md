@@ -1,6 +1,6 @@
 # My Blogger App
 
-https://car-travel-blog-app.herokuapp.com/blogs
+https://car-travel-blog-app.herokuapp.com/
 
 This project was built for people who love cars, road trips, and traveling to connect through blogs. 
 
