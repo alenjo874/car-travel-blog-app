@@ -365,10 +365,6 @@ input {
   background-color: #7a7a7a;
 }
 
-.login-page-container .login-form-container .update-pro-popup {
-  background-color: rgba(211, 211, 211, 0.25);
-}
-
 .blogs-page-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1181,6 +1177,10 @@ input {
 }
 
 .profile-container .confirm-delete button {
+  margin: 0;
+}
+
+.profile-container .update-pro-popup #pro-x {
   margin: 0;
 }
 

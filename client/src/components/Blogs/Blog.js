@@ -84,14 +84,14 @@ function Blog({
       </span>
       <button onClick={submitEditBlog}>Submit</button>
       <button onClick={showDeleteConfirm}>Delete Blog</button>
-    </motion.form>
+    </motion.form> 
   );
 
   const editBtn = <button onClick={handleEditBlog}>Edit</button>;
   const cancelEditBtn = <button onClick={handleEditBlog}>Cancel</button>;
-  const displayUserCategories = user.category.split(" ").map((category) => {
-    return <p key={uuidv4()}>{category}</p>;
-  });
+  // const displayUserCategories = user.category.split(" ").map((category) => {
+  //   return <p key={uuidv4()}>{category}</p>;
+  // });
 
   const blogPageNumber = blogsArray.map((blog) => blog.id).indexOf(id);
   const relatedBlogs = blogsArray.filter((blog) => blog.user.id === user.id);

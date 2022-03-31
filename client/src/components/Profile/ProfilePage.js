@@ -144,7 +144,8 @@ function ProfilePage({ setCurrentUser, currentUser }) {
               }}
             >
               <p>Edit Successful</p>
-              <button onClick={hideConfirmation}>
+
+              <button onClick={hideConfirmation} id="pro-x">
                 <FontAwesomeIcon icon={faXmark} />
               </button>
             </motion.div>
@@ -170,7 +171,7 @@ function ProfilePage({ setCurrentUser, currentUser }) {
               }}
             >
               <p>Are you sure?</p>
-              <div>
+              <div  >
                 <button onClick={handleDeleteUser}>Yes</button>
                 <button onClick={(e) => setAcctDeleteConfirm(false)}>No</button>
               </div>

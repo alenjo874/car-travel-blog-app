@@ -67,6 +67,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
   }
 
   function showRelatedBlog(id) {
+    window.scrollTo(0, 0);
     setEditBlog(false);
     setClickedBlog(id);
   }

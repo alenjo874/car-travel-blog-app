@@ -127,6 +127,7 @@ input {
   }
 }
 
+
 .home-page-container {
   display: flex;
   justify-content: flex-start;
@@ -298,10 +299,6 @@ input {
         transition: 0.2s;
         background-color: $active-color;
       }
-    }
-
-    .update-pro-popup {
-      background-color: rgba(211, 211, 211, 0.25);
     }
   }
 }
@@ -841,6 +838,12 @@ input {
     button {
       margin: 0;
     }
+  }
+  .update-pro-popup {
+   #pro-x {
+     margin: 0;
+   }
+   
   }
 }
 
