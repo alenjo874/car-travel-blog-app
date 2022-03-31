@@ -37,7 +37,7 @@ button:hover {
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  background-color: #f3f4f6;
+  background-color: #ffffff;
 }
 
 button:active {
@@ -332,8 +332,7 @@ input {
   z-index: -200;
   min-height: 150vh;
   color: #fff;
-  background-color: #121212;
-  background-color: #fff;
+  background-color: #f5f5f5;
   color: #121212;
 }
 
@@ -892,7 +891,7 @@ input {
   z-index: -200;
   min-height: 100vh;
   top: 80px;
-  background-color: #fff;
+  background-color: #f5f5f5;
   color: #141414;
 }
 
@@ -978,7 +977,7 @@ input {
   position: absolute;
   z-index: -200;
   top: 80px;
-  background-color: #fff;
+  background-color: #f5f5f5;
   color: #141414;
 }
 
