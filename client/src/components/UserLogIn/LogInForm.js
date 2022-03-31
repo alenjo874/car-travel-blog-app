@@ -40,6 +40,22 @@ function LogInForm({ handleLogIn }) {
     setPassword("");
   }
 
+  function handleDemoLogin(e) {
+    e.preventDefault();
+    const demoAdmin = {
+      name: "Demo Admin",
+      password: 123,
+    };
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(demoAdmin),
+    });
+    handleLogIn("Demo Admin");
+  }
+
   return (
     <div className="login-form-container">
       <form>
@@ -59,6 +75,7 @@ function LogInForm({ handleLogIn }) {
         ></input>
         <button onClick={handleSignUp}>SIGN UP</button>
         <button onClick={handleSignIn}>LOGIN</button>
+        <button onClick={handleDemoLogin}>DEMO ADMIN LOGIN</button>
       </form>
     </div>
   );

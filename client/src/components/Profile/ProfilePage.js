@@ -21,7 +21,7 @@ function ProfilePage({ setCurrentUser, currentUser }) {
   function handleUpdatedProfile(e) {
     e.preventDefault();
     const profileDetailsObj = {
-      name: accountName,
+      name: currentUser.name === "Demo Admin" ? "Demo Admin" : accountName,
       category: interests,
       about: aboutMe,
       profile_picture: profilePic,
@@ -33,7 +33,9 @@ function ProfilePage({ setCurrentUser, currentUser }) {
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
-    });
+    })
+      .then((res) => res.json())
+      .then(setCurrentUser);
 
     setFormUpdated(true);
   }

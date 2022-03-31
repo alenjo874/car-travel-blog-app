@@ -168,7 +168,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
         >
           <button onClick={handleExploreBlogs}>Explore</button>
           <Link to="/new_blog">
-            <button>+ Write Blog</button>
+            <button>Write Blog</button>
           </Link>
         </motion.div>
       </span>
@@ -221,7 +221,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
 
             {showBlog ? null : (
               <div className="news-container">
-                <p>Related News</p> {displayNewsCard}
+                <p className="news-title">Related News</p> {displayNewsCard}
               </div>
             )}
           </motion.div>

@@ -36,6 +36,7 @@ function App() {
   function handleLogIn(username) {
   
     const userObj = usersArray.find((user) => user.name === username);
+    
     setCurrentUser(userObj);
   }
 

@@ -315,6 +315,11 @@ input {
     );
     width: 30%;
 
+    .news-title {
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
     .news-card-container {
       border: 1px solid $secondary-color;
       border-radius: $img-border-radius;
@@ -335,12 +340,14 @@ input {
           overflow: hidden;
           height: 80%;
           border-radius: $img-border-radius;
+
           img {
             border-radius: $img-border-radius;
             margin-bottom: $elements-margin;
             height: 100%;
             width: 100%;
             object-fit: cover;
+            transition: 0.5s;
             &:hover {
               transition: 0.5s;
               transform: scale(1.35);
@@ -841,10 +848,6 @@ input {
 }
 
 @media only screen and (max-width: 1100px) {
-  .news-container {
-    display: none;
-  }
-
   .blogs-page-container {
     .blog-card-container {
       max-height: none;
@@ -858,6 +861,9 @@ input {
   .blog-news-container {
     .blog-display {
       width: 100%;
+    }
+    .news-container {
+      display: none;
     }
   }
 }
