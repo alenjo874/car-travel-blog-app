@@ -127,7 +127,6 @@ input {
   }
 }
 
-
 .home-page-container {
   display: flex;
   justify-content: flex-start;
@@ -673,9 +672,39 @@ input {
     }
 
     .user-related {
+      .read-more-card {
+        @include flexbox-positions($justify: flex-start, $align: flex-start);
+        height: 35%;
+        max-height: 250px;
+        width: 100%;
+        margin: $elements-margin;
+        .read-more-img {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          margin: 0;
+          transition: 0.5s;
+          overflow: hidden;
+          border-radius: $img-border-radius;
+          height: 80px;
+          width: 80px;
+          img {
+            height: 80px;
+            width: 80px;
+            object-fit: cover;
+            &:hover {
+              transition: 0.5s;
+              transform: scale(1.35);
+            }
+          }
+        }
+      }
+
       span {
         font-style: italic;
         p {
+          width: 100%;
           &:hover {
             cursor: pointer;
             text-decoration: underline;
@@ -840,10 +869,9 @@ input {
     }
   }
   .update-pro-popup {
-   #pro-x {
-     margin: 0;
-   }
-   
+    #pro-x {
+      margin: 0;
+    }
   }
 }
 

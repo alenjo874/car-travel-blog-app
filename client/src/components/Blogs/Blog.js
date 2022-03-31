@@ -84,7 +84,7 @@ function Blog({
       </span>
       <button onClick={submitEditBlog}>Submit</button>
       <button onClick={showDeleteConfirm}>Delete Blog</button>
-    </motion.form> 
+    </motion.form>
   );
 
   const editBtn = <button onClick={handleEditBlog}>Edit</button>;
@@ -97,9 +97,14 @@ function Blog({
   const relatedBlogs = blogsArray.filter((blog) => blog.user.id === user.id);
   const displayRelatedBlogs = relatedBlogs.map((blog) => {
     return (
-      <p key={uuidv4()} onClick={(e) => showRelatedBlog(blog.id)}>
-        {blog.title}
-      </p>
+      <div className="read-more-card">
+        <div className="read-more-img">
+          <img src={blog.thumbnail} />
+        </div>
+        <p key={uuidv4()} onClick={(e) => showRelatedBlog(blog.id)}>
+          {blog.title}
+        </p>
+      </div>
     );
   });
 
