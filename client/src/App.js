@@ -36,11 +36,11 @@ function App() {
   function handleLogIn(username) {
   
     const userObj = usersArray.find((user) => user.name === username);
-    
+
     setCurrentUser(userObj);
   }
 
-  if (!currentUser) return <LogInPage handleLogIn={handleLogIn} />;
+  if (!currentUser) return <LogInPage handleLogIn={handleLogIn} setUsersArray={setUsersArray}/>;
 
   return (
     <div className="App">

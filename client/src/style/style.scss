@@ -271,6 +271,29 @@ input {
         background-color: $active-color;
       }
     }
+    .update-pro-popup {
+      @include flexbox-positions($justify: center, $align: center);
+      position: fixed;
+      top: -120px;
+      left: 0;
+      width: 100%;
+      color: $secondary-color;
+      height: 100vh;
+    }
+
+    .submit-confirm {
+      @include flexbox-positions($justify: space-between, $align: center);
+      position: relative;
+      width: 25%;
+      max-width: 300px;
+      min-width: 150px;
+      background-color: $accent-color;
+      padding: 10px 20px;
+
+      button {
+        margin: 0;
+      }
+    }
   }
 }
 

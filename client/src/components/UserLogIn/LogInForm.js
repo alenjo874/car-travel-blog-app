@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-function LogInForm({ handleLogIn }) {
+function LogInForm({ handleLogIn, setUsersArray }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [acctCreated, setAcctCreated] = useState(false);
 
   function handleSignUp(e) {
     e.preventDefault();
@@ -16,7 +20,14 @@ function LogInForm({ handleLogIn }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          setAcctCreated(true);
+        }
+        setUsersArray((prev) => [...prev, data]);
+      });
 
     setUsername("");
     setPassword("");
@@ -56,6 +67,10 @@ function LogInForm({ handleLogIn }) {
     handleLogIn("Demo Admin");
   }
 
+  function hideAcctConfirm() {
+    setAcctCreated(false);
+  }
+
   return (
     <div className="login-form-container">
       <form>
@@ -77,6 +92,34 @@ function LogInForm({ handleLogIn }) {
         <button onClick={handleSignIn}>LOGIN</button>
         <button onClick={handleDemoLogin}>DEMO ADMIN LOGIN</button>
       </form>
+      <AnimatePresence>
+        {acctCreated ? (
+          <div className="update-pro-popup">
+            <motion.div
+              className="submit-confirm"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  duration: 0.25,
+                  type: "show",
+                  ease: "easeIn",
+                },
+              }}
+              exit={{
+                y: "10%",
+                opacity: 0,
+                transition: { duration: 0.25, ease: "easeOut" },
+              }}
+            >
+              <p>Account Created</p>
+              <button onClick={hideAcctConfirm}>
+                <FontAwesomeIcon icon={faXmark} />
+              </button>
+            </motion.div>
+          </div>
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 }
