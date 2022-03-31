@@ -442,12 +442,12 @@ input {
 
 .blogs-page-container .news-container .news-title {
   font-size: 1.4rem;
+  font-weight: 600;
   margin: 0;
 }
 
 .blogs-page-container .news-container .news-card-container {
-  border: 1px solid #121212;
-  border-radius: 4px;
+  border-bottom: 1px solid #121212;
   margin: 25px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -759,11 +759,10 @@ input {
 }
 
 .blogs-page-container .user-blog-container .about-head {
-  text-align: center;
   font-size: 1rem;
+  font-weight: 600;
   width: 100%;
-  border-top: 1.5px solid #121212;
-  border-bottom: 1.5px solid #121212;
+  border-bottom: 1px solid #121212;
 }
 
 .blogs-page-container .user-blog-container p {
@@ -773,7 +772,7 @@ input {
 
 .blogs-page-container .user-blog-container img {
   border-radius: 4px;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 
 .blogs-page-container .user-blog-container .editCancelBtn {
@@ -906,11 +905,10 @@ input {
 }
 
 .blogs-page-container .user-blog-container .user-blog-info .user-category p {
-  margin: 0 5px;
+  margin: 15px 0;
 }
 
 .blogs-page-container .user-blog-container .user-blog-info p {
-  text-align: center;
   padding: 0.5rem;
 }
 

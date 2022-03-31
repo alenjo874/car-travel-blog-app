@@ -35,7 +35,7 @@ function LogInForm({ handleLogIn, setUsersArray }) {
           }
         });
     } else {
-      console.log("error");
+      return null;
     }
 
     setUsername("");

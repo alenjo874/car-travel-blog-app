@@ -349,12 +349,15 @@ input {
 
     .news-title {
       font-size: 1.4rem;
+      font-weight: 600;
       margin: 0;
     }
 
     .news-card-container {
-      border: 1px solid $secondary-color;
-      border-radius: $img-border-radius;
+      // border: 1px solid $secondary-color;
+      border-bottom: 1px solid $secondary-color;
+      // border-top: 1px solid $secondary-color;
+      // border-radius: $img-border-radius;
       margin: 25px;
       height: fit-content;
       max-width: 500px;
@@ -554,12 +557,13 @@ input {
     min-height: 200vh;
 
     .about-head {
-      text-align: center;
+      // text-align: center;
       font-size: 1rem;
-
+      font-weight: 600;
       width: 100%;
-      border-top: 1.5px solid $secondary-color;
-      border-bottom: 1.5px solid $secondary-color;
+      // font-style: italic;
+      // border-top: 1.5px solid $secondary-color;
+      border-bottom: 1px solid $secondary-color;
     }
 
     p {
@@ -569,7 +573,7 @@ input {
 
     img {
       border-radius: $img-border-radius;
-      margin-bottom: $elements-margin;
+      margin: $elements-margin 0;
     }
 
     .editCancelBtn {
@@ -652,12 +656,12 @@ input {
         }
 
         p {
-          margin: 0 5px;
+          margin: $elements-margin 0;
         }
       }
 
       p {
-        text-align: center;
+        // text-align: center;
         padding: 0.5rem;
       }
 

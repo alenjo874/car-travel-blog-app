@@ -172,8 +172,10 @@ function Blog({
               </div>
             </div>
             <div className="user-category  user-sidebar">
-              <p className="about-head">Interests</p>
-              <span>{displayUserCategories}</span>
+              <p className="about-head">Bio</p>
+              <span>
+                <p>{user.about}</p>
+              </span>
             </div>
             <div className="user-related  user-sidebar">
               <p className="about-head">Read More</p>
