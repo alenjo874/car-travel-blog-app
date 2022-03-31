@@ -53,7 +53,7 @@ function Blog({
   }
 
   function showDeleteConfirm(e) {
-    e.preventDefault()
+    e.preventDefault();
     setDeleteBlogConfirm(true);
   }
 
@@ -137,7 +137,7 @@ function Blog({
             {deleteBlogConfirm ? (
               <div className="update-pro-popup">
                 <motion.div
-                  className="submit-confirm"
+                  className="submit-confirm confirm-delete"
                   initial={{ opacity: 0 }}
                   animate={{
                     opacity: 1,
@@ -154,13 +154,13 @@ function Blog({
                   }}
                 >
                   <p>Are you sure?</p>
-                  <button onClick={deleteBlog}>
-                    Yes
-                  </button>
-                  <button onClick={(e) => setDeleteBlogConfirm(false)}>
-                    {/* <FontAwesomeIcon icon={faXmark} /> */}
-                    No
-                  </button>
+                  <div>
+                    <button onClick={deleteBlog}>Yes</button>
+                    <button onClick={(e) => setDeleteBlogConfirm(false)}>
+                      {/* <FontAwesomeIcon icon={faXmark} /> */}
+                      No
+                    </button>
+                  </div>
                 </motion.div>
               </div>
             ) : null}
