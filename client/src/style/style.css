@@ -386,7 +386,7 @@ input {
   z-index: -200;
   min-height: 150vh;
   color: #fff;
-  background-color: #f5f5f5;
+  background-color: #f8f5ef;
   color: #121212;
 }
 
@@ -994,7 +994,7 @@ input {
   z-index: -200;
   min-height: 100vh;
   top: 80px;
-  background-color: #f5f5f5;
+  background-color: #f8f5ef;
   color: #141414;
 }
 
@@ -1080,7 +1080,7 @@ input {
   position: absolute;
   z-index: -200;
   top: 80px;
-  background-color: #f5f5f5;
+  background-color: #f8f5ef;
   color: #141414;
 }
 
