@@ -2,7 +2,7 @@
 
 https://car-travel-blog-app.herokuapp.com/
 
-This project was built for people who love cars, road trips, and traveling to connect through blogs. 
+This project was built for people who love cars, road trips, and traveling to connect through blogs.
 
 To start the project please run these commands
 
@@ -12,12 +12,12 @@ To start the project please run these commands
 ## Overview
 
 In this project you can:
-    - Create an Account
-      - Log in (remain logged in)
-    - Read Blogs
-    - Write Blogs
-    - Edit Blogs
-    - Delete Blogs
-    - View Related News Articles using external api
-      - https://newscatcherapi.com/free-news-api
 
+- Create an Account
+  - Log in (remain logged in)
+- Read Blogs
+- Write Blogs
+- Edit Blogs
+- Delete Blogs
+- View Related News Articles using external api
+  - https://newscatcherapi.com/free-news-api
