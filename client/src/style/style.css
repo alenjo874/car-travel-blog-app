@@ -929,6 +929,10 @@ input {
   width: 100%;
 }
 
+.blogs-page-container .user-blog-container .user-related span {
+  font-style: italic;
+}
+
 .blogs-page-container .user-blog-container .user-related span p:hover {
   cursor: pointer;
   text-decoration: underline;

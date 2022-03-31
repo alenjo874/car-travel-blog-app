@@ -180,9 +180,9 @@ function Blog({
             <div className="user-related  user-sidebar">
               <p className="about-head">Read More</p>
               <span>
-                {displayRelatedBlogs[0]}
-                {displayRelatedBlogs[1]}
-                {displayRelatedBlogs[2]}
+                {displayRelatedBlogs[0] ? displayRelatedBlogs[0] : null}
+                {displayRelatedBlogs[1] ? displayRelatedBlogs[1] : null}
+                {displayRelatedBlogs[2] ? displayRelatedBlogs[2] : null}
               </span>
             </div>
           </div>
