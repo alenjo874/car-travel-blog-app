@@ -19,7 +19,7 @@ function NewsCard({ title, summary, media, rights, link }) {
         <span>
           <b>{title}</b>
         </span>
-        <p>{rights} </p>
+        <p className="rights">{rights} </p>
         <p>{summaryTeaser}...</p>
         <a href={link} target="_blank" rel="noreferrer">
           <button>Read More</button>

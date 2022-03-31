@@ -218,7 +218,7 @@ input {
   width: 100%;
   color: #fff;
   background-color: transparent;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .navbar-container .nav-elem-ham {
@@ -269,7 +269,7 @@ input {
 
 .navbar-container .nav-elements-container ul li:hover {
   cursor: pointer;
-  border-bottom: 1px solid #fff;
+  text-decoration: underline;
 }
 
 .navbar-container .nav-elements-container ul li:active {
@@ -509,6 +509,11 @@ input {
 
 .blogs-page-container .news-container .news-card-container .news-body {
   width: 100%;
+}
+
+.blogs-page-container .news-container .news-card-container .news-body .rights {
+  font-style: italic;
+  font-size: 0.8rem;
 }
 
 .blogs-page-container .news-container .news-card-container .news-body p {
@@ -926,7 +931,7 @@ input {
 
 .blogs-page-container .user-blog-container .user-related span p:hover {
   cursor: pointer;
-  border-bottom: 1px solid #121212;
+  text-decoration: underline;
 }
 
 .blogs-page-container .user-blog-container .blog-edit-form-container {
