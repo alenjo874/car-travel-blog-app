@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import parse from "html-react-parser";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Blog({
   id,
@@ -24,6 +26,7 @@ function Blog({
 }) {
   const [newTitle, setNewTitle] = useState(title);
   const [newBlogEntry, setNewBlogEntry] = useState(blog_entry);
+  const [deleteBlogConfirm, setDeleteBlogConfirm] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,6 +49,12 @@ function Blog({
       method: "DELETE",
     });
     handleDeleteBlog(id);
+    setDeleteBlogConfirm(false);
+  }
+
+  function showDeleteConfirm(e) {
+    e.preventDefault()
+    setDeleteBlogConfirm(true);
   }
 
   const editBlogForm = (
@@ -76,7 +85,7 @@ function Blog({
         />
       </span>
       <button onClick={submitEditBlog}>Submit</button>
-      <button onClick={deleteBlog}>Delete Blog</button>
+      <button onClick={showDeleteConfirm}>Delete Blog</button>
     </motion.form>
   );
 
@@ -124,6 +133,38 @@ function Blog({
           <div className="blog-edit-form-container">
             <AnimatePresence>{editBlog ? editBlogForm : null}</AnimatePresence>
           </div>
+          <AnimatePresence>
+            {deleteBlogConfirm ? (
+              <div className="update-pro-popup">
+                <motion.div
+                  className="submit-confirm"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    transition: {
+                      duration: 0.25,
+                      type: "show",
+                      ease: "easeIn",
+                    },
+                  }}
+                  exit={{
+                    y: "10%",
+                    opacity: 0,
+                    transition: { duration: 0.25, ease: "easeOut" },
+                  }}
+                >
+                  <p>Are you sure?</p>
+                  <button onClick={deleteBlog}>
+                    Yes
+                  </button>
+                  <button onClick={(e) => setDeleteBlogConfirm(false)}>
+                    {/* <FontAwesomeIcon icon={faXmark} /> */}
+                    No
+                  </button>
+                </motion.div>
+              </div>
+            ) : null}
+          </AnimatePresence>
         </div>
         <div className="blog-col right">
           <div className="user-blog-info">
