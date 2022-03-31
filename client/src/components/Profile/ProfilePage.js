@@ -97,6 +97,11 @@ function ProfilePage({ setCurrentUser, currentUser }) {
 
       <button onClick={handleUpdatedProfile}>Update Account</button>
       <button onClick={handleDeletePopUp}>Delete Account</button>
+      <div className="pro-footer">
+        <button className="logout" onClick={handleLogout}>
+          Log Out
+        </button>
+      </div>
     </form>
   );
 
@@ -171,7 +176,7 @@ function ProfilePage({ setCurrentUser, currentUser }) {
               }}
             >
               <p>Are you sure?</p>
-              <div  >
+              <div>
                 <button onClick={handleDeleteUser}>Yes</button>
                 <button onClick={(e) => setAcctDeleteConfirm(false)}>No</button>
               </div>
@@ -179,11 +184,6 @@ function ProfilePage({ setCurrentUser, currentUser }) {
           </div>
         ) : null}
       </AnimatePresence>
-      <div className="pro-footer">
-        <button className="logout" onClick={handleLogout}>
-          Log Out
-        </button>
-      </div>
     </div>
   );
 }

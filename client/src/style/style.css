@@ -712,13 +712,13 @@ input {
 
 .blogs-page-container .blog-card-container .blog-thumbnail img {
   border-radius: 4px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
   height: 100%;
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1228,6 +1228,7 @@ input {
 
 .profile-container .pro-body form button {
   width: 30%;
+  min-width: 100px;
 }
 
 .profile-container button {

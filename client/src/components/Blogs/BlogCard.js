@@ -1,6 +1,4 @@
 import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 
 function BlogCard({
   id,
@@ -31,17 +29,11 @@ function BlogCard({
         </span>
       </div>
       <div className="blog-thumbnail">
-        {/* <img
+        <img
           src={thumbnail}
           alt="blog thumbnail"
           onClick={handleShowBlog}
           loading="lazy"
-        /> */}
-        <LazyLoadImage
-          src={thumbnail}
-          effect="blur"
-          onClick={handleShowBlog}
-          alt="blog thumbnail"
         />
       </div>
     </div>

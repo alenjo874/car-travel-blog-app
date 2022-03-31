@@ -527,9 +527,9 @@ input {
 
       img {
         border-radius: $img-border-radius;
-        transition: 0.2s;
         height: 100%;
         transition: transform 0.5s ease;
+        transition: 0.5s;
         object-fit: cover;
         &:hover {
           transition: 0.5s;
@@ -855,6 +855,7 @@ input {
 
       button {
         width: 30%;
+        min-width: 100px;
       }
     }
   }
@@ -969,7 +970,6 @@ input {
     @include flexbox-positions($justify: space-between, $align: center);
     width: 100%;
 
-   
     .page-logo {
       h4 {
         font-size: 1.15rem;
