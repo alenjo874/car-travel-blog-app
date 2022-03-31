@@ -959,14 +959,22 @@ input {
     justify-content: center;
     flex-direction: column;
     background-color: $secondary-color;
+
     .nav-elements-container {
       display: none;
     }
   }
 
   .nav-elem-ham {
-    width: 100%;
     @include flexbox-positions($justify: space-between, $align: center);
+    width: 100%;
+
+   
+    .page-logo {
+      h4 {
+        font-size: 1.15rem;
+      }
+    }
   }
 
   .nav-hamburger-container {
@@ -978,6 +986,7 @@ input {
       background-color: transparent;
       color: $accent-color;
       border: none;
+      margin-right: $elements-margin;
       outline: none;
       font-size: 1.5rem;
     }
@@ -1000,7 +1009,8 @@ input {
       width: 100%;
 
       li {
-        margin: $elements-margin 0;
+        margin: $elements-margin * 1.5 0;
+        font-size: 1.15rem;
       }
     }
   }

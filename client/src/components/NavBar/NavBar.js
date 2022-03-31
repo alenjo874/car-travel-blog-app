@@ -48,15 +48,11 @@ function NavBar({ blogsArray }) {
   );
 
   const triBarButton = (
-    <motion.button className="nav-hamburger-btn" onClick={handleShowHam}>
-      <FontAwesomeIcon icon={faBars} />
-    </motion.button>
+      <FontAwesomeIcon icon={faBars} className="nav-hamburger-btn" onClick={handleShowHam}/>
   );
 
   const xButton = (
-    <motion.button className="nav-hamburger-btn" onClick={handleHideHam}>
-      <FontAwesomeIcon icon={faX} />
-    </motion.button>
+      <FontAwesomeIcon icon={faX} className="nav-hamburger-btn" onClick={handleHideHam}/>
   );
 
   return (

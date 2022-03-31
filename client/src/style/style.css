@@ -1341,7 +1341,6 @@ input {
     display: none;
   }
   .nav-elem-ham {
-    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1355,6 +1354,10 @@ input {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    width: 100%;
+  }
+  .nav-elem-ham .page-logo h4 {
+    font-size: 1.15rem;
   }
   .nav-hamburger-container {
     display: block;
@@ -1364,6 +1367,7 @@ input {
     background-color: transparent;
     color: #fff;
     border: none;
+    margin-right: 15px;
     outline: none;
     font-size: 1.5rem;
   }
@@ -1393,7 +1397,8 @@ input {
     width: 100%;
   }
   .ham-elements-container ul li {
-    margin: 15px 0;
+    margin: 22.5px 0;
+    font-size: 1.15rem;
   }
   .home-page-container .home-blurb {
     top: 100px;
