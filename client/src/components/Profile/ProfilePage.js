@@ -7,13 +7,13 @@ import ForestOverhead from "../../style/images/ForestOverhead.jpg";
 function ProfilePage({ setCurrentUser, currentUser }) {
   const [profilePic, setProfilePic] = useState(currentUser.profile_picture);
   const [accountName, setAccountName] = useState(currentUser.name);
-  // const [password, setPassword] = useState("");
   const [interests, setInterests] = useState(currentUser.category);
   const [aboutMe, setAboutMe] = useState(currentUser.about);
   const [formUpdated, setFormUpdated] = useState(false);
   const [acctDeleteConfirm, setAcctDeleteConfirm] = useState(false);
 
-  function handleLogout() {
+  function handleLogout(e) {
+    e.preventDefault();
     fetch("/logout", {
       method: "DELETE",
     }).then(setCurrentUser(""));
