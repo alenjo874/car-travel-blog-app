@@ -244,7 +244,7 @@ input {
     object-fit: cover;
     min-height: 100vh;
     width: 100%;
-    filter: lur($blur);
+    filter: blur($blur);
     -webkit-filter: blur($blur);
     -moz-filter: blur($blur);
     -o-filter: blur($blur);
@@ -964,6 +964,15 @@ input {
     .home-blurb {
       top: 100px;
       left: 0;
+    }
+    .home-background {
+      img {
+        filter: blur($blur);
+        -webkit-filter: blur($blur);
+        -moz-filter: blur($blur);
+        -o-filter: blur($blur);
+        -ms-filter: blur($blur);
+      }
     }
   }
 }

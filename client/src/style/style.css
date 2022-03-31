@@ -287,7 +287,7 @@ input {
      object-fit: cover;
   min-height: 100vh;
   width: 100%;
-  filter: lur(4px);
+  filter: blur(4px);
   -webkit-filter: blur(4px);
   -moz-filter: blur(4px);
   -o-filter: blur(4px);
@@ -1332,6 +1332,13 @@ input {
   .home-page-container .home-blurb {
     top: 100px;
     left: 0;
+  }
+  .home-page-container .home-background img {
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
   }
 }
 /*# sourceMappingURL=style.css.map */
