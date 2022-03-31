@@ -304,9 +304,15 @@ input {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    justify-content: center;
   }
 
   .news-container {
+    @include flexbox-positions(
+      $justify: center,
+      $align: center,
+      $direction: column
+    );
     width: 30%;
 
     .news-card-container {
@@ -315,7 +321,7 @@ input {
       margin: 25px;
       height: fit-content;
       max-width: 500px;
-      padding: 35px;
+      padding: 30px;
       @include flexbox-positions(
         $justify: center,
         $align: center,
@@ -324,23 +330,30 @@ input {
 
       .news-head {
         @include flexbox-positions($justify: center, $align: center);
-      }
 
-      .news-thumbnail {
-        max-width: 100px;
-        max-height: 100px;
-        img {
+        .news-thumbnail {
+          overflow: hidden;
+          height: 80%;
           border-radius: $img-border-radius;
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
+          img {
+            border-radius: $img-border-radius;
+            margin-bottom: $elements-margin;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            &:hover {
+              transition: 0.5s;
+              transform: scale(1.35);
+            }
+          }
         }
       }
 
       .news-body {
         width: 100%;
+
         p {
-          margin-top: $elements-margin * 2;
+          margin: $elements-margin 0;
         }
       }
     }

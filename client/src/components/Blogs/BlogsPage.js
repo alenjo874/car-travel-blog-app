@@ -220,7 +220,9 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
             </div>
 
             {showBlog ? null : (
-              <div className="news-container">{displayNewsCard}</div>
+              <div className="news-container">
+                <p>Related News</p> {displayNewsCard}
+              </div>
             )}
           </motion.div>
         </div>
