@@ -42,6 +42,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
     setShowBlog(true);
     setEditBlog(false);
     setClickedBlog(id);
+    setSearchBlog("");
   }
 
   function showNextBlogPage() {

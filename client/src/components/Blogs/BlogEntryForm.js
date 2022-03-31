@@ -43,6 +43,7 @@ function BlogEntryForm({ setBlogsArray, currentUser }) {
     setThumbnail("");
     setBlogEntry("");
     history.push("/blogs");
+    window.scrollTo(0, 0);
   }
 
   const newBlogIntroBanner = (
