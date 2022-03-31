@@ -7,6 +7,7 @@ function LogInForm({ handleLogIn, setUsersArray }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [acctCreated, setAcctCreated] = useState(false);
+  const [createDeny, setCreateDeny] = useState(false);
 
   function handleSignUp(e) {
     e.preventDefault();
@@ -14,20 +15,28 @@ function LogInForm({ handleLogIn, setUsersArray }) {
       name: username,
       password: password,
     };
-    fetch("/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          setAcctCreated(true);
-        }
-        setUsersArray((prev) => [...prev, data]);
-      });
+
+    if (username.length > 0 && password.length > 0) {
+      fetch("/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data) {
+            setUsersArray((prev) => [...prev, data]);
+            setAcctCreated(true);
+            setCreateDeny(true);
+          } else {
+            setCreateDeny(false);
+          }
+        });
+    } else {
+      console.log("error");
+    }
 
     setUsername("");
     setPassword("");
@@ -88,7 +97,9 @@ function LogInForm({ handleLogIn, setUsersArray }) {
           autoComplete="on"
           type="password"
         ></input>
+
         <button onClick={handleSignUp}>SIGN UP</button>
+
         <button onClick={handleSignIn}>LOGIN</button>
         <button onClick={handleDemoLogin}>DEMO ADMIN LOGIN</button>
       </form>
@@ -112,7 +123,8 @@ function LogInForm({ handleLogIn, setUsersArray }) {
                 transition: { duration: 0.25, ease: "easeOut" },
               }}
             >
-              <p>Account Created</p>
+              {createDeny ? <p>Account Created</p> : <p>Account Denied</p>}
+
               <button onClick={hideAcctConfirm}>
                 <FontAwesomeIcon icon={faXmark} />
               </button>

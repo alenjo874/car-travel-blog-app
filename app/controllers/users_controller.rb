@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorized, only: :create
+    skip_before_action :authorized, only:[:index, :create]
     def index
         users = User.all 
         render json: users, status: :ok
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     private 
 
     def user_params 
-        params.permit(:name, :password)
+        params.permit(:name, :password, :profile_picture).with_defaults(profile_picture: "https://www.nicepng.com/png/full/933-9332131_profile-picture-default-png.png")
     end
 
     def update_user_params 
