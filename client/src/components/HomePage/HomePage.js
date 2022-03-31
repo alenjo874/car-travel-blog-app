@@ -2,6 +2,8 @@ import React from "react";
 import Porsche from "../../style/images/Porsche.jpg";
 import { motion } from "framer-motion/dist/framer-motion";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function HomePage() {
   return (
@@ -22,7 +24,9 @@ function HomePage() {
           </Link>
         </motion.div>
         <div>
-          <img src={Porsche} alt="gtr background" loading="lazy" />
+          {/* <img src={Porsche} alt="gtr background" /> */}
+          <LazyLoadImage src={Porsche} effect="blur" alt="car in rain" />
+
         </div>
       </div>
     </div>

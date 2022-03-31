@@ -1,4 +1,6 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function NewsCard({ title, summary, media, rights, link }) {
   const summaryTeaser = summary.split(" ").slice(0, 20).join(" ");
@@ -12,7 +14,8 @@ function NewsCard({ title, summary, media, rights, link }) {
           target="_blank"
           rel="noreferrer"
         >
-          <img src={media} alt="news thumbnail" />
+          {/* <img src={media} alt="news thumbnail" /> */}
+          <LazyLoadImage src={media} effect="blur" alt="news thumbnail" />
         </a>
       </div>
       <div className="news-body">
