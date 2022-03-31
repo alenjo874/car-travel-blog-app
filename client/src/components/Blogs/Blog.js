@@ -5,7 +5,6 @@ import parse from "html-react-parser";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
-
 function Blog({
   id,
   title,
@@ -156,7 +155,6 @@ function Blog({
                   <div>
                     <button onClick={deleteBlog}>Yes</button>
                     <button onClick={(e) => setDeleteBlogConfirm(false)}>
-                      {/* <FontAwesomeIcon icon={faXmark} /> */}
                       No
                     </button>
                   </div>

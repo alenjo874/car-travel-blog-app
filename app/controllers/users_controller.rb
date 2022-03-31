@@ -27,7 +27,12 @@ class UsersController < ApplicationController
         render json: update_user, status: :accepted
     end
 
- 
+    def destroy
+            destroy_user = User.find_by!(id: params[:id])
+            destroy_user.blogs.destroy_all
+            destroy_user.destroy
+        head :no_content
+      end
   
 
     private 

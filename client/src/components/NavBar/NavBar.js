@@ -62,8 +62,8 @@ function NavBar({ blogsArray }) {
   return (
     <div className="navbar-container">
       <div className="nav-elem-ham">
-        <div>
-          <h4>Logo</h4>
+        <div className="page-logo">
+          <h4>Car Blogger</h4>
         </div>
         <div className="nav-elements-container">
           <ul>

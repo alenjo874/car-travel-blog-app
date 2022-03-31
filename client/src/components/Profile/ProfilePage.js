@@ -11,6 +11,7 @@ function ProfilePage({ setCurrentUser, currentUser }) {
   const [interests, setInterests] = useState(currentUser.category);
   const [aboutMe, setAboutMe] = useState(currentUser.about);
   const [formUpdated, setFormUpdated] = useState(false);
+  const [acctDeleteConfirm, setAcctDeleteConfirm] = useState(false);
 
   function handleLogout() {
     fetch("/logout", {
@@ -42,10 +43,28 @@ function ProfilePage({ setCurrentUser, currentUser }) {
 
   function hideConfirmation() {
     setFormUpdated(false);
+    setAcctDeleteConfirm(false);
+  }
+
+  function handleDeletePopUp(e) {
+    e.preventDefault();
+    setAcctDeleteConfirm(true);
+  }
+
+  function handleDeleteUser(e) {
+    e.preventDefault();
+    if (currentUser.name === "Demo Admin") {
+      return null;
+    } else {
+      fetch(`/users/${currentUser.id}`, {
+        method: "DELETE",
+      });
+      setCurrentUser("");
+    }
   }
 
   const updateProfileForm = (
-    <form onSubmit={handleUpdatedProfile}>
+    <form>
       <div className="pro-page-pic">
         <img src={currentUser.profile_picture} alt="profile pic" />
       </div>
@@ -76,7 +95,8 @@ function ProfilePage({ setCurrentUser, currentUser }) {
         onChange={(e) => setAboutMe(e.target.value)}
       ></input>
 
-      <button>Update</button>
+      <button onClick={handleUpdatedProfile}>Update Account</button>
+      <button onClick={handleDeletePopUp}>Delete Account</button>
     </form>
   );
 
@@ -127,6 +147,33 @@ function ProfilePage({ setCurrentUser, currentUser }) {
               <button onClick={hideConfirmation}>
                 <FontAwesomeIcon icon={faXmark} />
               </button>
+            </motion.div>
+          </div>
+        ) : null}
+        {acctDeleteConfirm ? (
+          <div className="update-pro-popup">
+            <motion.div
+              className="submit-confirm confirm-delete"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  duration: 0.25,
+                  type: "show",
+                  ease: "easeIn",
+                },
+              }}
+              exit={{
+                y: "10%",
+                opacity: 0,
+                transition: { duration: 0.25, ease: "easeOut" },
+              }}
+            >
+              <p>Are you sure?</p>
+              <div>
+                <button onClick={handleDeleteUser}>Yes</button>
+                <button onClick={(e) => setAcctDeleteConfirm(false)}>No</button>
+              </div>
             </motion.div>
           </div>
         ) : null}
