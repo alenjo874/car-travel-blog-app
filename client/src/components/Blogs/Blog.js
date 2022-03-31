@@ -99,7 +99,11 @@ function Blog({
     return (
       <div className="read-more-card">
         <div className="read-more-img">
-          <img src={blog.thumbnail} />
+          <img
+            src={blog.thumbnail}
+            alt="article thumbnail"
+            onClick={(e) => showRelatedBlog(blog.id)}
+          />
         </div>
         <p key={uuidv4()} onClick={(e) => showRelatedBlog(blog.id)}>
           {blog.title}

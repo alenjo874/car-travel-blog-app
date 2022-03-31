@@ -682,9 +682,7 @@ input {
           display: flex;
           justify-content: flex-start;
           align-items: center;
-
           margin: 0;
-          transition: 0.5s;
           overflow: hidden;
           border-radius: $img-border-radius;
           height: 80px;
@@ -693,9 +691,11 @@ input {
             height: 80px;
             width: 80px;
             object-fit: cover;
+            transition: 0.5s;
             &:hover {
               transition: 0.5s;
               transform: scale(1.35);
+              cursor: pointer;
             }
           }
         }

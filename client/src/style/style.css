@@ -956,8 +956,6 @@ input {
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
   overflow: hidden;
   border-radius: 4px;
   height: 80px;
@@ -969,6 +967,8 @@ input {
   width: 80px;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .blogs-page-container .user-blog-container .user-related .read-more-card .read-more-img img:hover {
@@ -976,6 +976,7 @@ input {
   transition: 0.5s;
   -webkit-transform: scale(1.35);
           transform: scale(1.35);
+  cursor: pointer;
 }
 
 .blogs-page-container .user-blog-container .user-related span {
