@@ -24,9 +24,10 @@ textarea {
 }
 
 button {
-  border: 1.5px solid #121212;
+  border: 1.5px solid #fff;
+  color: #fff;
   padding: 0.5rem 1.2rem;
-  background-color: transparent;
+  background-color: #121212;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   -webkit-box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
@@ -37,7 +38,7 @@ button:hover {
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  background-color: #ffffff;
+  background-color: #a5a5a5;
 }
 
 button:active {
