@@ -14,7 +14,6 @@ function NavBar({ blogsArray }) {
     setShowHamNav(false);
   }
 
- 
   const navHam = (
     <motion.div
       className="ham-elements-container"
@@ -48,7 +47,6 @@ function NavBar({ blogsArray }) {
     </motion.div>
   );
 
- 
   const triBarButton = (
     <motion.button className="nav-hamburger-btn" onClick={handleShowHam}>
       <FontAwesomeIcon icon={faBars} />

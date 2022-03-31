@@ -479,7 +479,7 @@ input {
         object-fit: cover;
         &:hover {
           transition: 0.5s;
-          transform: scale(1.5);
+          transform: scale(1.35);
         }
       }
     }
@@ -869,6 +869,7 @@ input {
   .navbar-container {
     justify-content: center;
     flex-direction: column;
+    background-color: $secondary-color;
     .nav-elements-container {
       display: none;
     }
@@ -887,8 +888,8 @@ input {
     .nav-hamburger-btn {
       background-color: transparent;
       color: $accent-color;
-      border: 0;
-      outline: 0;
+      border: none;
+      outline: none;
       font-size: 1.5rem;
     }
   }
