@@ -12,13 +12,11 @@ function HomePage() {
         <motion.div
           initial={{ y: -5, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeIn" }}
+          transition={{ delay: 0.25, duration: 0.6, ease: "easeIn" }}
           className="home-blurb"
         >
           <p>Tell Us Your Story</p>
-          <em>
-            Share your passion with other car enthusiasts and travelers
-          </em>
+          <em>Share your passion with other car enthusiasts and travelers</em>
           <Link to="/new_blog">
             <button>Get Started</button>
           </Link>
@@ -26,7 +24,6 @@ function HomePage() {
         <div>
           {/* <img src={Porsche} alt="gtr background" /> */}
           <LazyLoadImage src={Porsche} effect="blur" alt="car in rain" />
-
         </div>
       </div>
     </div>
