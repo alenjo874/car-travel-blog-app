@@ -12,7 +12,7 @@ function LogInForm({ handleLogIn, setUsersArray }) {
   function handleSignUp(e) {
     e.preventDefault();
     const user = {
-      name: username,
+      name: username.trim(),
       password: password,
     };
 
@@ -99,7 +99,6 @@ function LogInForm({ handleLogIn, setUsersArray }) {
         ></input>
 
         <button onClick={handleSignUp}>SIGN UP</button>
-
         <button onClick={handleSignIn}>LOGIN</button>
         <button onClick={handleDemoLogin}>DEMO ADMIN LOGIN</button>
       </form>
