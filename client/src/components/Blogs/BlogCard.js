@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 function BlogCard({
   id,
@@ -10,8 +10,14 @@ function BlogCard({
   changeShowBlogState,
   blog_teaser,
 }) {
+  const [imgUrlInvalid, setImgUrlInvalid] = useState(false);
+
   function handleShowBlog() {
     changeShowBlogState(id);
+  }
+
+  function handleImgError() {
+    setImgUrlInvalid(true);
   }
 
   return (
@@ -29,12 +35,15 @@ function BlogCard({
         </span>
       </div>
       <div className="blog-thumbnail">
-        <img
-          src={thumbnail}
-          alt="blog thumbnail"
-          onClick={handleShowBlog}
-          loading="lazy"
-        />
+        {imgUrlInvalid ? null : (
+          <img
+            src={thumbnail}
+            alt="blog thumbnail"
+            onClick={handleShowBlog}
+            loading="lazy"
+            onError={handleImgError}
+          />
+        )}
       </div>
     </div>
   );

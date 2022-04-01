@@ -25,6 +25,11 @@ function Blog({
   const [newTitle, setNewTitle] = useState(title);
   const [newBlogEntry, setNewBlogEntry] = useState(blog_entry);
   const [deleteBlogConfirm, setDeleteBlogConfirm] = useState(false);
+  const [imgUrlInvalid, setImgUrlInvalid] = useState(false);
+
+  function handleImgError() {
+    setImgUrlInvalid(true);
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -125,7 +130,13 @@ function Blog({
           </div>
           <div className="user-blog-thumbnail">
             <h3>{title}</h3>
-            <img src={thumbnail} alt="thumbnail for blog" />
+            {imgUrlInvalid ? null : (
+              <img
+                src={thumbnail}
+                alt="thumbnail for blog"
+                onError={handleImgError}
+              />
+            )}
           </div>
           <div className="user-blog-entry">
             <div>
