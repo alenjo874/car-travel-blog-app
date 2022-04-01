@@ -184,6 +184,7 @@ function BlogsPage({ blogsArray, setBlogsArray }) {
     setShowBlog(false);
     const deleteBlogsArray = blogsArray.filter((blog) => blog.id !== id);
     setBlogsArray(deleteBlogsArray);
+    window.scrollTo(0, 0);
   }
 
   return (
