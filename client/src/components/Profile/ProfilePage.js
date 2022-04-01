@@ -4,7 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import ForestOverhead from "../../style/images/ForestOverhead.jpg";
 
-function ProfilePage({ setCurrentUser, currentUser }) {
+function ProfilePage({
+  setCurrentUser,
+  currentUser,
+  setUsersArray,
+  usersArray,
+  setBlogsArray,
+  blogsArray,
+}) {
   const [profilePic, setProfilePic] = useState(currentUser.profile_picture);
   const [accountName, setAccountName] = useState(currentUser.name);
   const [interests, setInterests] = useState(currentUser.category);
@@ -22,6 +29,7 @@ function ProfilePage({ setCurrentUser, currentUser }) {
   function handleUpdatedProfile(e) {
     e.preventDefault();
     const profileDetailsObj = {
+      id: currentUser.id,
       name: currentUser.name === "Demo Admin" ? "Demo Admin" : accountName,
       category: interests,
       about: aboutMe,
@@ -38,6 +46,16 @@ function ProfilePage({ setCurrentUser, currentUser }) {
       .then((res) => res.json())
       .then(setCurrentUser);
 
+    const updatedUserArray = blogsArray.map((blog) => {
+      if (blog.user.id === currentUser.id) {
+        const user = profileDetailsObj;
+        return { ...blog, user };
+      } else {
+        return blog;
+      }
+    });
+
+    setBlogsArray(updatedUserArray);
     setFormUpdated(true);
   }
 
@@ -56,9 +74,14 @@ function ProfilePage({ setCurrentUser, currentUser }) {
     if (currentUser.name === "Demo Admin") {
       return null;
     } else {
+      const deletedUserArray = usersArray.filter(
+        (user) => user.id !== currentUser.id
+      );
+
       fetch(`/users/${currentUser.id}`, {
         method: "DELETE",
       });
+      setUsersArray(deletedUserArray);
       setCurrentUser("");
     }
   }

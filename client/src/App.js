@@ -13,6 +13,7 @@ function App() {
   const [blogsArray, setBlogsArray] = useState([]);
   const [usersArray, setUsersArray] = useState([]);
 
+
   useEffect(() => {
     fetch("/blogs")
       .then((res) => res.json())
@@ -34,13 +35,15 @@ function App() {
   }, []);
 
   function handleLogIn(username) {
-  
     const userObj = usersArray.find((user) => user.name === username);
 
     setCurrentUser(userObj);
   }
 
-  if (!currentUser) return <LogInPage handleLogIn={handleLogIn} setUsersArray={setUsersArray}/>;
+  if (!currentUser)
+    return (
+      <LogInPage handleLogIn={handleLogIn} setUsersArray={setUsersArray} />
+    );
 
   return (
     <div className="App">
@@ -53,13 +56,20 @@ function App() {
           <ProfilePage
             setCurrentUser={setCurrentUser}
             currentUser={currentUser}
+            setUsersArray={setUsersArray}
+            usersArray={usersArray}
+            setBlogsArray={setBlogsArray}
+            blogsArray={blogsArray}
           />
         </Route>
         <Route exact path="/blogs">
           <BlogsPage setBlogsArray={setBlogsArray} blogsArray={blogsArray} />
         </Route>
         <Route exact path="/new_blog">
-          <BlogEntryForm setBlogsArray={setBlogsArray} currentUser={currentUser}/>
+          <BlogEntryForm
+            setBlogsArray={setBlogsArray}
+            currentUser={currentUser}
+          />
         </Route>
       </Switch>
     </div>
